@@ -1,3 +1,3 @@
 ## Marz
 
-Marz es proyecto de API pública de radios en Internet.
+Marz es proyecto de API pública para la gestión de radio en Internet.
