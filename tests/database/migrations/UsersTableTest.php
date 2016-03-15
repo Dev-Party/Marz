@@ -7,7 +7,7 @@ class UsersTableTest extends TestCase
     /** @var string $table Nombre de la tabla. */
     protected $table = 'users';
 
-    /** @var array $collumns Nombres de las columnas de una tabla. */
+    /** @var array $columns Nombres de los campos de una tabla. */
     protected $columns = [
         'id',
         'name',
