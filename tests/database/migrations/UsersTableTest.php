@@ -1,7 +1,5 @@
 <?php
 
-use Laravel\Lumen\Testing\DatabaseTransactions;
-
 class UsersTableTest extends TestCase
 {
     /** @var string $table Nombre de la tabla. */
