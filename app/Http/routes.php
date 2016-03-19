@@ -1,16 +1,35 @@
 <?php
+/**
+ * @api {get} /radio Listar
+ * @apiName  GetRadioAll
+ * @apiGroup Radio
+ */
+$app->get('/radio', function () {});
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It is a breeze. Simply tell Lumen the URIs it should respond to
-| and give it the Closure to call when that URI is requested.
-|
-*/
+/**
+ * @api {post} /radio Agregar
+ * @apiName  PostRadioStore
+ * @apiGroup Radio
+ */
+$app->post('/radio', function () {});
 
-$app->get('/', function () use ($app) {
-    return $app->version();
-});
+/**
+ * @api {get} /radio/:id Ver
+ * @apiName  GetRadioShow
+ * @apiGroup Radio
+ */
+$app->get('/radio/{id}', function () {});
+
+/**
+ * @api {put} /radio/:id Actualiar
+ * @apiName  PutRadioUpdate
+ * @apiGroup Radio
+ */
+$app->put('/radio/{id}', function () {});
+
+/**
+ * @api {delete} /radio/:id Eliminar
+ * @apiName  DeleteRadioDestroy
+ * @apiGroup Radio
+ */
+$app->delete('/radio/{id}', function () {});
