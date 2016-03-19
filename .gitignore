@@ -1,2 +1,4 @@
 /vendor
+/public/doc
+apidoc.json
 .env
