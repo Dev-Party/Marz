@@ -14,6 +14,9 @@ $app->get('/radio', function () {});
  * @apiName  Store
  * @apiGroup  Radio
  * @apiPermission  none
+ * 
+ * @apiParam {String} name Nombre de la radio.
+ * @apiParam {String} streaming URL de la radio.
  */
 $app->post('/radio', function () {});
 
@@ -24,7 +27,11 @@ $app->post('/radio', function () {});
  * @apiGroup  Radio
  * @apiPermission  none
  * 
- * @apiParam {Number} id Identificador único de la radio.
+ * @apiParam  {Number} id Identificador único de la radio.
+ * 
+ * @apiSuccess  {Number} id Identificador único de la radio.
+ * @apiSuccess  {String} name Nombre de la radio.
+ * @apiSuccess  {String} streaming URL de transmisión de la radio.
  */
 $app->get('/radio/{id}', function () {});
 
@@ -36,6 +43,8 @@ $app->get('/radio/{id}', function () {});
  * @apiPermission  admin
  * 
  * @apiParam {Number} id Identificador único de la radio.
+ * @apiParam {String} name Nombre de la radio.
+ * @apiParam {String} streaming URL de la radio.
  */
 $app->put('/radio/{id}', function () {});
 
