@@ -8,7 +8,6 @@ class RadiosTableTest extends TestCase
     /** @var array $columns Nombres de los campos de una tabla. */
     protected $columns = [
         'id',
-        'user_id',
         'name',
         'streaming',
         'created_at',
