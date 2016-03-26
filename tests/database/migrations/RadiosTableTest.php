@@ -10,6 +10,7 @@ class RadiosTableTest extends TestCase
         'id',
         'modulation_id',
         'name',
+        'frequency',
         'streaming',
         'created_at',
         'updated_at'

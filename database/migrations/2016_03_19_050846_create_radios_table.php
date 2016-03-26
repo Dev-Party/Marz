@@ -19,6 +19,7 @@ class CreateRadiosTable extends Migration
             $table->increments('id');
             $table->integer('modulation_id')->unsigned();
             $table->string('name');
+            $table->integer('frequency');
             $table->string('streaming');
             $table->timestamps();
         });

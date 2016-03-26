@@ -22,6 +22,7 @@ $factory->define(App\Radio::class, function ($faker) {
 	return [
 		'modulation_id' => rand(1, 3),
 		'name'          => $faker->name,
+		'frequency'     => rand(),
 		'streaming'     => 'http://' . $faker->ipv4
 	];
 });

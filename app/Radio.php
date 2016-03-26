@@ -13,6 +13,7 @@ class Radio extends Model
     protected $fillable = [
     	'modulation_id',
         'name',
+        'frequency',
         'streaming',
         'created_at',
         'updated_at'
