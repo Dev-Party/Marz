@@ -1,7 +1,11 @@
 <?php
 
+use Laravel\Lumen\Testing\DatabaseTransactions;
+
 class RoutesTest extends TestCase
 {
+	use DatabaseTransactions;
+
 	/**
 	 * Verificar si existe la ruta /radio  de tipo GET.
 	 * 
@@ -23,7 +27,7 @@ class RoutesTest extends TestCase
 	{
 		$response = $this->call('POST', '/radio');
 
-		$this->assertEquals(200, $response->status());
+		$this->assertEquals(201, $response->status());
 	}
 
 	/**
@@ -45,7 +49,8 @@ class RoutesTest extends TestCase
 	 */
 	public function testPutRadioId()
 	{
-		$response = $this->call('PUT', '/radio/' . rand());
+		$radio = factory('App\Radio')->create();
+		$response = $this->call('PUT', '/radio/'. $radio->id, []);
 
 		$this->assertEquals(200, $response->status());
 	}
@@ -57,7 +62,8 @@ class RoutesTest extends TestCase
 	 */
 	public function testDeleteRadioId()
 	{
-		$response = $this->call('DELETE', '/radio/' . rand());
+		$radio = factory('App\Radio')->create();
+		$response = $this->call('DELETE', '/radio/' . $radio->id);
 
 		$this->assertEquals(200, $response->status());
 	}
