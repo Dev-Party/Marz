@@ -24,7 +24,7 @@ class RadioTableSeederTest extends TestCase
 	 */
 	public function testSeeInDataBase()
 	{
-		$radio = factory('App\Radio')->create($this->values);
+		factory('App\Radio')->create($this->values);
 
 		$this->seeInDatabase($this->table, $this->values);
 	}
