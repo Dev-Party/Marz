@@ -24,3 +24,9 @@ $factory->define(App\Radio::class, function ($faker) {
 		'streaming' => 'http://' . $faker->ipv4
 	];
 });
+
+$factory->define(App\Modulation::class, function ($faker) {
+	return [
+		'name' => $faker->randomElements($array = array ('AM','FM','AM/FM'), $count = 1)
+	];
+});
