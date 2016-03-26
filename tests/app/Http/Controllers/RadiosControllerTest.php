@@ -8,10 +8,11 @@ class RadiosControllerTest extends TestCase
 
     /** @var array $values Valores para ingresar y comparar la tabla. */
     protected $values = [
-        'name'       => 'Nombre Radio',
-        'streaming'  => 'http://192.168.1.1',
-        'created_at' => '2016-03-22 11:21:21',
-        'updated_at' => '2016-03-22 11:21:21'
+        'modulation_id' => 1,
+        'name'          => 'Nombre Radio',
+        'streaming'     => 'http://192.168.1.1',
+        'created_at'    => '2016-03-22 11:21:21',
+        'updated_at'    => '2016-03-22 11:21:21'
     ];
 
     /**
