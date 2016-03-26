@@ -11,6 +11,7 @@ class Radio extends Model
 
     /** @var array $fillable Los atributos que son asignables. */
     protected $fillable = [
+    	'modulation_id',
         'name',
         'streaming',
         'created_at',

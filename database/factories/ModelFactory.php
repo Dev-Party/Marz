@@ -20,8 +20,9 @@ $factory->define(App\User::class, function ($faker) {
 
 $factory->define(App\Radio::class, function ($faker) {
 	return [
-		'name'      => $faker->name,
-		'streaming' => 'http://' . $faker->ipv4
+		'modulation_id' => rand(1, 3),
+		'name'          => $faker->name,
+		'streaming'     => 'http://' . $faker->ipv4
 	];
 });
 

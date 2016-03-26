@@ -17,6 +17,7 @@ class CreateRadiosTable extends Migration
     {
         Schema::create($this->table, function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('modulation_id')->unsigned();
             $table->string('name');
             $table->string('streaming');
             $table->timestamps();
