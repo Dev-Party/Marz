@@ -11,6 +11,7 @@ class RadiosControllerTest extends TestCase
         'modulation_id' => 1,
         'name'          => 'Nombre Radio',
         'streaming'     => 'http://192.168.1.1',
+        'frequency'     => 800,
         'created_at'    => '2016-03-22 11:21:21',
         'updated_at'    => '2016-03-22 11:21:21'
     ];
@@ -59,8 +60,10 @@ class RadiosControllerTest extends TestCase
     public function testPutRadioUpdate()
     {
         $update = [
-            'name'       => 'Nombre Radio 2',
-            'streaming'  => 'http://192.168.1.2'
+            'modulation_id' => 2,
+            'name'          => 'Nombre Radio 2',
+            'frequency'     => 500,
+            'streaming'     => 'http://192.168.1.2'
         ];
         $radio = factory('App\Radio')->create($this->values);
         $this->put('/radio/' . $radio->id, $update)

@@ -56,8 +56,10 @@ class RadiosController extends Controller
     public function putUpdate(Request $request, $id)
     {
         $radio = Radio::find($id);
-        $radio->name = $request->name;
-        $radio->streaming = $request->streaming;
+        $radio->modulation_id = $request->modulation_id;
+        $radio->name          = $request->name;
+        $radio->frequency     = $request->frequency;
+        $radio->streaming     = $request->streaming;
         $radio->save();
 
         return response()->json($radio);
