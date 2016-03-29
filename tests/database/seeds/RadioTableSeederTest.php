@@ -11,11 +11,13 @@ class RadioTableSeederTest extends TestCase
 
 	/** @var array $values Valores para ingresar y comparar la tabla. */
 	protected $values = [
-		'name'       => 'Nombre Radio',
-		'frequency'  => 800,
-		'streaming'  => 'http://192.168.1.1',
-		'created_at' => '2016-03-22 11:21:21',
-		'updated_at' => '2016-03-22 11:21:21'
+		'modulation_id' => 1,
+		'name'          => 'Nombre Radio',
+		'frequency'     => 800,
+		'streaming'     => 'http://192.168.1.1',
+		'active'        => 1,
+		'created_at'    => '2016-03-22 11:21:21',
+		'updated_at'    => '2016-03-22 11:21:21'
 	];
 
 	/**

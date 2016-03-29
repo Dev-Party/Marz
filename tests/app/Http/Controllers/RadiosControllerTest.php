@@ -10,7 +10,7 @@ class RadiosControllerTest extends TestCase
     protected $values = [
         'modulation_id' => 1,
         'name'          => 'Nombre Radio',
-        'frequency'     => 800,
+        'frequency'     => 98,
         'streaming'     => 'http://192.168.1.1',
         'active'        => 1,
         'created_at'    => '2016-03-22 11:21:21',
