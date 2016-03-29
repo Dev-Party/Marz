@@ -9,6 +9,7 @@ class RadiosTableTest extends TestCase
     protected $columns = [
         'id',
         'state_id',
+        'city_id',
         'modulation_id',
         'name',
         'frequency',
