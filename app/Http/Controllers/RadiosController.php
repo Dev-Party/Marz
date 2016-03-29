@@ -14,7 +14,21 @@ class RadiosController extends Controller
      */
     public function getAll()
     {
-        $radios = Radio::all();
+        $radios = Radio::where('active', 1)
+                ->join('modulations', 'modulation_id', '=', 'modulations.id')
+                ->select(
+                    'radios.id',
+                    'radios.modulation_id',
+                    'modulations.name as modulation',
+                    'radios.name',
+                    'radios.frequency',
+                    'radios.streaming',
+                    'radios.active',
+                    'radios.created_at',
+                    'radios.updated_at')
+                ->orderBy('name', 'desc')
+                ->take(20)
+                ->get();
 
         return response()->json($radios);
     }

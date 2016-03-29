@@ -11,11 +11,20 @@ class Radio extends Model
 
     /** @var array $fillable Los atributos que son asignables. */
     protected $fillable = [
-    	'modulation_id',
         'name',
+        'modulation_id',
         'frequency',
         'streaming',
+        'active',
         'created_at',
         'updated_at'
     ];
+
+    /**
+     * Obtener la modulación asociado a la radio.
+     */
+    public function modulation()
+    {
+        return $this->hasOne('App\Modulation');
+    }
 }

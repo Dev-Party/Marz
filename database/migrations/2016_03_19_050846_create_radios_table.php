@@ -21,6 +21,7 @@ class CreateRadiosTable extends Migration
             $table->string('name');
             $table->integer('frequency');
             $table->string('streaming');
+            $table->integer('active');
             $table->timestamps();
         });
     }

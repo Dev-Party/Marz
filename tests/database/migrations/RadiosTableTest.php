@@ -12,6 +12,7 @@ class RadiosTableTest extends TestCase
         'name',
         'frequency',
         'streaming',
+        'active',
         'created_at',
         'updated_at'
     ];
