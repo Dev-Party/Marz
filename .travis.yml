@@ -6,10 +6,11 @@ php:
 before_script:
   - cp .env.travis .env
   - mysql -e 'create database testing;'
-  - composer self-update --no-interaction
-  - composer install --no-interaction
+  - composer self-update
+  - composer install
+  - composer dump-autoload
 
 script:
-  - php artisan migrate --no-interaction
-  - php artisan db:seed --no-interaction
+  - php artisan migrate
+  - php artisan db:seed
   - vendor/bin/phpunit
