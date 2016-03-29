@@ -21,10 +21,10 @@ $factory->define(App\User::class, function ($faker) {
 $factory->define(App\Radio::class, function ($faker) {
 	return [
 		'state_id'      => 1,
-		'city_id'       => rand(1, 30),
+		'city_id'       => rand(1, 49),
 		'modulation_id' => rand(1, 3),
 		'name'          => $faker->name,
-		'frequency'     => rand(),
+		'frequency'     => rand(90, 200),
 		'streaming'     => 'http://' . $faker->ipv4,
 		'active'		=> 1
 	];

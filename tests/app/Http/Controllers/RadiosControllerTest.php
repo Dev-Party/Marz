@@ -43,9 +43,11 @@ class RadiosControllerTest extends TestCase
     public function testPostRadioStore()
     {
         $create = [
+            'state_id'      => 1,
+            'city_id'       => 10,
             'modulation_id' => 1,
             'name'          => 'Nombre Radio',
-            'frequency'     => 98,
+            'frequency'     => 98.5,
             'streaming'     => 'http://192.168.1.1'
         ];
 
@@ -71,6 +73,8 @@ class RadiosControllerTest extends TestCase
         $this->seeStatusCode(200);
         $this->seeJson([
             'id'            => $radio->id,
+            'state_id'      => $radio->state_id,
+            'city_id'       => $radio->city_id,
             'modulation_id' => $radio->modulation_id,
             'name'          => $radio->name,
             'frequency'     => $radio->frequency,
@@ -86,10 +90,13 @@ class RadiosControllerTest extends TestCase
     public function testPutRadioUpdate()
     {   
         $update = [
+            'state_id'      => 1,
+            'city_id'       => 10,
             'modulation_id' => 1,
             'name'          => 'Nombre Radio 2',
-            'frequency'     => 200,
-            'streaming'     => 'http://192.168.1.2'
+            'frequency'     => 97.5,
+            'streaming'     => 'http://192.168.1.2',
+            'active'        => 1
         ];
 
         $radio = factory('App\Radio')->create();
