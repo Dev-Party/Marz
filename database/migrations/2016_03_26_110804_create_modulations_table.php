@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateModulationTable extends Migration
+class CreateModulationsTable extends Migration
 {
     /** @var string $table Nombre de la tabla. */
     protected $table = 'modulations';
