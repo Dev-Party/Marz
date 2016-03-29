@@ -58,3 +58,12 @@ $app->put('/radio/{id}', 'RadiosController@putUpdate');
  * @apiParam {Number} id Identificador único de la radio.
  */
 $app->delete('/radio/{id}', 'RadiosController@deleteDestroy');
+
+/**
+ * @api {get} /modulation Listar
+ * @apiDescription  Ruta para obtener todas las modulaciones.
+ * @apiName  All
+ * @apiGroup  Modulation
+ * @apiPermission  none
+ */
+$app->get('/modulation', 'ModulationsController@getAll');
