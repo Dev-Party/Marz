@@ -16,12 +16,15 @@ class RadiosController extends Controller
     {
         $radios = Radio::where('active', 1)
                 ->join('states', 'state_id', '=', 'states.id')
+                ->join('cities', 'city_id', '=', 'cities.id')
                 ->join('modulations', 'modulation_id', '=', 'modulations.id')
                 ->select(
                     'radios.id',
                     'radios.state_id',
+                    'radios.city_id',
                     'radios.modulation_id',
                     'states.name as state',
+                    'cities.name as city',
                     'modulations.name as modulation',
                     'radios.name',
                     'radios.frequency',

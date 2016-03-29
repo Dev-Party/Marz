@@ -26,6 +26,7 @@ class RadiosControllerTest extends TestCase
             $this->seeJson([
                 'id'            => $radio->id,
                 'state_id'      => $radio->state_id,
+                'city_id'       => $radio->city_id,
                 'modulation_id' => $radio->modulation_id,
                 'name'          => $radio->name,
                 'frequency'     => $radio->frequency,
