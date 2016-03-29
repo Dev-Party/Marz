@@ -11,6 +11,7 @@ class RadioTableSeederTest extends TestCase
 
 	/** @var array $values Valores para ingresar y comparar la tabla. */
 	protected $values = [
+		'state_id'      => 1,
 		'modulation_id' => 1,
 		'name'          => 'Nombre Radio',
 		'frequency'     => 800,

@@ -17,6 +17,7 @@ class CreateRadiosTable extends Migration
     {
         Schema::create($this->table, function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('state_id')->unsigned();
             $table->integer('modulation_id')->unsigned();
             $table->string('name');
             $table->integer('frequency');

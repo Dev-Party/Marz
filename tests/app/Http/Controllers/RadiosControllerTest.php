@@ -24,10 +24,12 @@ class RadiosControllerTest extends TestCase
         
         foreach ($radios as $radio) {
             $this->seeJson([
-                'id'         => $radio->id,
-                'name'       => $radio->name,
-                'frequency'  => $radio->frequency,
-                'streaming'  => $radio->streaming
+                'id'            => $radio->id,
+                'state_id'      => $radio->state_id,
+                'modulation_id' => $radio->modulation_id,
+                'name'          => $radio->name,
+                'frequency'     => $radio->frequency,
+                'streaming'     => $radio->streaming
             ]);
         }
     }

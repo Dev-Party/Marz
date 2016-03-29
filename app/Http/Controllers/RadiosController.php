@@ -15,10 +15,13 @@ class RadiosController extends Controller
     public function getAll()
     {
         $radios = Radio::where('active', 1)
+                ->join('states', 'state_id', '=', 'states.id')
                 ->join('modulations', 'modulation_id', '=', 'modulations.id')
                 ->select(
                     'radios.id',
+                    'radios.state_id',
                     'radios.modulation_id',
+                    'states.name as state',
                     'modulations.name as modulation',
                     'radios.name',
                     'radios.frequency',

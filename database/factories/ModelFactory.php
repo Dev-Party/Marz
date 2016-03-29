@@ -20,6 +20,7 @@ $factory->define(App\User::class, function ($faker) {
 
 $factory->define(App\Radio::class, function ($faker) {
 	return [
+		'state_id'      => 1,
 		'modulation_id' => rand(1, 3),
 		'name'          => $faker->name,
 		'frequency'     => rand(),
