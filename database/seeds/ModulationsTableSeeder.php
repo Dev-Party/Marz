@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class ModulationTableSeeder extends Seeder
+class ModulationsTableSeeder extends Seeder
 {
       /**
        * Ejecutar seed.
