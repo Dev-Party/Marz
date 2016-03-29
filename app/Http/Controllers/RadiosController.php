@@ -12,28 +12,12 @@ class RadiosController extends Controller
      * 
      * @return object
      */
-    public function getAll()
+    public function getAll($total = 20)
     {
-        $radios = Radio::where('active', 1)
-                ->join('states', 'state_id', '=', 'states.id')
-                ->join('cities', 'city_id', '=', 'cities.id')
-                ->join('modulations', 'modulation_id', '=', 'modulations.id')
-                ->select(
-                    'radios.id',
-                    'radios.state_id',
-                    'radios.city_id',
-                    'radios.modulation_id',
-                    'states.name as state',
-                    'cities.name as city',
-                    'modulations.name as modulation',
-                    'radios.name',
-                    'radios.frequency',
-                    'radios.streaming',
-                    'radios.active',
-                    'radios.created_at',
-                    'radios.updated_at')
+        $radios = Radio::active()
+                ->format()
                 ->orderBy('name', 'desc')
-                ->take(20)
+                ->take($total)
                 ->get();
 
         return response()->json($radios);
@@ -61,7 +45,10 @@ class RadiosController extends Controller
      */
     public function getShow($id)
     {
-        $radio = Radio::find($id);
+        $radio = Radio::find($id)
+                ->active()
+                ->format()
+                ->get();
         return response()->json($radio);
     }
 
@@ -76,10 +63,13 @@ class RadiosController extends Controller
     public function putUpdate(Request $request, $id)
     {
         $radio = Radio::find($id);
+        $radio->state_id      = $request->state_id;
+        $radio->city_id       = $request->city_id;
         $radio->modulation_id = $request->modulation_id;
         $radio->name          = $request->name;
         $radio->frequency     = $request->frequency;
         $radio->streaming     = $request->streaming;
+        $radio->active        = $request->active;
         $radio->save();
 
         return response()->json($radio);

@@ -25,10 +25,38 @@ class Radio extends Model
     protected $guarded = ['active'];
 
     /**
-     * Obtener la modulación asociado a la radio.
+     * Scope para incluir las radios activas.
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function modulation()
+    public function scopeActive($query)
     {
-        return $this->hasOne('App\Modulation');
+        return $query->where('active', 1);
+    }
+
+    /**
+     * Scope para formatear la salida de los datos.
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeFormat($query)
+    {
+        return $query->join('states', 'state_id', '=', 'states.id')
+                ->join('cities', 'city_id', '=', 'cities.id')
+                ->join('modulations', 'modulation_id', '=', 'modulations.id')
+                ->select(
+                    'radios.id',
+                    'radios.state_id',
+                    'radios.city_id',
+                    'radios.modulation_id',
+                    'states.name as state',
+                    'cities.name as city',
+                    'modulations.name as modulation',
+                    'radios.name',
+                    'radios.frequency',
+                    'radios.streaming',
+                    'radios.active',
+                    'radios.created_at',
+                    'radios.updated_at');
     }
 }
