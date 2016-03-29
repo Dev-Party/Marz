@@ -23,12 +23,13 @@ $factory->define(App\Radio::class, function ($faker) {
 		'modulation_id' => rand(1, 3),
 		'name'          => $faker->name,
 		'frequency'     => rand(),
-		'streaming'     => 'http://' . $faker->ipv4
+		'streaming'     => 'http://' . $faker->ipv4,
+		'active'		=> 1
 	];
 });
 
 $factory->define(App\Modulation::class, function ($faker) {
 	return [
-		'name' => $faker->randomElements($array = array ('AM','FM','AM/FM'), $count = 1)
+		'name' => $faker->randomElements($array = array ('AM','FM','AM/FM'))
 	];
 });

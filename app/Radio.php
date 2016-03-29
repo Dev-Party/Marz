@@ -15,7 +15,6 @@ class Radio extends Model
         'name',
         'frequency',
         'streaming',
-        'active',
         'created_at',
         'updated_at'
     ];

@@ -6,16 +6,8 @@ class RadiosControllerTest extends TestCase
 {
     use DatabaseTransactions;
 
-    /** @var array $values Valores para ingresar y comparar la tabla. */
-    protected $values = [
-        'modulation_id' => 1,
-        'name'          => 'Nombre Radio',
-        'frequency'     => 98,
-        'streaming'     => 'http://192.168.1.1',
-        'active'        => 1,
-        'created_at'    => '2016-03-22 11:21:21',
-        'updated_at'    => '2016-03-22 11:21:21'
-    ];
+    /** @var string $table Nombre de la tabla. */
+    protected $table = 'radios';
 
     /**
      * Verificar si la ruta radio retorna un objecto.
@@ -24,10 +16,20 @@ class RadiosControllerTest extends TestCase
      */
     public function testGetRadioAll()
     {
-        factory('App\Radio')->create($this->values);
+        $radios = factory('App\Radio', 10)->create();
 
-        $this->get('/radio')
-             ->seeJson($this->values);
+        $this->get('/radio');
+        
+        $this->seeStatusCode(200);
+        
+        foreach ($radios as $radio) {
+            $this->seeJson([
+                'id'         => $radio->id,
+                'name'       => $radio->name,
+                'frequency'  => $radio->frequency,
+                'streaming'  => $radio->streaming
+            ]);
+        }
     }
 
     /**
@@ -37,8 +39,20 @@ class RadiosControllerTest extends TestCase
      */
     public function testPostRadioStore()
     {
-        $this->post('/radio', $this->values)
-             ->seeJson($this->values);
+        $create = [
+            'modulation_id' => 1,
+            'name'          => 'Nombre Radio',
+            'frequency'     => 98,
+            'streaming'     => 'http://192.168.1.1'
+        ];
+
+        $this->post('/radio', $create);
+
+        $this->seeStatusCode(201);
+
+        $this->seeJson($create);
+
+        $this->seeInDatabase($this->table, $create);
     }
 
     /**
@@ -48,9 +62,17 @@ class RadiosControllerTest extends TestCase
      */
     public function testGetRadioShow()
     {
-        $radio = factory('App\Radio')->create($this->values);
-        $this->get('/radio/' . $radio->id)
-             ->seeJson($this->values);
+        $radio = factory('App\Radio')->create();
+        
+        $this->get('/radio/' . $radio->id);
+        $this->seeStatusCode(200);
+        $this->seeJson([
+            'id'            => $radio->id,
+            'modulation_id' => $radio->modulation_id,
+            'name'          => $radio->name,
+            'frequency'     => $radio->frequency,
+            'streaming'     => $radio->streaming
+        ]);
     }
 
     /**
@@ -59,16 +81,21 @@ class RadiosControllerTest extends TestCase
      *  @return void
      */
     public function testPutRadioUpdate()
-    {
+    {   
         $update = [
-            'modulation_id' => 2,
+            'modulation_id' => 1,
             'name'          => 'Nombre Radio 2',
-            'frequency'     => 500,
+            'frequency'     => 200,
             'streaming'     => 'http://192.168.1.2'
         ];
-        $radio = factory('App\Radio')->create($this->values);
-        $this->put('/radio/' . $radio->id, $update)
-             ->seeJson($update);
+
+        $radio = factory('App\Radio')->create();
+        
+        $this->put('/radio/' . $radio->id, $update);
+
+        $this->seeJson($update);
+
+        $this->seeInDatabase($this->table, $update);
     }
 
     /**
@@ -79,7 +106,12 @@ class RadiosControllerTest extends TestCase
     public function testDeleteRadioDestroy()
     {
         $radio = factory('App\Radio')->create();
-        $this->delete('/radio/' . $radio->id)
-             ->seeJson(['deleted']);
+        
+        $this->delete('/radio/' . $radio->id);
+        $this->seeStatusCode(204);
+        $this->seeJson(['deleted']);
+        $this->isEmpty();
+        
+        $this->notSeeInDatabase($this->table, ['id' => $radio->id]);
     }
 }

@@ -17,7 +17,10 @@ class ModulationsControllerTest extends TestCase
      */
     public function testGetModulationAll()
     {
-        $this->get('/modulation')
-             ->seeJson($this->values);
+        $this->get('/modulation');
+
+        $this->seeStatusCode(200);
+        
+        $this->seeJson($this->values);
     }
 }
