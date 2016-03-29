@@ -67,4 +67,16 @@ class RoutesTest extends TestCase
 
 		$this->assertEquals(200, $response->status());
 	}
+
+	/**
+	 * Verificar si existe la ruta /modulation de tipo GET.
+	 * 
+	 * @return void
+	 */
+	public function testGetModulation()
+	{
+		$response = $this->call('GET', '/modulation');
+
+		$this->assertEquals(200, $response->status());
+	}
 }
