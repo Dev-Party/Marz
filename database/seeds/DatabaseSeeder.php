@@ -13,5 +13,6 @@ class DatabaseSeeder extends Seeder
     {
         $this->call('ModulationTableSeeder');
         $this->call('StatesTableSeeder');
+        $this->call('CitiesTableSeeder');
     }
 }
