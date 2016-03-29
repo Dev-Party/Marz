@@ -67,3 +67,12 @@ $app->delete('/radio/{id}', 'RadiosController@deleteDestroy');
  * @apiPermission  none
  */
 $app->get('/modulation', 'ModulationsController@getAll');
+
+/**
+ * @api {get} /state Listar
+ * @apiDescription  Ruta para obtener todas las provincias.
+ * @apiName  All
+ * @apiGroup  State
+ * @apiPermission  none
+ */
+$app->get('/state', 'StatesController@getAll');
