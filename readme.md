@@ -1,8 +1,8 @@
-## Marz [![Build Status](https://travis-ci.org/soyFelixBarros/Marz.svg?branch=master)](https://travis-ci.org/soyFelixBarros/Marz)
+# Marz [![Build Status](https://travis-ci.org/soyFelixBarros/Marz.svg?branch=master)](https://travis-ci.org/soyFelixBarros/Marz)
 
-Marz es proyecto de API pública para la gestión de radio en Internet.
+> Marz es proyecto de API pública para la gestión de radio en Internet.
 
-### Instalación
+## Instalación
 1. Clonar el repo en tu equipo:
 ```sh
 $ git clone git@github.com:soyFelixBarros/Marz.git
