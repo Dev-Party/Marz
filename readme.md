@@ -12,7 +12,7 @@ $ cd Marz
 ```sh
 $ composer install
 ```
-3. Crear una base de datos con el nombre "Marz". Renombrar el archivo ".env.example" por ".env" y agregar los datos de conexion:
+3. Crear una base de datos con el nombre "Marz". Renombrar el archivo ".env.example" por ".env", y editar con los datos de conexión:
 ```
 DB_DATABASE=Marz
 DB_USERNAME=root
@@ -25,4 +25,8 @@ $ php artisan db:seed
 ```
 ¡Listo!
 
-Para más información [https://soyfelixbarros.wordpress.com/marz]
+Para más información [https://soyfelixbarros.wordpress.com/marz][https://soyfelixbarros.wordpress.com/marz]
+
+Licencia
+----
+MIT
