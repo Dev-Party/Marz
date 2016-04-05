@@ -17,14 +17,16 @@ class CreateRadiosTable extends Migration
     {
         Schema::create($this->table, function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('state_id')->unsigned();
-            $table->integer('city_id')->unsigned();
-            $table->integer('modulation_id')->unsigned();
+            $table->integer('user_id')->unsigned();
             $table->string('name');
-            $table->float('frequency');
             $table->string('streaming');
-            $table->integer('active');
             $table->timestamps();
+        });
+
+        Schema::table($this->table, function (Blueprint $table) {
+            $table->foreign('user_id')
+                  ->references('id')->on('users')
+                  ->onDelete('cascade');
         });
     }
 

@@ -6,7 +6,7 @@
  * @apiGroup  Radio
  * @apiPermission  none
  */
-$app->get('/radio', 'RadiosController@getAll');
+$app->get('/radio', function () {});
 
 /**
  * @api {post} /radio Agregar
@@ -18,7 +18,7 @@ $app->get('/radio', 'RadiosController@getAll');
  * @apiParam {String} name Nombre de la radio.
  * @apiParam {String} streaming URL de la radio.
  */
-$app->post('/radio', 'RadiosController@postStore');
+$app->post('/radio', function () {});
 
 /**
  * @api {get} /radio/:id Ver
@@ -33,7 +33,7 @@ $app->post('/radio', 'RadiosController@postStore');
  * @apiSuccess  {String} name Nombre de la radio.
  * @apiSuccess  {String} streaming URL de transmisión de la radio.
  */
-$app->get('/radio/{id}', 'RadiosController@getShow');
+$app->get('/radio/{id}', function () {});
 
 /**
  * @api {put} /radio/:id Actualiar
@@ -46,7 +46,7 @@ $app->get('/radio/{id}', 'RadiosController@getShow');
  * @apiParam {String} name Nombre de la radio.
  * @apiParam {String} streaming URL de la radio.
  */
-$app->put('/radio/{id}', 'RadiosController@putUpdate');
+$app->put('/radio/{id}', function () {});
 
 /**
  * @api {delete} /radio/:id Eliminar
@@ -57,22 +57,4 @@ $app->put('/radio/{id}', 'RadiosController@putUpdate');
  * 
  * @apiParam {Number} id Identificador único de la radio.
  */
-$app->delete('/radio/{id}', 'RadiosController@deleteDestroy');
-
-/**
- * @api {get} /modulation Listar
- * @apiDescription  Ruta para obtener todas las modulaciones.
- * @apiName  All
- * @apiGroup  Modulation
- * @apiPermission  none
- */
-$app->get('/modulation', 'ModulationsController@getAll');
-
-/**
- * @api {get} /state Listar
- * @apiDescription  Ruta para obtener todas las provincias.
- * @apiName  All
- * @apiGroup  State
- * @apiPermission  none
- */
-$app->get('/state', 'StatesController@getAll');
+$app->delete('/radio/{id}', function () {});
