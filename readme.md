@@ -1,6 +1,6 @@
 # Marz [![Build Status](https://travis-ci.org/soyFelixBarros/Marz.svg?branch=master)](https://travis-ci.org/soyFelixBarros/Marz)
 
-> Proyecto de API pública para la gestión de radio en Internet.
+> Proyecto de API pública para la gestión de radios en Internet.
 
 ## Instalación
 1) Clonar el repo en tu equipo:
@@ -25,7 +25,7 @@ $ php artisan db:seed
 ```
 ¡Listo!
 
-Para más información [https://soyfelixbarros.wordpress.com/marz][https://soyfelixbarros.wordpress.com/marz]
+Para más información [https://soyfelixbarros.wordpress.com/marz]
 
 Licencia
 ----
