@@ -17,16 +17,9 @@ class CreateRadiosTable extends Migration
     {
         Schema::create($this->table, function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
             $table->string('name');
             $table->string('streaming');
             $table->timestamps();
-        });
-
-        Schema::table($this->table, function (Blueprint $table) {
-            $table->foreign('user_id')
-                  ->references('id')->on('users')
-                  ->onDelete('cascade');
         });
     }
 
