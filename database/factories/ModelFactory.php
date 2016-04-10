@@ -17,3 +17,10 @@ $factory->define(App\User::class, function ($faker) {
         'email' => $faker->email,
     ];
 });
+
+$factory->define(App\Radio::class, function ($faker) {
+    return [
+        'name' => $faker->name,
+        'streaming' => 'http://' . $faker->ipv4
+    ];
+});
