@@ -1,4 +1,4 @@
-# Marz [![Build Status](https://travis-ci.org/soyFelixBarros/Marz.svg?branch=master)](https://travis-ci.org/soyFelixBarros/Marz)
+# Marz [![Build Status](https://travis-ci.org/soyFelixBarros/Marz.svg?branch=curso)](https://travis-ci.org/soyFelixBarros/Marz)
 
 > Proyecto de API pública para la gestión de radios en Internet.
 
@@ -7,6 +7,7 @@
 ```sh
 $ git clone git@github.com:soyFelixBarros/Marz.git
 $ cd Marz
+$ git checkout curso
 ```
 2) Descargar todas las librerias del framework:
 ```sh
