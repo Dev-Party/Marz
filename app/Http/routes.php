@@ -6,7 +6,7 @@
  * @apiGroup  Radio
  * @apiPermission  none
  */
-$app->get('/radio', function () {});
+$app->get('/radio', 'RadiosController@all');
 
 /**
  * @api {post} /radio Agregar
@@ -18,7 +18,7 @@ $app->get('/radio', function () {});
  * @apiParam {String} name Nombre de la radio.
  * @apiParam {String} streaming URL de la radio.
  */
-$app->post('/radio', function () {});
+$app->post('/radio', 'RadiosController@store');
 
 /**
  * @api {get} /radio/:id Ver
@@ -33,7 +33,7 @@ $app->post('/radio', function () {});
  * @apiSuccess  {String} name Nombre de la radio.
  * @apiSuccess  {String} streaming URL de transmisión de la radio.
  */
-$app->get('/radio/{id}', function () {});
+$app->get('/radio/{id}', 'RadiosController@show');
 
 /**
  * @api {put} /radio/:id Actualiar
@@ -46,7 +46,7 @@ $app->get('/radio/{id}', function () {});
  * @apiParam {String} name Nombre de la radio.
  * @apiParam {String} streaming URL de la radio.
  */
-$app->put('/radio/{id}', function () {});
+$app->put('/radio/{id}', 'RadiosController@update');
 
 /**
  * @api {delete} /radio/:id Eliminar
@@ -57,4 +57,4 @@ $app->put('/radio/{id}', function () {});
  * 
  * @apiParam {Number} id Identificador único de la radio.
  */
-$app->delete('/radio/{id}', function () {});
+$app->delete('/radio/{id}', 'RadiosController@destroy');
