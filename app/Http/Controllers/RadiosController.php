@@ -13,7 +13,7 @@ class RadiosController extends Controller
      * 
      * @return object
      */
-    public function getAll($total = 20)
+    public function all($total = 20)
     {
         $radios = Radio::ofActive()
                 ->state()
@@ -34,7 +34,7 @@ class RadiosController extends Controller
      * 
      * @return object
      */
-    public function postStore(Request $request)
+    public function store(Request $request)
     {
         $radio = Radio::create($request->all());
         return response()->json($radio, 201);
@@ -47,7 +47,7 @@ class RadiosController extends Controller
      * 
      * @return object
      */
-    public function getShow($id)
+    public function show($id)
     {
         $radio = Radio::find($id)
                 ->ofActive()
@@ -67,7 +67,7 @@ class RadiosController extends Controller
      * 
      * @return object
      */
-    public function putUpdate(Request $request, $id)
+    public function update(Request $request, $id)
     {
         $radio = Radio::find($id);
         $radio->state_id      = $request->state_id;
@@ -89,7 +89,7 @@ class RadiosController extends Controller
      * 
      * @return object
      */
-    public function deleteDestroy($id)
+    public function destroy($id)
     {
         $radio = Radio::find($id);
         $radio->delete();

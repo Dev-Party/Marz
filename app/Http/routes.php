@@ -5,8 +5,25 @@
  * @apiName  All
  * @apiGroup  Radio
  * @apiPermission  none
+ * 
+ * @apiSuccessExample  Ejemplo de respuesta
+ * 	{
+ * 		"id": 1
+ * 		"state_id": 1
+ * 		"city_id": 1
+ * 		"modulation_id": 1
+ * 		"state": "Chaco"
+ * 		"city": "Resistencia"
+ * 		"modulation": "AM"
+ * 		"name": "Radio Marz"
+ * 		"frequency": 100.9
+ * 		"streaming": "http://marz.dev:8000/streaming"
+ * 		"active": 1
+ * 		"created_at": "2016-04-13 20:03:25"
+ * 		"updated_at": "2016-04-13 20:03:25"
+ * 	}
  */
-$app->get('/radio', 'RadiosController@getAll');
+$app->get('/radio', 'RadiosController@all');
 
 /**
  * @api {post} /radio Agregar
@@ -16,9 +33,9 @@ $app->get('/radio', 'RadiosController@getAll');
  * @apiPermission  none
  * 
  * @apiParam {String} name Nombre de la radio.
- * @apiParam {String} streaming URL de la radio.
+ * @apiParam {String} streaming URL Dirección del streaming de audio.
  */
-$app->post('/radio', 'RadiosController@postStore');
+$app->post('/radio', 'RadiosController@store');
 
 /**
  * @api {get} /radio/:id Ver
@@ -30,10 +47,30 @@ $app->post('/radio', 'RadiosController@postStore');
  * @apiParam  {Number} id Identificador único de la radio.
  * 
  * @apiSuccess  {Number} id Identificador único de la radio.
+ * @apiSuccess  {String} modulation Modulación de la radio (AM, FM o AM-FM).
  * @apiSuccess  {String} name Nombre de la radio.
- * @apiSuccess  {String} streaming URL de transmisión de la radio.
+ * @apiSuccess  {String} streaming  URL de transmisión de la radio.
+ * @apiSuccess  {Number} frequency  Número de la frecuencia (Mhz).
+ * @apiSuccess  {String} streaming  Dirección del streaming de audio.
+ * 
+ * @apiSuccessExample  Ejemplo de respuesta
+ * 	{
+ * 		"id": 1
+ * 		"state_id": 1
+ * 		"city_id": 1
+ * 		"modulation_id": 1
+ * 		"state": "Chaco"
+ * 		"city": "Resistencia"
+ * 		"modulation": "AM"
+ * 		"name": "Radio Marz"
+ * 		"frequency": 100.9
+ * 		"streaming": "http://marz.dev:8000/streaming"
+ * 		"active": 1
+ * 		"created_at": "2016-04-13 20:03:25"
+ * 		"updated_at": "2016-04-13 20:03:25"
+ * 	}
  */
-$app->get('/radio/{id}', 'RadiosController@getShow');
+$app->get('/radio/{id}', 'RadiosController@show');
 
 /**
  * @api {put} /radio/:id Actualiar
@@ -44,9 +81,9 @@ $app->get('/radio/{id}', 'RadiosController@getShow');
  * 
  * @apiParam {Number} id Identificador único de la radio.
  * @apiParam {String} name Nombre de la radio.
- * @apiParam {String} streaming URL de la radio.
+ * @apiParam {String} streaming Dirección del streaming de audio.
  */
-$app->put('/radio/{id}', 'RadiosController@putUpdate');
+$app->put('/radio/{id}', 'RadiosController@update');
 
 /**
  * @api {delete} /radio/:id Eliminar
@@ -57,7 +94,7 @@ $app->put('/radio/{id}', 'RadiosController@putUpdate');
  * 
  * @apiParam {Number} id Identificador único de la radio.
  */
-$app->delete('/radio/{id}', 'RadiosController@deleteDestroy');
+$app->delete('/radio/{id}', 'RadiosController@destroy');
 
 /**
  * @api {get} /modulation Listar
