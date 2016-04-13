@@ -15,7 +15,7 @@ class RadiosController extends Controller
      */
     public function getAll($total = 20)
     {
-        $radios = Radio::active()
+        $radios = Radio::ofActive()
                 ->state()
                 ->city()
                 ->modulation()
@@ -50,7 +50,7 @@ class RadiosController extends Controller
     public function getShow($id)
     {
         $radio = Radio::find($id)
-                ->active()
+                ->ofActive()
                 ->state()
                 ->city()
                 ->modulation()

@@ -46,9 +46,9 @@ class Radio extends Model
      *
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function scopeActive($query)
+    public function scopeOfActive($query, $active = 1)
     {
-        return $query->where('active', 1);
+        return $query->where('active', $active);
     }
 
     /**
