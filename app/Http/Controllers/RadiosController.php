@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class RadiosController extends Controller
 {
+
     /**
      * Restorna todas las radios.
      * 
@@ -15,7 +16,10 @@ class RadiosController extends Controller
     public function getAll($total = 20)
     {
         $radios = Radio::active()
-                ->format()
+                ->state()
+                ->city()
+                ->modulation()
+                ->ofSelect()
                 ->orderBy('name', 'desc')
                 ->take($total)
                 ->get();
@@ -47,7 +51,10 @@ class RadiosController extends Controller
     {
         $radio = Radio::find($id)
                 ->active()
-                ->format()
+                ->state()
+                ->city()
+                ->modulation()
+                ->ofSelect()
                 ->get();
         return response()->json($radio);
     }
