@@ -48,7 +48,7 @@ class Radio extends Model
      */
     public function scopeOfActive($query, $active = 1)
     {
-        return $query->where('active', $active);
+        return $query->where('radios.active', $active);
     }
 
     /**
