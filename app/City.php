@@ -10,7 +10,10 @@ class City extends Model
     protected $table = 'cities';
 
     /** @var array $fillable Los atributos que son asignables. */
-    protected $fillable = ['name'];
+    protected $fillable = [
+    	'state_id',
+    	'name'
+    ];
 
     /** @var bool $timestamps Los campos timestamp de la tabla. */
     public $timestamps = false;
