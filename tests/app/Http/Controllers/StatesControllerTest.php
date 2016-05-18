@@ -1,5 +1,4 @@
 <?php
-
 use Laravel\Lumen\Testing\DatabaseTransactions;
 
 class StatesControllerTest extends TestCase
@@ -12,7 +11,7 @@ class StatesControllerTest extends TestCase
     /**
      * Verificar si la ruta radio retorna un objecto.
      * 
-     *  @return void
+     * @return void
      */
     public function testGetStateAll()
     {
@@ -24,5 +23,26 @@ class StatesControllerTest extends TestCase
             'id'   => 1,
             'name' => 'Chaco'
         ]);
+    }
+
+    /**
+     * Verificar el metodo que retorna las ciudades de una provincia.
+     * 
+     * @return void
+     */
+    public function testGetStateAllCities()
+    {
+        $cities = factory('App\City', 10)->create();
+
+        $this->get('/state/1/cities');
+
+        $this->seeStatusCode(200);
+
+        foreach ($cities as $city) {
+            $this->seeJson([
+                'id'            => $city->id,
+                'name'          => $city->name
+            ]);
+        }
     }
 }

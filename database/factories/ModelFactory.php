@@ -35,3 +35,16 @@ $factory->define(App\Modulation::class, function ($faker) {
 		'name' => $faker->randomElements($array = array ('AM','FM','AM/FM'))
 	];
 });
+
+$factory->define(App\State::class, function ($faker) {
+	return [
+		'name' => $faker->state
+	];
+});
+
+$factory->define(App\City::class, function ($faker) {
+	return [
+		'state_id' => 1,
+		'name'     => $faker->city
+	];
+});

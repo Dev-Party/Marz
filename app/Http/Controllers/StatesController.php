@@ -11,10 +11,22 @@ class StatesController extends Controller
      * 
      * @return object
      */
-    public function getAll()
+    public function all()
     {
         $states = State::all();
 
         return response()->json($states);
+    }
+
+    /**
+     * Restorna todas las ciudades de una provincia.
+     * 
+     * @return object
+     */
+    public function cities($id)
+    {
+        $cities = State::find($id)->cities;
+
+        return response()->json($cities);
     }
 }

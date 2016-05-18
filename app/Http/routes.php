@@ -126,4 +126,13 @@ $app->get('/modulation', 'ModulationsController@getAll');
  * @apiGroup  State
  * @apiPermission  none
  */
-$app->get('/state', 'StatesController@getAll');
+$app->get('/state', 'StatesController@all');
+
+/**
+ * @api {get} /state/:id/cities Listar ciudades
+ * @apiDescription  Obtener todas las ciudades de una provincia.
+ * @apiName  Cities
+ * @apiGroup  State
+ * @apiPermission  none
+ */
+$app->get('/state/{id}/cities', 'StatesController@cities');
