@@ -39,7 +39,9 @@ class Radio extends Model
     ];
 
     /** @var array $guarded Campos protegidos. */
-    protected $guarded = ['active'];
+    protected $guarded = [
+        'active'
+    ];
 
     /**
      * Scope para incluir las radios activas.

@@ -10,7 +10,9 @@ class State extends Model
     protected $table = 'states';
 
     /** @var array $fillable Los atributos que son asignables. */
-    protected $fillable = ['name'];
+    protected $fillable = [
+        'name'
+    ];
 
     /** @var bool $timestamps Los campos timestamp de la tabla. */
     public $timestamps = false;

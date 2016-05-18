@@ -14,21 +14,14 @@ class User extends Model implements
 {
     use Authenticatable, Authorizable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
+    /** @var array $fillable Los atributos que son asignables. */
     protected $fillable = [
-        'name', 'email',
+        'name',
+        'email'
     ];
 
-    /**
-     * The attributes excluded from the model's JSON form.
-     *
-     * @var array
-     */
+    /** @var array $hidden Los atributos excluidos en el JSON. */
     protected $hidden = [
-        'password',
+        'password'
     ];
 }

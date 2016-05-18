@@ -10,7 +10,9 @@ class Modulation extends Model
     protected $table = 'modulations';
 
     /** @var array $fillable Los atributos que son asignables. */
-    protected $fillable = ['name'];
+    protected $fillable = [
+    	'name'
+    ];
 
     /** @var string $dateFormat El formato de almacenamiento de columnas de fecha del modelo. */
     protected $dateFormat = 'U';

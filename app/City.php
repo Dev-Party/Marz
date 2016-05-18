@@ -11,8 +11,12 @@ class City extends Model
 
     /** @var array $fillable Los atributos que son asignables. */
     protected $fillable = [
-    	'state_id',
     	'name'
+    ];
+
+    /** @var array $fillable Los atributos excluidos en el JSON. */
+    protected $hidden = [
+        'state_id'
     ];
 
     /** @var bool $timestamps Los campos timestamp de la tabla. */
