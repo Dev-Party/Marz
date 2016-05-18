@@ -34,10 +34,32 @@ class RadiosController extends Controller
      * 
      * @return object
      */
-    public function store(Request $request)
+    public function create(Request $request)
     {
         $radio = Radio::create($request->all());
-        return response()->json($radio, 201);
+        return response()->json(['created' => true], 201);
+    }
+
+    /**
+     * Retornar los datos de la radio que se busca.
+     * 
+     * @param string $q Nombre de la radio.
+     * 
+     * @return object
+     */
+    public function search(Request $request)
+    {
+        $q = $request->input('q');
+
+        $radio = Radio::where('radios.name', 'like', '%' . $q . '%')
+                ->ofActive()
+                ->state()
+                ->city()
+                ->modulation()
+                ->ofSelect()
+                ->get();
+                 
+        return response()->json($radio);
     }
 
     /**

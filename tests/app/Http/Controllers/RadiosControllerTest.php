@@ -40,14 +40,14 @@ class RadiosControllerTest extends TestCase
      * 
      *  @return void
      */
-    public function testPostRadioStore()
+    public function testPostRadioCreate()
     {
         $create = [
             'state_id'      => 1,
             'city_id'       => 10,
             'modulation_id' => 1,
-            'name'          => 'Nombre Radio',
-            'frequency'     => 98.5,
+            'name'          => 'Mi Radio',
+            'frequency'     => 98.05,
             'streaming'     => 'http://192.168.1.1'
         ];
 
@@ -55,9 +55,35 @@ class RadiosControllerTest extends TestCase
 
         $this->seeStatusCode(201);
 
-        $this->seeJson($create);
+        $this->seeJsonEquals([
+            'created' => true
+        ]);
 
         $this->seeInDatabase($this->table, $create);
+    }
+
+    /**
+     * Verificar recurso radio/search.
+     * 
+     *  @return void
+     */
+    public function testGetRadioSearch()
+    {
+        $radio = factory('App\Radio')->create();
+        
+        $this->get('/radio/search?q=' . $radio->name);
+
+        $this->seeStatusCode(200);
+
+        $this->seeJson([
+            'id'            => $radio->id,
+            'state_id'      => $radio->state_id,
+            'city_id'       => $radio->city_id,
+            'modulation_id' => $radio->modulation_id,
+            'name'          => $radio->name,
+            'frequency'     => $radio->frequency,
+            'streaming'     => $radio->streaming
+        ]);
     }
 
     /**
@@ -70,7 +96,9 @@ class RadiosControllerTest extends TestCase
         $radio = factory('App\Radio')->create();
         
         $this->get('/radio/' . $radio->id);
+
         $this->seeStatusCode(200);
+
         $this->seeJson([
             'id'            => $radio->id,
             'state_id'      => $radio->state_id,
@@ -118,8 +146,11 @@ class RadiosControllerTest extends TestCase
         $radio = factory('App\Radio')->create();
         
         $this->delete('/radio/' . $radio->id);
+
         $this->seeStatusCode(204);
+
         $this->seeJson(['deleted']);
+
         $this->isEmpty();
         
         $this->notSeeInDatabase($this->table, ['id' => $radio->id]);

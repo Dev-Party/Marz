@@ -28,14 +28,25 @@ $app->get('/radio', 'RadiosController@all');
 /**
  * @api {post} /radio Agregar
  * @apiDescription  Ruta para agregar una radio nueva.
- * @apiName  Store
+ * @apiName  Create
  * @apiGroup  Radio
  * @apiPermission  none
  * 
  * @apiParam {String} name Nombre de la radio.
  * @apiParam {String} streaming URL Dirección del streaming de audio.
  */
-$app->post('/radio', 'RadiosController@store');
+$app->post('/radio', 'RadiosController@create');
+
+/**
+ * @api {search} /radio/search/ Buscar
+ * @apiDescription  Ruta para buscar una radio.
+ * @apiName  Search
+ * @apiGroup  Radio
+ * @apiPermission  none
+ * 
+ * @apiParam {String} q Nombre de la radio a buscar.
+ */
+$app->get('/radio/search', 'RadiosController@search');
 
 /**
  * @api {get} /radio/:id Ver
