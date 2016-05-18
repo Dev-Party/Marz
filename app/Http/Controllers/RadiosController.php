@@ -13,15 +13,17 @@ class RadiosController extends Controller
      * 
      * @return object
      */
-    public function all($total = 20)
+    public function all(Request $request)
     {
+        $count = $request->input('count');
+
         $radios = Radio::ofActive()
                 ->state()
                 ->city()
                 ->modulation()
                 ->ofSelect()
                 ->orderBy('name', 'desc')
-                ->take($total)
+                ->take($count)
                 ->get();
 
         return response()->json($radios);
@@ -50,6 +52,7 @@ class RadiosController extends Controller
     public function search(Request $request)
     {
         $q = $request->input('q');
+        $count = $request->input('count');
 
         $radio = Radio::where('radios.name', 'like', '%' . $q . '%')
                 ->ofActive()
@@ -57,8 +60,9 @@ class RadiosController extends Controller
                 ->city()
                 ->modulation()
                 ->ofSelect()
+                ->take($count)
                 ->get();
-                 
+
         return response()->json($radio);
     }
 
@@ -78,6 +82,7 @@ class RadiosController extends Controller
                 ->modulation()
                 ->ofSelect()
                 ->get();
+                
         return response()->json($radio);
     }
 

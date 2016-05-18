@@ -6,6 +6,8 @@
  * @apiGroup  Radio
  * @apiPermission  none
  * 
+ * @apiParam {Number} count Especifica el número de radios para tratar de recuperar.
+ * 
  * @apiSuccessExample  Ejemplo de respuesta
  * 	{
  * 		"id": 1
@@ -45,6 +47,7 @@ $app->post('/radio', 'RadiosController@create');
  * @apiPermission  none
  * 
  * @apiParam {String} q Nombre de la radio a buscar.
+ * @apiParam {Number} count Especifica el número de radios para tratar de recuperar.
  */
 $app->get('/radio/search', 'RadiosController@search');
 
