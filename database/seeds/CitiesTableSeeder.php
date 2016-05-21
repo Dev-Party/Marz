@@ -48,6 +48,7 @@ class CitiesTableSeeder extends Seeder
                   'Napenay',
                   'Pampa del Indio',
                   'Pampa del Infierno',
+                  'Presidencia Roque Sáenz Peña',
                   'Presidencia de la Plaza',
                   'Presidencia Roca',
                   'Puerto Bermejo',
