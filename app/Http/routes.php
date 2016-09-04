@@ -1,4 +1,8 @@
 <?php
+$app->get('/', function () {
+	return "Marz 0.0.0 - API pública para la gestión de radios en Internet.";
+});
+
 /**
  * @api {get} /radio Listar
  * @apiDescription  Ruta para obtener todas las radios.
