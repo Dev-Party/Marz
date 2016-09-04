@@ -1,6 +1,6 @@
 {
-    "name": "laravel/lumen",
-    "description": "The Laravel Lumen Framework.",
+    "name": "soyFelixBarros/Marz",
+    "description": "API pública para la gestion de radios en Internet.",
     "keywords": ["framework", "laravel", "lumen"],
     "license": "MIT",
     "type": "project",
