@@ -1,5 +1,5 @@
 <?php
-if (app()->environment('production')) {
+if (app()->environment('staging')) {
     return  [
         'default' => 'pgsql',
         'pgsql' => [
