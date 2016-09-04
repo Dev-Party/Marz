@@ -1,3 +1,4 @@
 /vendor
 /public/doc
 .env
+composer.lock
