@@ -41,4 +41,6 @@ return [
     'connections' => $connections,
 
     'migrations' => 'migrations',
+
+    'seeds' => 'seeds',
 ];
