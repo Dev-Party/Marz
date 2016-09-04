@@ -1,5 +1,5 @@
 <?php
-if (app()->environment('staging')) {
+if (!app()->environment('local')) {
 return  [
     'default' => 'pgsql',
     'migrations' => 'migrations',
