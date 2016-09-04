@@ -6,6 +6,7 @@ before_script:
 - phpenv config-rm xdebug.ini
 - cp .env.travis .env
 - mysql -e 'create database testing;'
+- composer self-update
 - composer install
 - composer dump-autoload
 script:
