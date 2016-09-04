@@ -25,7 +25,10 @@ $ php artisan db:seed
 ```
 ¡Listo!
 
-Para más información [https://soyfelixbarros.wordpress.com/marz]
+## Historial de versiones
+
+**v1.0.0pre** (Septiembre 4, 2016)
+* Preliminar pública inicial.
 
 Licencia
 ----
