@@ -1,16 +1,18 @@
 language: php
-
 php:
-  - 5.6
-
+- 5.6
 before_script:
-  - cp .env.travis .env
-  - mysql -e 'create database testing;'
-  - composer self-update
-  - composer install
-  - composer dump-autoload
-
+- cp .env.travis .env
+- mysql -e 'create database testing;'
+- composer self-update
+- composer install
+- composer dump-autoload
 script:
-  - php artisan migrate
-  - php artisan db:seed
-  - vendor/bin/phpunit
+- php artisan migrate
+- php artisan db:seed
+- vendor/bin/phpunit
+deploy:
+  provider: heroku
+  api_key:
+    secure: oQNZdgF6G6BFbBX4AAkhM7mX8GzMCyxrF4CfJEX9fW0ewvcTh66MPx8kYyv9xPcSiM80BgNywo4BYG3R1HWROoFBM4w3Ys6CAJcYEOLfG6he7JjGYSnZLflhzlOg2VsYH+rdcxlsFCLRgnReoSURXtOq//yLzlOaadn3bE9gI3cE2EMHT9lIXiflZcIMFKoqruy0P7xyIlkth6aO27sArKyqqGzG8hpkbGlKsyUelWHSwDs6GPg28VZ0OTUDu0gDI2dtzCIiak4OiGXE3RQi/SJRB+GxonZLaX/EPN2vnZpROYobNXe50U9lTsHf4+MiCfh5J1hSgvyxo0jWW+8kfB1++Xsf2MxEL7BO0ewyLgua2vH7g72YlEfUcajB0fN1+kHz2KZTJqRvruz9oh/6QKtKoHGxwpZNFtmVagsgahq7k1fgfDAFFnL1phPnDsVq4RnYpP3y6wzOvMrqdUGraK6lvVZy4AgQ4C3qnB9rboICQbvz9bwPZ8RHCB9IWxBTv57wAmwushJG+FkFemAu+RqL+M22HEXpmdEmEKcP33VGYCWl+eZO1lKxEsJQp53WNa/IOdt5qwiCj1cm273xvvWIrqmvRLo3qhnMBdzsUp85/GIN4MvHM4wanzx3cywRaENWy66WFM+tad0rd9NtCLNlZaqYUadvP540uJps6Pg=
+    app: marz
