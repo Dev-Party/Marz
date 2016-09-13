@@ -23,7 +23,7 @@ class CreateRadiosTable extends Migration
             $table->string('name');
             $table->float('frequency');
             $table->string('streaming');
-            $table->integer('active');
+            $table->integer('active')->default(0);
             $table->timestamps();
         });
     }
