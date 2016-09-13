@@ -1,5 +1,5 @@
 <?php
-if (!app()->environment('local')) {
+if (!app()->environment('local') && !app()->environment('testing')) {
     $connections = [
         'pgsql' => [
             'driver' => 'pgsql',
