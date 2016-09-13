@@ -11,14 +11,14 @@
 |
 */
 
-$factory->define(App\User::class, function ($faker) {
+$factory->define(App\User::class, function (Faker\Generator $faker) {
     return [
         'name'  => $faker->name,
         'email' => $faker->email,
     ];
 });
 
-$factory->define(App\Radio::class, function ($faker) {
+$factory->define(App\Radio::class, function (Faker\Generator $faker) {
 	return [
 		'state_id'      => 1,
 		'city_id'       => rand(1, 49),
@@ -30,19 +30,19 @@ $factory->define(App\Radio::class, function ($faker) {
 	];
 });
 
-$factory->define(App\Modulation::class, function ($faker) {
+$factory->define(App\Modulation::class, function (Faker\Generator $faker) {
 	return [
 		'name' => $faker->randomElements($array = array ('AM','FM','AM/FM'))
 	];
 });
 
-$factory->define(App\State::class, function ($faker) {
+$factory->define(App\State::class, function (Faker\Generator $faker) {
 	return [
 		'name' => $faker->state
 	];
 });
 
-$factory->define(App\City::class, function ($faker) {
+$factory->define(App\City::class, function (Faker\Generator $faker) {
 	return [
 		'state_id' => 1,
 		'name'     => $faker->city

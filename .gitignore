@@ -1,3 +1,7 @@
 /vendor
 /public/doc
+/.idea
+Homestead.json
+Homestead.yaml
 .env
+composer.lock
