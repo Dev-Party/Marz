@@ -1,4 +1,4 @@
-# Marz [![Build Status](https://travis-ci.org/soyFelixBarros/Marz.svg?branch=master)](https://travis-ci.org/soyFelixBarros/Marz)
+## Marz [![Build Status](https://travis-ci.org/soyFelixBarros/Marz.svg?branch=master)](https://travis-ci.org/soyFelixBarros/Marz)
 
 > Proyecto de API pública para la gestión de radios en Internet.
 
@@ -14,7 +14,7 @@ $ composer install
 ```
 3) Crear una base de datos con el nombre "Marz". Renombrar el archivo ".env.example" por ".env", y editar con los datos de conexión:
 ```
-DB_DATABASE=Marz
+DB_DATABASE=marz
 DB_USERNAME=root
 DB_PASSWORD=
 ```
@@ -27,9 +27,9 @@ $ php artisan db:seed
 
 ## Historial de versiones
 
-**v1.0.0pre** (Septiembre 4, 2016)
-* Preliminar pública inicial.
+**v1.0.0** (Septiembre 13, 2016)
+* Inicial.
 
-Licencia
-----
-MIT
+### Licencia
+
+El proyecto Marz es software de código abierto bajo la [licencia MIT](http://opensource.org/licenses/MIT)
