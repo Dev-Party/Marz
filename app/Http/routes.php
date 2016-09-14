@@ -1,6 +1,6 @@
 <?php
 $app->get('/', function () {
-	return "Marz 0.0.0 - API pública para la gestión de radios en Internet.";
+	return "Marz v1.0.0 - API pública para la gestión de radios en Internet. <a href=\"/doc/\">Documentación</a>";
 });
 
 /**
