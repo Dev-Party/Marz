@@ -5,6 +5,7 @@ $app->get('/', function () {
 
 /**
  * @api {get} /radio Listar
+ * @apiVersion 1.0.0
  * @apiDescription  Ruta para obtener todas las radios.
  * @apiName  All
  * @apiGroup  Radio
@@ -33,6 +34,7 @@ $app->get('/radio', 'RadiosController@all');
 
 /**
  * @api {post} /radio Agregar
+ * @apiVersion 1.0.0
  * @apiDescription  Ruta para agregar una radio nueva.
  * @apiName  Create
  * @apiGroup  Radio
@@ -45,6 +47,7 @@ $app->post('/radio', 'RadiosController@create');
 
 /**
  * @api {search} /radio/search/ Buscar
+ * @apiVersion 1.0.0
  * @apiDescription  Ruta para buscar una radio.
  * @apiName  Search
  * @apiGroup  Radio
@@ -57,6 +60,7 @@ $app->get('/radio/search', 'RadiosController@search');
 
 /**
  * @api {get} /radio/:id Ver
+ * @apiVersion 1.0.0
  * @apiDescription  Ruta para ver la información de una radio.
  * @apiName  Show
  * @apiGroup  Radio
@@ -92,6 +96,7 @@ $app->get('/radio/{id}', 'RadiosController@show');
 
 /**
  * @api {put} /radio/:id Actualiar
+ * @apiVersion 1.0.0
  * @apiDescription  Ruta para editar la información de una radio.
  * @apiName  Update
  * @apiGroup  Radio
@@ -105,6 +110,7 @@ $app->put('/radio/{id}', 'RadiosController@update');
 
 /**
  * @api {delete} /radio/:id Eliminar
+ * @apiVersion 1.0.0
  * @apiDescription  Ruta para eliminar una radio.
  * @apiName  Destroy
  * @apiGroup  Radio
@@ -116,6 +122,7 @@ $app->delete('/radio/{id}', 'RadiosController@destroy');
 
 /**
  * @api {get} /modulation Listar
+ * @apiVersion 1.0.0
  * @apiDescription  Ruta para obtener todas las modulaciones.
  * @apiName  All
  * @apiGroup  Modulation
@@ -125,6 +132,7 @@ $app->get('/modulation', 'ModulationsController@getAll');
 
 /**
  * @api {get} /state Listar
+ * @apiVersion 1.0.0
  * @apiDescription  Ruta para obtener todas las provincias.
  * @apiName  All
  * @apiGroup  State
@@ -134,6 +142,7 @@ $app->get('/state', 'StatesController@all');
 
 /**
  * @api {get} /state/:id/cities Listar ciudades
+ * @apiVersion 1.0.0
  * @apiDescription  Obtener todas las ciudades de una provincia.
  * @apiName  Cities
  * @apiGroup  State

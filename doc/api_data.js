@@ -1,8 +1,9 @@
-[
+define({ "api": [
   {
     "type": "get",
     "url": "/modulation",
     "title": "Listar",
+    "version": "1.0.0",
     "description": "<p>Ruta para obtener todas las modulaciones.</p>",
     "name": "All",
     "group": "Modulation",
@@ -11,7 +12,6 @@
         "name": "none"
       }
     ],
-    "version": "0.0.0",
     "filename": "app/Http/routes.php",
     "groupTitle": "Modulation"
   },
@@ -19,6 +19,7 @@
     "type": "get",
     "url": "/radio",
     "title": "Listar",
+    "version": "1.0.0",
     "description": "<p>Ruta para obtener todas las radios.</p>",
     "name": "All",
     "group": "Radio",
@@ -49,7 +50,6 @@
         }
       ]
     },
-    "version": "0.0.0",
     "filename": "app/Http/routes.php",
     "groupTitle": "Radio"
   },
@@ -57,6 +57,7 @@
     "type": "post",
     "url": "/radio",
     "title": "Agregar",
+    "version": "1.0.0",
     "description": "<p>Ruta para agregar una radio nueva.</p>",
     "name": "Create",
     "group": "Radio",
@@ -85,7 +86,6 @@
         ]
       }
     },
-    "version": "0.0.0",
     "filename": "app/Http/routes.php",
     "groupTitle": "Radio"
   },
@@ -93,6 +93,7 @@
     "type": "delete",
     "url": "/radio/:id",
     "title": "Eliminar",
+    "version": "1.0.0",
     "description": "<p>Ruta para eliminar una radio.</p>",
     "name": "Destroy",
     "group": "Radio",
@@ -114,7 +115,6 @@
         ]
       }
     },
-    "version": "0.0.0",
     "filename": "app/Http/routes.php",
     "groupTitle": "Radio"
   },
@@ -122,6 +122,7 @@
     "type": "search",
     "url": "/radio/search/",
     "title": "Buscar",
+    "version": "1.0.0",
     "description": "<p>Ruta para buscar una radio.</p>",
     "name": "Search",
     "group": "Radio",
@@ -150,7 +151,6 @@
         ]
       }
     },
-    "version": "0.0.0",
     "filename": "app/Http/routes.php",
     "groupTitle": "Radio"
   },
@@ -158,6 +158,7 @@
     "type": "get",
     "url": "/radio/:id",
     "title": "Ver",
+    "version": "1.0.0",
     "description": "<p>Ruta para ver la información de una radio.</p>",
     "name": "Show",
     "group": "Radio",
@@ -227,7 +228,6 @@
         }
       ]
     },
-    "version": "0.0.0",
     "filename": "app/Http/routes.php",
     "groupTitle": "Radio"
   },
@@ -235,6 +235,7 @@
     "type": "put",
     "url": "/radio/:id",
     "title": "Actualiar",
+    "version": "1.0.0",
     "description": "<p>Ruta para editar la información de una radio.</p>",
     "name": "Update",
     "group": "Radio",
@@ -270,7 +271,6 @@
         ]
       }
     },
-    "version": "0.0.0",
     "filename": "app/Http/routes.php",
     "groupTitle": "Radio"
   },
@@ -278,6 +278,7 @@
     "type": "get",
     "url": "/state",
     "title": "Listar",
+    "version": "1.0.0",
     "description": "<p>Ruta para obtener todas las provincias.</p>",
     "name": "All",
     "group": "State",
@@ -286,7 +287,6 @@
         "name": "none"
       }
     ],
-    "version": "0.0.0",
     "filename": "app/Http/routes.php",
     "groupTitle": "State"
   },
@@ -294,6 +294,7 @@
     "type": "get",
     "url": "/state/:id/cities",
     "title": "Listar ciudades",
+    "version": "1.0.0",
     "description": "<p>Obtener todas las ciudades de una provincia.</p>",
     "name": "Cities",
     "group": "State",
@@ -302,8 +303,7 @@
         "name": "none"
       }
     ],
-    "version": "0.0.0",
     "filename": "app/Http/routes.php",
     "groupTitle": "State"
   }
-]
+] });
