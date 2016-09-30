@@ -27,7 +27,7 @@ $ php artisan db:seed
 
 ## Historial de versiones
 
-**v1.0.0** (Septiembre 13, 2016)
+**v1.0.0** (Septiembre 30, 2016)
 * Inicial.
 
 ### Licencia
