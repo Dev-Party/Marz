@@ -149,9 +149,9 @@ class RadiosControllerTest extends TestCase
         
         $this->delete('api/radio/' . $radio->id);
 
+        // $this->seeJson(['deleted']);
+        
         $this->seeStatusCode(204);
-
-        $this->seeJson(['deleted']);
 
         $this->isEmpty();
         
