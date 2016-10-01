@@ -21,7 +21,7 @@ class ModulationsControllerTest extends TestCase
      */
     public function testGetModulationAll()
     {
-        $this->get('/modulation');
+        $this->get('api/modulation');
 
         $this->seeStatusCode(200);
         
