@@ -2,6 +2,8 @@
 
 namespace App;
 
+use Illuminate\Database\Eloquent\Model;
+
 class Radio extends Model
 {
     /** @var string $table Nombre de la tabla. */

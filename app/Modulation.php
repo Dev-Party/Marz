@@ -2,6 +2,8 @@
 
 namespace App;
 
+use Illuminate\Database\Eloquent\Model;
+
 class Modulation extends Model
 {
     /** @var string $table Nombre de la tabla. */
