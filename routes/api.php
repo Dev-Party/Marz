@@ -44,7 +44,7 @@ Route::get('/user', function (Request $request) {
  * 		"updated_at": "2016-04-13 20:03:25"
  * 	}
  */
-Route::get('/radio', 'RadiosController@all');
+Route::get('/radio', 'Api\RadiosController@all');
 
 /**
  * @api {post} /radio Agregar
@@ -57,7 +57,7 @@ Route::get('/radio', 'RadiosController@all');
  * @apiParam {String} name Nombre de la radio.
  * @apiParam {String} streaming URL Dirección del streaming de audio.
  */
-Route::post('/radio', 'RadiosController@create');
+Route::post('/radio', 'Api\RadiosController@create');
 
 /**
  * @api {search} /radio/search/ Buscar
@@ -70,7 +70,7 @@ Route::post('/radio', 'RadiosController@create');
  * @apiParam {String} q Nombre de la radio a buscar.
  * @apiParam {Number} count Especifica el número de radios para tratar de recuperar.
  */
-Route::get('/radio/search', 'RadiosController@search');
+Route::get('/radio/search', 'Api\RadiosController@search');
 
 /**
  * @api {get} /radio/:id Ver
@@ -106,7 +106,7 @@ Route::get('/radio/search', 'RadiosController@search');
  * 		"updated_at": "2016-04-13 20:03:25"
  * 	}
  */
-Route::get('/radio/{id}', 'RadiosController@show');
+Route::get('/radio/{id}', 'Api\RadiosController@show');
 
 /**
  * @api {put} /radio/:id Actualiar
@@ -120,7 +120,7 @@ Route::get('/radio/{id}', 'RadiosController@show');
  * @apiParam {String} name Nombre de la radio.
  * @apiParam {String} streaming Dirección del streaming de audio.
  */
-Route::put('/radio/{id}', 'RadiosController@update');
+Route::put('/radio/{id}', 'Api\RadiosController@update');
 
 /**
  * @api {delete} /radio/:id Eliminar
@@ -132,7 +132,7 @@ Route::put('/radio/{id}', 'RadiosController@update');
  * 
  * @apiParam {Number} id Identificador único de la radio.
  */
-Route::delete('/radio/{id}', 'RadiosController@destroy');
+Route::delete('/radio/{id}', 'Api\RadiosController@destroy');
 
 /**
  * @api {get} /modulation Listar
@@ -142,7 +142,7 @@ Route::delete('/radio/{id}', 'RadiosController@destroy');
  * @apiGroup  Modulation
  * @apiPermission  none
  */
-Route::get('/modulation', 'ModulationsController@getAll');
+Route::get('/modulation', 'Api\ModulationsController@getAll');
 
 /**
  * @api {get} /state Listar
@@ -152,7 +152,7 @@ Route::get('/modulation', 'ModulationsController@getAll');
  * @apiGroup  State
  * @apiPermission  none
  */
-Route::get('/state', 'StatesController@all');
+Route::get('/state', 'Api\StatesController@all');
 
 /**
  * @api {get} /state/:id/cities Listar ciudades
@@ -162,4 +162,4 @@ Route::get('/state', 'StatesController@all');
  * @apiGroup  State
  * @apiPermission  none
  */
-Route::get('/state/{id}/cities', 'StatesController@cities');
+Route::get('/state/{id}/cities', 'Api\StatesController@cities');
