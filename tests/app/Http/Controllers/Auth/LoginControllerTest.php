@@ -16,10 +16,10 @@ class LoginControllerTest extends TestCase
     public function testLoginUser()
     {
     	$user = factory(App\User::class)->create();
-        $this->visit('/login')
-              ->type($user->email, 'email')
-              ->type('secret', 'password')
-              ->press('Login')
-              ->seePageIs('/dashboard');
+      $this->visit('/login')
+           ->type($user->email, 'email')
+           ->type('secret', 'password')
+           ->press('Login')
+           ->seePageIs('/dashboard');
     }
 }
