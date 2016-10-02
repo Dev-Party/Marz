@@ -1,6 +1,8 @@
 <?php
 
-use Laravel\Lumen\Testing\DatabaseTransactions;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class RadiosControllerTest extends TestCase
 {
@@ -18,7 +20,7 @@ class RadiosControllerTest extends TestCase
     {
         $radios = factory('App\Radio', 10)->create();
 
-        $this->get('/radio');
+        $this->get('api/radio');
         
         $this->seeStatusCode(200);
         
@@ -51,7 +53,7 @@ class RadiosControllerTest extends TestCase
             'streaming'     => 'http://192.168.1.1'
         ];
 
-        $this->post('/radio', $create);
+        $this->post('api/radio', $create);
 
         $this->seeStatusCode(201);
 
@@ -71,7 +73,7 @@ class RadiosControllerTest extends TestCase
     {
         $radio = factory('App\Radio')->create();
         
-        $this->get('/radio/search?q=' . $radio->name);
+        $this->get('api/radio/search?q=' . $radio->name);
 
         $this->seeStatusCode(200);
 
@@ -95,7 +97,7 @@ class RadiosControllerTest extends TestCase
     {
         $radio = factory('App\Radio')->create();
         
-        $this->get('/radio/' . $radio->id);
+        $this->get('api/radio/' . $radio->id);
 
         $this->seeStatusCode(200);
 
@@ -129,7 +131,7 @@ class RadiosControllerTest extends TestCase
 
         $radio = factory('App\Radio')->create();
         
-        $this->put('/radio/' . $radio->id, $update);
+        $this->put('api/radio/' . $radio->id, $update);
 
         $this->seeJson($update);
 
@@ -145,11 +147,11 @@ class RadiosControllerTest extends TestCase
     {
         $radio = factory('App\Radio')->create();
         
-        $this->delete('/radio/' . $radio->id);
+        $this->delete('api/radio/' . $radio->id);
 
+        // $this->seeJson(['deleted']);
+        
         $this->seeStatusCode(204);
-
-        $this->seeJson(['deleted']);
 
         $this->isEmpty();
         

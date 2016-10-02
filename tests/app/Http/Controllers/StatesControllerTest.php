@@ -1,5 +1,8 @@
 <?php
-use Laravel\Lumen\Testing\DatabaseTransactions;
+
+use Illuminate\Foundation\Testing\WithoutMiddleware;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class StatesControllerTest extends TestCase
 {
@@ -15,7 +18,7 @@ class StatesControllerTest extends TestCase
      */
     public function testGetStateAll()
     {
-        $this->get('/state');
+        $this->get('api/state');
         
         $this->seeStatusCode(200);
         
@@ -34,7 +37,7 @@ class StatesControllerTest extends TestCase
     {
         $cities = factory('App\City', 10)->create();
 
-        $this->get('/state/1/cities');
+        $this->get('api/state/1/cities');
 
         $this->seeStatusCode(200);
 

@@ -1,5 +1,9 @@
 <?php
 
+use Illuminate\Foundation\Testing\WithoutMiddleware;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
+
 class ModulationsControllerTest extends TestCase
 {
 
@@ -17,7 +21,7 @@ class ModulationsControllerTest extends TestCase
      */
     public function testGetModulationAll()
     {
-        $this->get('/modulation');
+        $this->get('api/modulation');
 
         $this->seeStatusCode(200);
         
