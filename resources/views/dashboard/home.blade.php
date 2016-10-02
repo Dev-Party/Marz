@@ -8,7 +8,13 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    You are logged in!
+                @if (count($radios) > 0)
+                    @foreach ($radios as $radio)
+                    <p>{{ $radio->name }}</p>
+                    @endforeach
+                @else
+                <h4>No hay radios :|</h4>
+                @endif
                 </div>
             </div>
         </div>

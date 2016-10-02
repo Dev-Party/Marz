@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Dashboard;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use App\Radio;
+
 class IndexController extends Controller
 {
 	/**
@@ -22,7 +24,8 @@ class IndexController extends Controller
      */
     public function getHome()
     {
-        return view('dashboard.home');
+        $radios = Radio::all();
+        return view('dashboard.home', ['radios' => $radios]);
     }
 
 }
