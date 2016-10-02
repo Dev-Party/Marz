@@ -4,16 +4,15 @@ use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
-class IndexControllerTest extends TestCase
+class DashboardControllerTest extends TestCase
 {
     /**
-     * Haceder al home y revisra su contenido.
+     * Haceder a la ruta del dashboard.
      * 
      * @return void
      */
-    public function testGetHome()
+    public function testGetDashboard()
     {
-        $this->visit('/')
-             ->see('Marz v1.1.0');
+        $this->visit('/dashboard');
     }
 }
