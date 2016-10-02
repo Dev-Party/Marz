@@ -13,4 +13,9 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function getNew()
+    {
+    	return 'Agregar una nueva radio. Gratis!';
+    }
 }

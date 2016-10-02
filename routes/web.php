@@ -13,6 +13,8 @@
 
 Route::get('/', 'HomeController@index');
 
+Route::get('/new', 'HomeController@getNew');
+
 Route::get('/dashboard', 'Dashboard\IndexController@getHome');
 
 Auth::routes();
