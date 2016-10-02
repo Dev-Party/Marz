@@ -14,6 +14,6 @@ class DashboardControllerTest extends TestCase
     public function testGetDashboard()
     {
         $this->visit('/dashboard')
-        	 ->see('Dashboard');
+        	 ->seePageIs('/login');
     }
 }
