@@ -15,4 +15,4 @@ Route::get('/', function () {
     return "Marz v1.1.0";
 });
 
-Route::get('/dashboard', function () {});
+Route::get('/dashboard', 'Dashboard\IndexController@getHome');
