@@ -16,4 +16,15 @@ class IndexControllerTest extends TestCase
         $this->visit('/')
              ->see('Marz v1.1.0');
     }
+
+    /**
+     * Haceder al /new y revisra su contenido.
+     * 
+     * @return void
+     */
+    public function testGetNew()
+    {
+        $this->visit('/new')
+             ->see('Agregar una nueva radio. Gratis!');
+    }
 }
