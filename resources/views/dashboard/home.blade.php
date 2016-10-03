@@ -10,7 +10,13 @@
                 <div class="panel-body">
                 @if (count($radios) > 0)
                     @foreach ($radios as $radio)
-                    <p>{{ $radio->name }}</p>
+                    <div class="media">
+                      <div class="media-body">
+                        <h4 class="media-heading">{{ $radio->name }}</h4>
+                        <p>{{ $radio->frequency }} Mhz</p>
+                      </div>
+                    </div>
+                    <hr>
                     @endforeach
                 @else
                 <h4>No hay radios :|</h4>
