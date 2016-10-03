@@ -21,8 +21,10 @@
         <label for="modulation_id" class="col-md-4 control-label">modulation_id</label>
 
         <div class="col-md-6">
-            <input id="modulation_id" type="text" class="form-control" name="modulation_id" value="" required>
-
+          <select class="form-control" name="modulation_id">
+            <option value="" selected="selected">Seleccione la modulación</option>
+            <option v-for="modulation in modulations" value="{{ modulation.id }}">{{ modulation.name }}</option>
+          </select>
         </div>
     </div>
 
@@ -62,6 +64,27 @@
 </template>
 
 <script>
+var urlApi = "api/";
+
 export default {
+  data () {
+    return {
+      modulations: []
+    }
+  },
+
+  ready: function (){
+    this.listModulations();
+  },
+
+  methods: {
+    listModulations: function () {
+      this.$http.get(urlApi + 'modulation').then(function (response) {
+        this.modulations = response.data;
+      }, function (response) {
+        console.log(response.status);
+      });
+    }
+  }
 }
 </script>
