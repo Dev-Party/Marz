@@ -27,15 +27,7 @@ class IndexControllerTest extends TestCase
     public function testGetNew()
     {
         $this->visit('/new')
-             ->see('Agregar una nueva radio. Gratis!')
-             ->type('Radio Felix', 'name')
-             ->type(98.1, 'frequency')
-             ->select(1, 'modulation_id')
-             ->type('http://felixbarros.com:8080', 'streaming')
-             ->type(1, 'state_id')
-             ->type(4, 'city_id')
-             ->press('Create')
-             ->seePageIs('/');
+             ->see('Agregar una nueva radio. Gratis!');
              
     }
 }

@@ -14,6 +14,7 @@ require('./bootstrap');
  */
 
 Vue.component('radio', require('./components/Radio.vue'));
+Vue.component('new', require('./components/New.vue'));
 
 const app = new Vue({
     el: 'body'
