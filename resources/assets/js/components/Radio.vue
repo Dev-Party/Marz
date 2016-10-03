@@ -6,7 +6,12 @@
                     <div class="panel-heading">Radios</div>
 
                     <div class="panel-body">
-                        ...
+                      <div class="media" v-for="radio in radios | orderBy 'name' order">
+                        <div class="media-body">
+                          <h4 class="media-heading">{{ radio.name }} - {{ radio.frequency }} Mhz</h4>
+                          <p>{{ radio.city }}</p>
+                        </div>
+                      </div>
                     </div>
                 </div>
             </div>
@@ -15,9 +20,30 @@
 </template>
 
 <script>
-    export default {
-        ready() {
-            console.log('Component ready.')
-        }
+var urlApi = "api/";
+
+export default {
+  data () {
+    return {
+      city: '',
+      order: 1,
+      playing: false,
+      radios: []
     }
+  },
+
+  ready: function (){
+    this.loadRadios();
+  },
+
+  methods: {
+    loadRadios: function () {
+      this.$http.get(urlApi + 'radio').then(function (response) {
+        this.radios = response.data;
+      }, function (response) {
+        console.log(response.status);
+      });
+    }
+  }
+}
 </script>
