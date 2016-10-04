@@ -51,7 +51,10 @@
         <label for="city_id" class="col-md-4 control-label">city_id</label>
 
         <div class="col-md-6">
-            <input id="city_id" type="text" class="form-control" name="city_id" value="" required>
+          <select class="form-control" name="city_id">
+            <option value="" selected="selected">Seleccione la ciudad</option>
+            <option v-for="city in cities" value="{{ city.id }}">{{ city.name }}</option>
+          </select>
         </div>
     </div>
 
@@ -72,13 +75,15 @@ export default {
   data () {
     return {
       modulations: [],
-      states: []
+      states: [],
+      cities: []
     }
   },
 
   ready: function (){
     this.listModulations();
     this.listStates();
+    this.listCities();
   },
 
   methods: {
@@ -92,6 +97,13 @@ export default {
     listStates: function () {
       this.$http.get(urlApi + 'state').then(function (response) {
         this.states = response.data;
+      }, function (response) {
+        console.log(response.status);
+      });
+    },
+    listCities: function () {
+      this.$http.get(urlApi + 'state/1/cities').then(function (response) {
+        this.cities = response.data;
       }, function (response) {
         console.log(response.status);
       });
