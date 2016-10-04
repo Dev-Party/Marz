@@ -40,8 +40,10 @@
         <label for="state_id" class="col-md-4 control-label">state_id</label>
 
         <div class="col-md-6">
-            <input id="state_id" type="text" class="form-control" name="state_id" value="" required>
-
+          <select class="form-control" name="state_id">
+            <option value="" selected="selected">Seleccione la provincia</option>
+            <option v-for="state in states" value="{{ state.id }}">{{ state.name }}</option>
+          </select>
         </div>
     </div>
 
@@ -69,18 +71,27 @@ var urlApi = "api/";
 export default {
   data () {
     return {
-      modulations: []
+      modulations: [],
+      states: []
     }
   },
 
   ready: function (){
     this.listModulations();
+    this.listStates();
   },
 
   methods: {
     listModulations: function () {
       this.$http.get(urlApi + 'modulation').then(function (response) {
         this.modulations = response.data;
+      }, function (response) {
+        console.log(response.status);
+      });
+    },
+    listStates: function () {
+      this.$http.get(urlApi + 'state').then(function (response) {
+        this.states = response.data;
       }, function (response) {
         console.log(response.status);
       });
