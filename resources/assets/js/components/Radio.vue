@@ -48,11 +48,11 @@ export default {
       var audio = document.getElementById('audio');
 
       if (audio.paused) {
-        document.getElementById("i-" + id).src = "http://marz.herokuapp.com/pause.png";
+        document.getElementById("i-" + id).src = "http://marz.herokuapp.com/img/pause.png";
         audio.src = streaming + "/;stream/1";
         audio.play();
       } else {
-        document.getElementById("i-" + id).src = "http://marz.herokuapp.com/play.png";
+        document.getElementById("i-" + id).src = "http://marz.herokuapp.com/img/play.png";
         audio.pause();
       }
 
