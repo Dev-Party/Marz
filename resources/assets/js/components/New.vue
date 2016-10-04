@@ -83,32 +83,32 @@ export default {
   watch: {
     radio: function(radio, oldVal) {
       if (radio.state_id > 0) {
-        this.listCities(radio.state_id)
+        this.getAllcitiesOfOneState(radio.state_id)
       }
     }
   },
 
   ready: function (){
-    this.listModulations();
-    this.listStates();
+    this.getAllModulations();
+    this.getAllStates();
   },
 
   methods: {
-    listModulations: function () {
+    getAllModulations: function () {
       this.$http.get('api/modulation').then(function (response) {
         this.modulations = response.data;
       }, function (response) {
         console.log(response.status);
       });
     },
-    listStates: function () {
+    getAllStates: function () {
       this.$http.get('api/state').then(function (response) {
         this.states = response.data;
       }, function (response) {
         console.log(response.status);
       });
     },
-    listCities: function (state) {
+    getAllcitiesOfOneState: function (state) {
       this.$http.get('api/state/' + this.radio.state_id +'/cities').then(function (response) {
         this.cities = response.data;
       }, function (response) {
