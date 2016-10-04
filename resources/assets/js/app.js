@@ -16,13 +16,6 @@ require('./bootstrap');
 Vue.component('radio', require('./components/Radio.vue'));
 Vue.component('new', require('./components/New.vue'));
 
-/**
- * Si el servidor web no puede manejar las solicitudes,
- * esto enviará la solicitud como application x-www-form-urlencoded tipo MIME,
- * como si de un formulario HTML normal.
- */
-Vue.http.options.emulateJSON = true;
-
 const app = new Vue({
     el: 'body'
 });
