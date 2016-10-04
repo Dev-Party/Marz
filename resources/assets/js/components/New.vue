@@ -1,8 +1,8 @@
 <template>
-<form class="form-horizontal">
+<form class="form-horizontal" method="POST">
 
     <div class="form-group">
-        <label for="name" class="col-md-4 control-label">name</label>
+        <label for="name" class="col-md-4 control-label">Name</label>
 
         <div class="col-md-6">
             <input v-model.trim="radio.name" type="text" name="name" class="form-control" value="" placeholder="Radio Marz" autofocus>
@@ -10,7 +10,7 @@
     </div>
 
     <div class="form-group">
-        <label for="frequency" class="col-md-4 control-label">frequency</label>
+        <label for="frequency" class="col-md-4 control-label">Frequency</label>
 
         <div class="col-md-6">
             <div class="input-group">
@@ -21,7 +21,7 @@
     </div>
 
     <div class="form-group">
-        <label for="modulation_id" class="col-md-4 control-label">modulation_id</label>
+        <label for="modulation_id" class="col-md-4 control-label">Modulation</label>
 
         <div class="col-md-6">
           <label class="radio-inline" v-for="modulation in modulations">
@@ -31,7 +31,7 @@
     </div>
 
     <div class="form-group">
-        <label for="state_id" class="col-md-4 control-label">state_id</label>
+        <label for="state_id" class="col-md-4 control-label">State</label>
 
         <div class="col-md-6">
           <select v-model="radio.state_id" name="state_id" class="form-control">
@@ -42,7 +42,7 @@
     </div>
 
     <div class="form-group" v-if="radio.state_id > 0">
-        <label for="city_id" class="col-md-4 control-label">city_id</label>
+        <label for="city_id" class="col-md-4 control-label">City</label>
 
         <div class="col-md-6">
           <select v-model="radio.city_id" name="city_id" class="form-control">
@@ -53,7 +53,7 @@
     </div>
 
     <div class="form-group">
-        <label for="streaming" class="col-md-4 control-label">streaming</label>
+        <label for="streaming" class="col-md-4 control-label">Streaming</label>
 
         <div class="col-md-6">
           <input v-model.trim="radio.streaming" type="text" name="streaming" class="form-control" value="" placeholder="http://ejemplo.com:8080/;stream">
