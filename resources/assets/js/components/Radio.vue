@@ -18,8 +18,6 @@
 </template>
 
 <script>
-var urlApi = "api/";
-
 export default {
   data () {
     return {
@@ -36,7 +34,7 @@ export default {
 
   methods: {
     loadRadios: function () {
-      this.$http.get(urlApi + 'radio').then(function (response) {
+      this.$http.get('api/radio').then(function (response) {
         this.radios = response.data;
       }, function (response) {
         console.log(response.status);

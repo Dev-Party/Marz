@@ -1,19 +1,22 @@
 <template>
-<form class="form-horizontal" role="form" method="POST">
+<form class="form-horizontal">
 
     <div class="form-group">
-        <label for="name" class="col-md-4 control-label">Name</label>
+        <label for="name" class="col-md-4 control-label">name</label>
 
         <div class="col-md-6">
-            <input id="name" type="text" class="form-control" name="name" value="" required autofocus>
+            <input v-model.trim="radio.name" type="text" class="form-control" value="" placeholder="Radio Marz" autofocus>
         </div>
     </div>
 
     <div class="form-group">
-        <label for="frequency" class="col-md-4 control-label">Frequency</label>
+        <label for="frequency" class="col-md-4 control-label">frequency</label>
 
         <div class="col-md-6">
-            <input id="frequency" type="text" class="form-control" name="frequency" value="" required>
+            <div class="input-group">
+              <input v-model="radio.frequency" type="text" class="form-control" value="" placeholder="90.07">
+              <span class="input-group-addon">MHz</span>
+            </div>
         </div>
     </div>
 
@@ -21,9 +24,30 @@
         <label for="modulation_id" class="col-md-4 control-label">modulation_id</label>
 
         <div class="col-md-6">
-          <select class="form-control" name="modulation_id">
-            <option value="" selected="selected">Seleccione la modulación</option>
-            <option v-for="modulation in modulations" value="{{ modulation.id }}">{{ modulation.name }}</option>
+          <label class="radio-inline" v-for="modulation in modulations">
+            <input v-model="radio.modulation_id" id="{{ modulation.name }}" type="radio" value="{{ modulation.id }}"> {{ modulation.name }}
+          </label>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="state_id" class="col-md-4 control-label">state_id</label>
+
+        <div class="col-md-6">
+          <select v-model="radio.state_id" class="form-control">
+            <option value="" selected="selected">Seleccione la provincia</option>
+            <option v-for="state in states | orderBy 'name'" value="{{ state.id }}">{{ state.name }}</option>
+          </select>
+        </div>
+    </div>
+
+    <div class="form-group" v-if="radio.state_id > 0">
+        <label for="city_id" class="col-md-4 control-label">city_id</label>
+
+        <div class="col-md-6">
+          <select v-model="radio.city_id" class="form-control">
+            <option value="" selected="selected">Seleccione la ciudad</option>
+            <option v-for="city in cities | orderBy 'name'" value="{{ city.id }}">{{ city.name }}</option>
           </select>
         </div>
     </div>
@@ -32,78 +56,69 @@
         <label for="streaming" class="col-md-4 control-label">streaming</label>
 
         <div class="col-md-6">
-            <input id="streaming" type="text" class="form-control" name="streaming" value="" required>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label for="state_id" class="col-md-4 control-label">state_id</label>
-
-        <div class="col-md-6">
-          <select class="form-control" name="state_id">
-            <option value="" selected="selected">Seleccione la provincia</option>
-            <option v-for="state in states" value="{{ state.id }}">{{ state.name }}</option>
-          </select>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label for="city_id" class="col-md-4 control-label">city_id</label>
-
-        <div class="col-md-6">
-          <select class="form-control" name="city_id">
-            <option value="" selected="selected">Seleccione la ciudad</option>
-            <option v-for="city in cities" value="{{ city.id }}">{{ city.name }}</option>
-          </select>
+          <input v-model.trim="radio.streaming" type="text" class="form-control" value="" placeholder="http://ejemplo.com:8080/;stream">
         </div>
     </div>
 
     <div class="form-group">
         <div class="col-md-6 col-md-offset-4">
-            <button type="submit" class="btn btn-primary">
-                Create
-            </button>
+            <button v-on:click="saveRadio" class="btn btn-primary">Create</button>
         </div>
     </div>
 </form>
+<pre>{{ $data.radio | json }}</pre>
 </template>
 
 <script>
-var urlApi = "api/";
-
 export default {
   data () {
     return {
       modulations: [],
       states: [],
-      cities: []
+      cities: [],
+      radio: {}
+    }
+  },
+
+  watch: {
+    radio: function(radio, oldVal) {
+      if (radio.state_id > 0) {
+        this.listCities(radio.state_id)
+      }
     }
   },
 
   ready: function (){
     this.listModulations();
     this.listStates();
-    this.listCities();
   },
 
   methods: {
     listModulations: function () {
-      this.$http.get(urlApi + 'modulation').then(function (response) {
+      this.$http.get('api/modulation').then(function (response) {
         this.modulations = response.data;
       }, function (response) {
         console.log(response.status);
       });
     },
     listStates: function () {
-      this.$http.get(urlApi + 'state').then(function (response) {
+      this.$http.get('api/state').then(function (response) {
         this.states = response.data;
       }, function (response) {
         console.log(response.status);
       });
     },
-    listCities: function () {
-      this.$http.get(urlApi + 'state/1/cities').then(function (response) {
+    listCities: function (state) {
+      this.$http.get('api/state/' + this.radio.state_id +'/cities').then(function (response) {
         this.cities = response.data;
+      }, function (response) {
+        console.log(response.status);
+      });
+    },
+    saveRadio: function (event) {
+      if (event) event.preventDefault()
+      this.$http.post('api/radio', this.radio).then(function (response) {
+        console.log(response.data);
       }, function (response) {
         console.log(response.status);
       });
