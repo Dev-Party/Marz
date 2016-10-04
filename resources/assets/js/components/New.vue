@@ -62,11 +62,10 @@
 
     <div class="form-group">
         <div class="col-md-6 col-md-offset-4">
-            <button v-on:click="saveRadio" class="btn btn-primary">Create</button>
+            <button v-on:click="saveRadio()" class="btn btn-primary">Create</button>
         </div>
     </div>
 </form>
-<pre>{{ $data.radio | json }}</pre>
 </template>
 
 <script>
@@ -81,7 +80,7 @@ export default {
   },
 
   watch: {
-    radio: function(radio, oldVal) {
+    radio: function(radio) {
       if (radio.state_id > 0) {
         this.getAllcitiesOfOneState(radio.state_id)
       }
