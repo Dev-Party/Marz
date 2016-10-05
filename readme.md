@@ -28,6 +28,12 @@ $ php artisan key:generate
 
 ## Historial de versiones
 
+**v1.2.0** (Octubre 04, 2016)
+* Nuevos estilos para toda la aplicación.
+* Botón para reproducir las radios.
+* Formulario para agregar una radio nueva.
+* Autenticación (login, register and reset password)
+
 **v1.1.0** (Octubre 02, 2016)
 * [#2](https://github.com/soyFelixBarros/Marz/issues/2) Migramos todo el proyecto a Laravel 5.3
 
