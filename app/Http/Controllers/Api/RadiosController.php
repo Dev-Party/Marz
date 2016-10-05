@@ -21,8 +21,7 @@ class RadiosController extends Controller
     {
         $count = $request->input('count');
 
-        $radios = Radio::ofActive()
-                ->state()
+        $radios = Radio::state()
                 ->city()
                 ->modulation()
                 ->ofSelect()

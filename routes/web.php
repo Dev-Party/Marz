@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return "Marz v1.1.0";
-});
+Route::get('/', 'HomeController@index');
+
+Route::get('/new', 'HomeController@getNew');
+
+Route::post('/new', 'HomeController@postNew');
+
+Route::get('/dashboard', 'Dashboard\IndexController@getHome');
+
+Auth::routes();

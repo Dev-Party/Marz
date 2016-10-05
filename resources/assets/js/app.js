@@ -13,7 +13,8 @@ require('./bootstrap');
  * the application, or feel free to tweak this setup for your needs.
  */
 
-Vue.component('example', require('./components/Example.vue'));
+Vue.component('radio', require('./components/Radio.vue'));
+Vue.component('form-create-radio', require('./components/FormCreateRadio.vue'));
 
 const app = new Vue({
     el: 'body'
