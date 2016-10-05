@@ -14,7 +14,7 @@ require('./bootstrap');
  */
 
 Vue.component('radio', require('./components/Radio.vue'));
-Vue.component('new', require('./components/New.vue'));
+Vue.component('form-create-radio', require('./components/FormCreateRadio.vue'));
 
 const app = new Vue({
     el: 'body'
