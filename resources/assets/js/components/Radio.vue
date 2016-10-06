@@ -8,9 +8,9 @@
                     <div class="media-left">
                       <a href="#" v-on:click="playRadio($index, $event)"><img id="{{ $index }}" class="media-object" src="http://marz.herokuapp.com/img/play.png"></a>
                       <audio id="player-{{ $index }}" preload="none">
-                        <source :src="radio.streaming" type="audio/wav">
-                        <source :src="radio.streaming" type="audio/ogg">
                         <source :src="radio.streaming + '/;stream/1'" type="audio/mpeg">
+                        <source :src="radio.streaming" type="audio/ogg">
+                        <source :src="radio.streaming" type="audio/wav">
                       </audio>
                     </div>
                     <div class="media-body">
