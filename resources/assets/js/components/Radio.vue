@@ -2,12 +2,15 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-              <audio id="audio"></audio>
               <div class="panel panel-default" v-for="radio in radios | orderBy 'name'">
                 <div class="panel-body">
                   <div class="media">
                     <div class="media-left">
-                      <a href="#" v-on:click="playRadio(radio.streaming, $index, $event)"><img id="{{ $index }}"class="media-object" src="http://marz.herokuapp.com/img/play.png"></a>
+                      <a href="#" v-on:click="playRadio($index, $event)"><img id="{{ $index }}" class="media-object" src="http://marz.herokuapp.com/img/play.png"></a>
+                      <audio id="player-{{ $index }}">
+                        <source :src="radio.streaming + '/;stream/1'" type="audio/mpeg">
+                        <source :src="radio.streaming" type="audio/ogg">
+                      </audio>
                     </div>
                     <div class="media-body">
                       <h4 class="media-heading">{{ radio.name }} {{ radio.frequency }} Mhz</h4>
@@ -42,18 +45,19 @@ export default {
         console.log(response.status);
       });
     },
-    playRadio: function (streaming, index, event) {
+    playRadio: function (index, event) {
       if (event) event.preventDefault()
 
-      var audio = document.getElementById('audio');
+      var player = document.getElementById("player-" + index);
 
-      if (audio.paused) {
-        document.getElementById(index).src = "http://marz.herokuapp.com/img/pause.png";
-        audio.src = streaming + "/;stream/1";
-        audio.play();
+      if (player.paused) {
+        player.play(); // Reproducir audio
+        player.onplaying = function () {
+          document.getElementById(index).src = "http://marz.herokuapp.com/img/pause.png";
+        }
       } else {
+        player.pause(); // Detener la reproducción
         document.getElementById(index).src = "http://marz.herokuapp.com/img/play.png";
-        audio.pause();
       }
 
     }
