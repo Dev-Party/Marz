@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Agregar una nueva radio. Gratis!</div>
                 <div class="panel-body">
-                    <form-create-radio></form-create-radio>
+                    <create-radio></create-radio>
                 </div>
             </div>
         </div>
