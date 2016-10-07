@@ -1,9 +1,9 @@
 <template>
 <div class="row">
-  <div class="col-xs-8">
+  <div class="col-xs-7">
     <input type="text" v-model.trim="search" v-on:keyup="searchRadio($event)" class="form-control" placeholder="Buscar">
   </div>
-  <div class="col-xs-4">
+  <div class="col-xs-5">
     <select v-model="city" class="form-control">
       <option value="" selected="selected">Todas las ciudades</option>
       <option v-for="city in cities | orderBy 'name'" value="{{ city.id }}">{{ city.name }}</option>
