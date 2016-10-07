@@ -5,7 +5,7 @@
         <label for="name" class="col-md-4 control-label">Name</label>
 
         <div class="col-md-6">
-            <input v-model.trim="radio.name" type="text" name="name" class="form-control" value="" placeholder="Radio Marz" autofocus>
+            <input v-model.trim="radio.name" type="text" class="form-control" value="" placeholder="Radio Marz" autofocus>
         </div>
     </div>
 
@@ -14,7 +14,7 @@
 
         <div class="col-md-6">
             <div class="input-group">
-              <input v-model="radio.frequency" type="text" name="frequency" class="form-control" value="" placeholder="90.07">
+              <input v-model="radio.frequency" type="text" class="form-control" value="" placeholder="90.07">
               <span class="input-group-addon">MHz</span>
             </div>
         </div>
@@ -25,7 +25,7 @@
 
         <div class="col-md-6">
           <label class="radio-inline" v-for="modulation in modulations">
-            <input v-model="radio.modulation_id" type="radio" name="modulation_id" value="{{ modulation.id }}"> {{ modulation.name }}
+            <input v-model="radio.modulation_id" type="radio" value="{{ modulation.id }}"> {{ modulation.name }}
           </label>
         </div>
     </div>
@@ -34,7 +34,7 @@
         <label for="state_id" class="col-md-4 control-label">State</label>
 
         <div class="col-md-6">
-          <select v-model="radio.state_id" name="state_id" class="form-control">
+          <select v-model="radio.state_id" class="form-control">
             <option value="" selected="selected">Seleccione la provincia</option>
             <option v-for="state in states | orderBy 'name'" value="{{ state.id }}">{{ state.name }}</option>
           </select>
@@ -45,7 +45,7 @@
         <label for="city_id" class="col-md-4 control-label">City</label>
 
         <div class="col-md-6">
-          <select v-model="radio.city_id" name="city_id" class="form-control">
+          <select v-model="radio.city_id" class="form-control">
             <option value="" selected="selected">Seleccione la ciudad</option>
             <option v-for="city in cities | orderBy 'name'" value="{{ city.id }}">{{ city.name }}</option>
           </select>
@@ -56,7 +56,7 @@
         <label for="streaming" class="col-md-4 control-label">Streaming</label>
 
         <div class="col-md-6">
-          <input v-model.trim="radio.streaming" type="text" name="streaming" class="form-control" value="" placeholder="http://ejemplo.com:8080/;stream">
+          <input v-model.trim="radio.streaming" type="text" class="form-control" value="" placeholder="http://ejemplo.com:8080/;stream">
         </div>
     </div>
 
