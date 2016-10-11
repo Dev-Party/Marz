@@ -18,13 +18,15 @@ class StatesControllerTest extends TestCase
      */
     public function testGetStateAll()
     {
+        $state = factory('App\State')->create();
+
         $this->get('api/state');
         
         $this->seeStatusCode(200);
         
         $this->seeJson([
-            'id'   => 1,
-            'name' => 'Chaco'
+            'id'   => $state->id,
+            'name' => $state->name
         ]);
     }
 
