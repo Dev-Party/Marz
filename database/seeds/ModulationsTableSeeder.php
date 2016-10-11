@@ -13,8 +13,7 @@ class ModulationsTableSeeder extends Seeder
       {
             DB::table('modulations')->insert([
                   ['name' => 'AM'],
-                  ['name' => 'FM'],
-                  ['name' => 'AM/FM']
+                  ['name' => 'FM']
             ]);
       }
 }

@@ -36,18 +36,18 @@
         <label for="state_id" class="col-md-4 control-label">Provincia</label>
 
         <div class="col-md-6">
-          <select v-validate:state="{ required: true }" v-model="radio.state_id" class="form-control">
+          <select v-validate:state="{ required: true }" v-on:change="getAllcitiesOfOneState(radio.state_id)" v-model="radio.state_id" class="form-control">
             <option value="" selected="selected">Seleccione la provincia</option>
             <option v-for="state in states | orderBy 'name'" value="{{ state.id }}">{{ state.name }}</option>
           </select>
         </div>
     </div>
 
-    <div class="form-group" v-if="radio.state_id > 0">
+    <div class="form-group">
         <label for="city_id" class="col-md-4 control-label">Ciudad</label>
 
         <div class="col-md-6">
-          <select v-validate:city="{ required: true }" v-model="radio.city_id" class="form-control">
+          <select v-validate:city="{ required: true }" v-model="radio.city_id" class="form-control" :disabled="!radio.state_id">
             <option value="" selected="selected">Seleccione la ciudad</option>
             <option v-for="city in cities | orderBy 'name'" value="{{ city.id }}">{{ city.name }}</option>
           </select>
@@ -68,7 +68,7 @@
     </div>
     <div class="form-group">
         <div class="col-md-6 col-md-offset-4">
-            <button type="button" v-on:click.prevent="saveRadio()" class="btn btn-primary" :disabled="!$validation.valid">Create</button>
+            <button type="button" v-on:click.prevent="saveRadio()" class="btn btn-primary" :disabled="!$validation.valid">Crear</button>
         </div>
     </div>
 </form>
@@ -83,14 +83,8 @@ export default {
       modulations: [],
       states: [],
       cities: [],
-      radio: {}
-    }
-  },
-
-  watch: {
-    radio: function(radio) {
-      if (radio.state_id > 0) {
-        this.getAllcitiesOfOneState(radio.state_id)
+      radio: {
+        state_id: 0
       }
     }
   },
@@ -116,11 +110,13 @@ export default {
       });
     },
     getAllcitiesOfOneState: function (state) {
-      this.$http.get('api/state/' + this.radio.state_id +'/cities').then(function (response) {
-        this.cities = response.data;
-      }, function (response) {
-        console.log(response.status);
-      });
+      if (state > 0) {
+        this.$http.get('api/state/' + state +'/cities').then(function (response) {
+          this.cities = response.data;
+        }, function (response) {
+          console.log(response.status);
+        });
+      }
     },
     saveRadio: function () {
       this.$http.post('api/radio', this.radio).then(function (response) {
