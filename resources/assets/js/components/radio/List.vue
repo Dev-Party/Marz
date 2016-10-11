@@ -14,7 +14,7 @@
 <div class="panel panel-default" v-for="radio in radios | orderBy field | filterBy city in 'city_id'">
   <div class="panel-body">
     <div class="media">
-      <div class="media-left">
+      <div v-if="radio.streaming" class="media-left">
         <a href="#" v-on:click="playRadio(radio.name, $index, $event)"><img id="{{ $index }}" class="media-object" src="http://marz.herokuapp.com/img/play.png"></a>
         <audio id="player-{{ $index }}" preload="none">
           <source :src="radio.streaming + '/;stream/1'" type="audio/mpeg">
