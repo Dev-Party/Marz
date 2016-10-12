@@ -56,7 +56,8 @@ class RadiosController extends Controller
     {
         $q = $request->input('q');
         $count = $request->input('count');
-
+        $q = ucwords(strtolower($q));
+        
         $radio = Radio::where('radios.name', 'like', '%' . $q . '%')
                 ->state()
                 ->city()
