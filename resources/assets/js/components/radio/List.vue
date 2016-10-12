@@ -16,8 +16,11 @@
         </audio>
       </div>
       <div class="media-body">
-        <h4 class="media-heading"><small>{{ radio.modulation }}</small> {{ radio.name }} {{ radio.frequency }} Mhz.</h4>
+        <h4 class="media-heading">{{ radio.name }} <small>{{ radio.frequency }} MHz</small></h4>
         <span>{{ radio.city }}, {{ radio.state }}</span>
+      </div>
+      <div class="media-right">
+        <p class="text-muted">{{ radio.modulation }}</p>
       </div>
     </div>
   </div>
