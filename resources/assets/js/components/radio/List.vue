@@ -1,7 +1,7 @@
 <template>
 <div class="row">
   <div class="col-xs-7">
-    <input type="text" v-model.trim="search" v-on:keyup="searchRadio($event)" class="form-control" placeholder="Buscar">
+    <input type="text" v-model.trim="search" v-on:keyup.prevent="searchRadio" class="form-control" placeholder="Buscar">
   </div>
   <div class="col-xs-5">
     <select v-model="city" class="form-control">
@@ -15,9 +15,9 @@
   <div class="panel-body">
     <div class="media">
       <div v-if="radio.streaming" class="media-left">
-        <a href="#" v-on:click="playRadio(radio.name, $index, $event)"><img id="{{ $index }}" class="media-object" src="http://marz.herokuapp.com/img/play.png"></a>
-        <audio id="player-{{ $index }}" preload="none">
-          <source :src="radio.streaming + '/;stream/1'" type="audio/mpeg">
+        <a href="#" v-on:click.prevent="listen(radio.id)"><img id="{{ radio.id }}" class="media-object" src="http://marz.herokuapp.com/img/play.png"></a>
+        <audio id="player-{{ radio.id }}" preload="none">
+          <source :src="radio.streaming + '/;'" type="audio/mpeg">
           <source :src="radio.streaming" type="audio/ogg">
           <source :src="radio.streaming" type="audio/wav">
         </audio>
@@ -38,6 +38,7 @@ export default {
       search: '',
       city: '',
       field: 'name',
+      playing: 0,
       cities: [],
       radios: []
     }
@@ -56,31 +57,34 @@ export default {
         console.log(response.status);
       });
     },
-    searchRadio: function (event) {
-      if (event) event.preventDefault()
-
+    searchRadio: function () {
       this.$http.get('api/radio/search?q=' + this.search).then(function (response) {
         this.radios = response.data;
       }, function (response) {
         console.log(response.status);
       });
     },
-    playRadio: function (name, index, event) {
-      if (event) event.preventDefault()
-
-      var player = document.getElementById("player-" + index);
-
-      if (player.paused) {
-        player.play(); // Reproducir audio
-        player.onplaying = function () {
-          document.title = name;
-          document.getElementById(index).src = "http://marz.herokuapp.com/img/pause.png";
-        }
+    listen: function (radioId) {
+      if (radioId != this.playing) {
+        if (this.playing) this.pauseRadio(this.playing);
+        this.playRadio(radioId);
+        this.playing = radioId;
       } else {
-        player.pause(); // Detener la reproducción
-        document.title = "Marz";
-        document.getElementById(index).src = "http://marz.herokuapp.com/img/play.png";
+        this.pauseRadio(radioId);
+        this.playing = 0;
       }
+    },
+    playRadio: function (index) {
+      var player = document.getElementById("player-" + index);
+      player.play(); // Reproducir audio
+      player.onplaying = function () {
+        document.getElementById(index).src = "http://marz.herokuapp.com/img/pause.png";
+      }
+    },
+    pauseRadio: function (index) {
+      var player = document.getElementById("player-" + index);
+      player.pause(); // Detener la reproducción
+      document.getElementById(index).src = "http://marz.herokuapp.com/img/play.png";
     },
     getAllcitiesOfOneState: function (state) {
       this.$http.get('api/state/' + state +'/cities').then(function (response) {
@@ -88,10 +92,6 @@ export default {
       }, function (response) {
         console.log(response.status);
       });
-    },
-    sortBy: function(sortKey){
-      this.reverse = this.sortKey==sortKey? !this.reverse : false
-      this.sortKey = sortKey
     }
   }
 }
