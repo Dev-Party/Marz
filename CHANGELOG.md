@@ -1,5 +1,3 @@
-# Historial de versiones
-
 ## v1.3.2 (Octubre 12, 2016)
 
 #### :zap: Mejoras
