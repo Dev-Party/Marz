@@ -1,17 +1,11 @@
 <template>
 <div class="row">
-  <div class="col-xs-7">
+  <div class="col-xs-12">
     <input type="text" v-model.trim="search" v-on:keyup.prevent="searchRadio" class="form-control" placeholder="Buscar">
-  </div>
-  <div class="col-xs-5">
-    <select v-model="city" class="form-control">
-      <option value="" selected="selected">Todas las ciudades</option>
-      <option v-for="city in cities | orderBy 'name'" value="{{ city.id }}">{{ city.name }}</option>
-    </select>
   </div>
 </div>
 <hr>
-<div class="panel panel-default" v-for="radio in radios | orderBy field | filterBy city in 'city_id'">
+<div class="panel panel-default" v-for="radio in radios">
   <div class="panel-body">
     <div class="media">
       <div v-if="radio.streaming" class="media-left">
@@ -36,16 +30,12 @@ export default {
   data () {
     return {
       search: '',
-      city: '',
-      field: 'name',
       playing: 0,
-      cities: [],
       radios: []
     }
   },
 
   ready: function () {
-    this.getAllcitiesOfOneState(1);
     this.loadRadios();
   },
 
@@ -85,13 +75,6 @@ export default {
       var player = document.getElementById("player-" + index);
       player.pause(); // Detener la reproducción
       document.getElementById(index).src = "http://marz.herokuapp.com/img/play.png";
-    },
-    getAllcitiesOfOneState: function (state) {
-      this.$http.get('api/state/' + state +'/cities').then(function (response) {
-        this.cities = response.data;
-      }, function (response) {
-        console.log(response.status);
-      });
     }
   }
 }
