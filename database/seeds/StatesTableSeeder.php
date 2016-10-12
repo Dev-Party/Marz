@@ -11,7 +11,15 @@ class StatesTableSeeder extends Seeder
        */
       public function run()
       {
-            $states = ['Chaco'];
+            $states = [
+                  'Chaco',
+                  'Corrientes',
+                  'Entre Rios',
+                  'Formosa',
+                  'Misiones'
+                  //'Santa Fe',
+                  //'Santiago del Estero'
+            ];
 
             for ($i = 0; count($states) > $i; $i++) {
                   DB::table('states')->insert(['name' => $states[$i]]);

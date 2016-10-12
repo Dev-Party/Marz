@@ -58,7 +58,6 @@ class RadiosController extends Controller
         $count = $request->input('count');
 
         $radio = Radio::where('radios.name', 'like', '%' . $q . '%')
-                ->ofActive()
                 ->state()
                 ->city()
                 ->modulation()

@@ -10,8 +10,7 @@ class ModulationsControllerTest extends TestCase
     /** @var array $values Valores para ingresar y comparar la tabla. */
     protected $values = [
         'name' => 'AM',
-        'name' => 'FM',
-        'name' => 'AM/FM'
+        'name' => 'FM'
     ];
 
     /**
