@@ -16,7 +16,7 @@ class IndexControllerTest extends TestCase
     public function testGetHome()
     {
         $this->visit('/')
-             ->see('Marz');
+             ->see('Sintonizando');
     }
 
     /**
