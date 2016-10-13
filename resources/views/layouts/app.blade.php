@@ -42,6 +42,9 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
+                                @if(Entrust::hasRole('admin'))
+                                <li><a href="{{ url('/dashboard') }}">Dashboard</a></li>
+                                @endif
                                 <li>
                                     <a href="{{ url('/logout') }}"
                                         onclick="event.preventDefault();

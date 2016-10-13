@@ -17,6 +17,8 @@ Route::get('/new', 'HomeController@getNew');
 
 Route::post('/new', 'HomeController@postNew');
 
-Route::get('/dashboard', 'Dashboard\IndexController@getHome');
+Route::group(['prefix' => 'dashboard', 'middleware' => ['role:admin']], function() {
+	Route::get('/', 'Dashboard\IndexController@getHome');
+});
 
 Auth::routes();
