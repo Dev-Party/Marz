@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Sintonizando</title>
+    <title>Marz</title>
     <link href="/css/app.css" rel="stylesheet">
-    <script> window.Sintonizando = <?php echo json_encode(['csrfToken' => csrf_token()]); ?> </script>
+    <script> window.Marz = <?php echo json_encode(['csrfToken' => csrf_token()]); ?> </script>
 </head>
 <body>
     <nav class="navbar navbar-default navbar-static-top">
@@ -19,7 +19,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ url('/') }}">Sintonizando</a>
+                <a class="navbar-brand" href="{{ url('/') }}">Marz</a>
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
