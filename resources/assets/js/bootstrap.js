@@ -27,7 +27,7 @@ require('vue-validator');
  */
 
 Vue.http.interceptors.push((request, next) => {
-    request.headers['X-CSRF-TOKEN'] = Sintonizando.csrfToken;
+    request.headers['X-CSRF-TOKEN'] = Marz.csrfToken;
 
     next();
 });
