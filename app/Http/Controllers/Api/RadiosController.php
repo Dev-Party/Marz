@@ -105,6 +105,7 @@ class RadiosController extends Controller
         $radio->modulation_id = $request->modulation_id;
         $radio->name          = $request->name;
         $radio->frequency     = $request->frequency;
+        $radio->email         = $request->email;
         $radio->website       = $request->website;
         $radio->streaming     = $request->streaming;
         $radio->active        = $request->active;

@@ -32,6 +32,7 @@ class RadiosControllerTest extends TestCase
                 'modulation_id' => $radio->modulation_id,
                 'name'          => $radio->name,
                 'frequency'     => $radio->frequency,
+                'email'         => $radio->email,
                 'website'       => $radio->website,
                 'streaming'     => $radio->streaming
             ]);
@@ -51,6 +52,7 @@ class RadiosControllerTest extends TestCase
             'modulation_id' => 1,
             'name'          => 'Mi Radio',
             'frequency'     => 98.05,
+            'email'         => 'ejemplo@email.com',
             'website'       => 'http://ejemplo.com',
             'streaming'     => 'http://192.168.1.1'
         ];
@@ -86,6 +88,7 @@ class RadiosControllerTest extends TestCase
             'modulation_id' => $radio->modulation_id,
             'name'          => $radio->name,
             'frequency'     => $radio->frequency,
+            'email'         => $radio->email,
             'website'       => $radio->website,
             'streaming'     => $radio->streaming
         ]);
@@ -111,6 +114,7 @@ class RadiosControllerTest extends TestCase
             'modulation_id' => $radio->modulation_id,
             'name'          => $radio->name,
             'frequency'     => $radio->frequency,
+            'email'         => $radio->email,
             'website'       => $radio->website,
             'streaming'     => $radio->streaming
         ]);
@@ -129,6 +133,7 @@ class RadiosControllerTest extends TestCase
             'modulation_id' => 1,
             'name'          => 'Nombre Radio 2',
             'frequency'     => 97.5,
+            'email'         => 'ejemplo2@email.com',
             'website'       => 'http://ejemplo2.com',
             'streaming'     => 'http://192.168.1.2',
             'active'        => 1

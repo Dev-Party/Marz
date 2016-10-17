@@ -55,10 +55,18 @@
     </div>
 
     <div class="form-group">
+        <label for="email" class="col-md-4 control-label">Correo</label>
+
+        <div class="col-md-6">
+          <input v-model.trim="radio.email" type="email" class="form-control" value="" placeholder="radio@gmail.com">
+        </div>
+    </div>
+
+    <div class="form-group">
         <label for="website" class="col-md-4 control-label">Sitio web</label>
 
         <div class="col-md-6">
-          <input v-model.trim="radio.website" type="text" class="form-control" value="" placeholder="http://ejemplo.com">
+          <input v-model.trim="radio.website" type="text" class="form-control" value="" placeholder="http://radio.com">
         </div>
     </div>
 
