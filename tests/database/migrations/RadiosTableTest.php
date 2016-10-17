@@ -14,6 +14,7 @@ class RadiosTableTest extends TestCase
         'name',
         'frequency',
         'email',
+        'address',
         'website',
         'streaming',
         'active',
