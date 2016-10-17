@@ -6,7 +6,7 @@
         <label for="name" class="col-md-4 control-label">Nombre</label>
 
         <div class="col-md-6">
-            <input v-validate:name="{ required: true, minlength: 3, maxlength: 50 }" v-model.trim="radio.name" v-on:click="success = false" type="text" class="form-control" value="" placeholder="Radio Marz" autofocus>
+            <input v-validate:name="{ required: true, minlength: 3, maxlength: 50 }" v-model.trim="radio.name" v-on:click="success = false" type="text" class="form-control" value="" autofocus>
             <span v-if="$validation.name.maxlength" class="text-danger">El nombre es largo.</span>
         </div>
     </div>
@@ -16,7 +16,7 @@
 
         <div class="col-md-6">
             <div class="input-group">
-              <input v-validate:frequency="{ required: true }" v-model="radio.frequency" type="text" class="form-control" value="" placeholder="90.07">
+              <input v-validate:frequency="{ required: true }" v-model="radio.frequency" type="text" class="form-control" value="" placeholder="00.00">
               <span class="input-group-addon">MHz</span>
             </div>
         </div>
@@ -55,10 +55,18 @@
     </div>
 
     <div class="form-group">
+        <label for="website" class="col-md-4 control-label">Sitio web</label>
+
+        <div class="col-md-6">
+          <input v-model.trim="radio.website" type="text" class="form-control" value="" placeholder="http://ejemplo.com">
+        </div>
+    </div>
+
+    <div class="form-group">
         <label for="streaming" class="col-md-4 control-label">Streaming</label>
 
         <div class="col-md-6">
-          <input v-model.trim="radio.streaming" type="text" class="form-control" value="" placeholder="http://ejemplo.com:8080/;stream">
+          <input v-model.trim="radio.streaming" type="text" class="form-control" value="" placeholder="http://ejemplo.com:8080">
         </div>
     </div>
     <div v-if="success" class="form-group">

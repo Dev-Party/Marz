@@ -16,6 +16,7 @@ class Radio extends Model
         'modulation_id',
         'name',
         'frequency',
+        'website',
         'streaming',
         'created_at',
         'updated_at'
@@ -32,6 +33,7 @@ class Radio extends Model
         'modulations.name as modulation',
         'radios.name',
         'radios.frequency',
+        'radios.website',
         'radios.streaming',
         'radios.active',
         'radios.created_at',

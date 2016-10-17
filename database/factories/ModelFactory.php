@@ -29,6 +29,7 @@ $factory->define(App\Radio::class, function (Faker\Generator $faker) {
 		'modulation_id' => rand(1, 2),
 		'name'          => $faker->name,
 		'frequency'     => rand(90, 200),
+		'website'       => 'http://' . $faker->safeEmailDomain,
 		'streaming'     => 'http://' . $faker->ipv4,
 		'active'		=> 1
 	];
