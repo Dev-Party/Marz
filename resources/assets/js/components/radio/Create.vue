@@ -12,14 +12,6 @@
     </div>
 
     <div class="form-group">
-        <label for="email" class="col-md-4 control-label">Correo</label>
-
-        <div class="col-md-6">
-          <input v-model.trim="radio.email" type="email" class="form-control" value="" placeholder="radio@gmail.com">
-        </div>
-    </div>
-
-    <div class="form-group">
         <label for="frequency" class="col-md-4 control-label">Frecuencia</label>
 
         <div class="col-md-6">
@@ -75,6 +67,14 @@
 
         <div class="col-md-6">
           <input v-model.trim="radio.website" type="text" class="form-control" value="" placeholder="http://radio.com">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="email" class="col-md-4 control-label">Correo</label>
+
+        <div class="col-md-6">
+          <input v-model.trim="radio.email" type="email" class="form-control" value="" placeholder="contacto@radio.com">
         </div>
     </div>
 
