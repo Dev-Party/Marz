@@ -21,7 +21,7 @@ class AddingColumnWebsiteInTableRadios extends Migration
     {
         if (Schema::hasTable($this->table)) {
             Schema::table($this->table, function (Blueprint $table) {
-                $table->string($this->column);
+                $table->string($this->column)->nullable();
             });
         }
     }
