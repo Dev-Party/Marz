@@ -1,7 +1,7 @@
 <template>
 <div class="row search">
   <div class="col-xs-12">
-    <input type="text" v-model.trim="search" v-on:keyup.prevent="searchRadio" class="form-control" placeholder="Buscar">
+    <input type="search" v-model.trim="search" v-on:keyup.prevent="searchRadio" class="form-control" placeholder="Buscar">
   </div>
 </div>
 <div class="panel panel-default" v-for="radio in radios">

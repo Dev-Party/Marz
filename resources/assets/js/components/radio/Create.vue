@@ -66,7 +66,7 @@
         <label for="website" class="col-md-4 control-label">Sitio web</label>
 
         <div class="col-md-6">
-          <input v-model.trim="radio.website" type="text" class="form-control" value="" placeholder="http://radio.com">
+          <input v-model.trim="radio.website" type="url" class="form-control" value="" placeholder="http://radio.com">
         </div>
     </div>
 
@@ -79,10 +79,18 @@
     </div>
 
     <div class="form-group">
+        <label for="phone" class="col-md-4 control-label">Teléfono</label>
+
+        <div class="col-md-6">
+          <input v-model.trim="radio.phone" type="text" class="form-control" value="" placeholder="(000) 000-0000">
+        </div>
+    </div>
+
+    <div class="form-group">
         <label for="streaming" class="col-md-4 control-label">Streaming</label>
 
         <div class="col-md-6">
-          <input v-model.trim="radio.streaming" type="text" class="form-control" value="" placeholder="http://ejemplo.com:8080">
+          <input v-model.trim="radio.streaming" type="url" class="form-control" value="" placeholder="http://ejemplo.com:8080">
         </div>
     </div>
     <div v-if="success" class="form-group">
