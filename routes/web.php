@@ -13,11 +13,11 @@
 
 Route::get('/', 'HomeController@index');
 
-Route::get('/new', 'HomeController@getNew');
+Route::get('/new', 'RadioController@create');
 
-Route::post('/new', 'HomeController@postNew');
+Route::get('/radio/{id}/edit', 'RadioController@edit');
 
-Route::group(['prefix' => 'dashboard', 'middleware' => ['role:admin']], function() {
+Route::group(['prefix' => 'dashboard'], function() {
 	Route::get('/', 'Dashboard\IndexController@getHome');
 });
 

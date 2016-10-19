@@ -1,4 +1,5 @@
 <template>
+<div>
 <div class="row search">
   <div class="col-xs-12">
     <input type="search" v-model.trim="search" v-on:keyup.prevent="searchRadio" class="form-control" placeholder="Buscar">
@@ -24,6 +25,7 @@
       </div>
     </div>
   </div>
+</div>
 </div>
 </template>
 

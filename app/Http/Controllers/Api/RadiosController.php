@@ -78,13 +78,7 @@ class RadiosController extends Controller
      */
     public function show($id)
     {
-        $radio = Radio::find($id)
-                ->ofActive()
-                ->state()
-                ->city()
-                ->modulation()
-                ->ofSelect()
-                ->get();
+        $radio = Radio::find($id);
                 
         return response()->json($radio);
     }
