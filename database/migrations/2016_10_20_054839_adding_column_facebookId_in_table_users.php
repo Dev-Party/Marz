@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddingCollumnFacebookIdInTableUsers extends Migration
+class AddingColumnFacebookIdInTableUsers extends Migration
 {
     /** @var string $table Nombre de la tabla. */
     protected $table = 'users';

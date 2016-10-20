@@ -23,5 +23,5 @@ Route::group(['prefix' => 'dashboard'], function() {
 
 Auth::routes();
 
-Route::get('auth/facebook', 'Auth\AuthController@redirectToProvider');
-Route::get('auth/facebook/callback', 'Auth\AuthController@handleProviderCallback');
+Route::get('auth/facebook', 'Auth\SocialController@redirectToProvider');
+Route::get('auth/facebook/callback', 'Auth\SocialController@handleProviderCallback');

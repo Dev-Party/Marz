@@ -53,7 +53,9 @@
                                 <button type="submit" class="btn btn-primary">
                                     Login
                                 </button>
-
+                                <div class="text-right">
+                                    <a href="{{ url('/auth/facebook') }}">Facebook</a>
+                                </div>
                                 <a class="btn btn-link" href="{{ url('/password/reset') }}">
                                     Forgot Your Password?
                                 </a>
