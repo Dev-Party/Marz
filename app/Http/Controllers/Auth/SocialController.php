@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 use App\User;
 use App\Http\Requests;
@@ -29,7 +30,7 @@ class SocialController extends Controller
 
         auth()->login($authUser, true);
 
-        return redirect()->to('/');
+        return redirect()->intended('/');
     }
     
     private function findOrCreateUser($facebookUser)
