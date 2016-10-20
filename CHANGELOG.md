@@ -1,3 +1,13 @@
+## v1.4.1 (Octubre 20, 2016)
+
+#### :zap: Mejoras
+* Roles y permisos ([#32](https://github.com/soyFelixBarros/Marz/issues/32))
+* Nuevos campos en la tabla radio ([#34](https://github.com/soyFelixBarros/Marz/issues/34))
+* Formulario para editar la información de una radio ([#33](https://github.com/soyFelixBarros/Marz/issues/33))
+
+#### :bug: Correcciones
+* Buscador camelcase ([#31](https://github.com/soyFelixBarros/Marz/issues/31))
+
 ## v1.3.2 (Octubre 12, 2016)
 
 #### :zap: Mejoras
