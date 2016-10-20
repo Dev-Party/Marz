@@ -21,7 +21,7 @@ class AddingColumnFacebookIdInTableUsers extends Migration
     {
         if (Schema::hasTable($this->table)) {
             Schema::table($this->table, function (Blueprint $table) {
-                $table->string($this->column)->unique();
+                $table->string($this->column)->nullable()->unique();
             });
         }
     }
