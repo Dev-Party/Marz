@@ -13,7 +13,8 @@ class UsersTableTest extends TestCase
         'password',
         'remember_token',
         'created_at',
-        'updated_at'
+        'updated_at',
+        'facebook_id'
     ];
 
     /**

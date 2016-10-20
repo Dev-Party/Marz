@@ -71,6 +71,9 @@
                                 <button type="submit" class="btn btn-primary">
                                     Register
                                 </button>
+                                <div class="text-right">
+                                    <a href="{{ url('/auth/facebook') }}">Facebook</a>
+                                </div>
                             </div>
                         </div>
                     </form>
