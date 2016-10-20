@@ -13,10 +13,12 @@
 
 Route::get('/', 'HomeController@index');
 
-Route::get('/new', 'HomeController@getNew');
+Route::get('/new', 'RadioController@create');
 
-Route::post('/new', 'HomeController@postNew');
+Route::get('/radio/{id}/edit', 'RadioController@edit');
 
-Route::get('/dashboard', 'Dashboard\IndexController@getHome');
+Route::group(['prefix' => 'dashboard'], function() {
+	Route::get('/', 'Dashboard\IndexController@getHome');
+});
 
 Auth::routes();

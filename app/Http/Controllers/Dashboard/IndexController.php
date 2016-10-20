@@ -24,8 +24,7 @@ class IndexController extends Controller
      */
     public function getHome()
     {
-        $radios = Radio::all();
-        return view('dashboard.home', ['radios' => $radios]);
+        return view('dashboard.index');
     }
 
 }

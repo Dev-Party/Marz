@@ -56,7 +56,8 @@ class RadiosController extends Controller
     {
         $q = $request->input('q');
         $count = $request->input('count');
-
+        $q = ucwords(strtolower($q));
+        
         $radio = Radio::where('radios.name', 'like', '%' . $q . '%')
                 ->state()
                 ->city()
@@ -77,13 +78,7 @@ class RadiosController extends Controller
      */
     public function show($id)
     {
-        $radio = Radio::find($id)
-                ->ofActive()
-                ->state()
-                ->city()
-                ->modulation()
-                ->ofSelect()
-                ->get();
+        $radio = Radio::find($id);
                 
         return response()->json($radio);
     }
@@ -104,6 +99,10 @@ class RadiosController extends Controller
         $radio->modulation_id = $request->modulation_id;
         $radio->name          = $request->name;
         $radio->frequency     = $request->frequency;
+        $radio->email         = $request->email;
+        $radio->phone         = $request->phone;
+        $radio->address       = $request->address;
+        $radio->website       = $request->website;
         $radio->streaming     = $request->streaming;
         $radio->active        = $request->active;
         $radio->save();

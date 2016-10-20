@@ -1,6 +1,7 @@
-## Marz [![Build Status](https://travis-ci.org/soyFelixBarros/Marz.svg?branch=master)](https://travis-ci.org/soyFelixBarros/Marz)
-
-> Proyecto de API pública para la gestión de radios en Internet.
+## Marz
+[![Build Status](https://travis-ci.org/soyFelixBarros/Marz.svg?branch=master)](https://travis-ci.org/soyFelixBarros/Marz)
+[![Laravel 5.3](https://img.shields.io/badge/Laravel-5.3-orange.svg?style=flat)](http://laravel.com)
+[![License](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](https://opensource.org/licenses/MIT)
 
 ## Instalación
 1) Clonar el repo en tu equipo:
