@@ -15,7 +15,7 @@
         <label for="frequency" class="col-md-4 control-label">Frecuencia</label>
         <div class="col-md-6">
             <div class="input-group">
-              <input v-validate:radio.frequency="{ required: true }" v-model="radio.frequency" type="text" class="form-control" :value="frequency" placeholder="00.00">
+              <input v-validate:frequency="{ required: true }" v-model="radio.frequency" type="text" class="form-control" :value="frequency" placeholder="00.00">
               <span class="input-group-addon">MHz</span>
             </div>
         </div>
@@ -25,7 +25,7 @@
         <label for="modulation_id" class="col-md-4 control-label">Modulación</label>
         <div class="col-md-6">
           <label class="radio-inline" v-for="modulation in modulations">
-            <input v-validate:radio.modulation_id="{ required: true }" v-model="radio.modulation_id" type="radio" value="{{ modulation.id }}"> {{ modulation.name }}
+            <input v-validate:modulation="{ required: true }" v-model="radio.modulation_id" type="radio" value="{{ modulation.id }}"> {{ modulation.name }}
           </label>
         </div>
     </div>
@@ -33,7 +33,7 @@
     <div class="form-group">
         <label for="state_id" class="col-md-4 control-label">Provincia</label>
         <div class="col-md-6">
-          <select v-validate:radio.state_id="{ required: true }" v-model="radio.state_id" v-on:change="getAllcitiesOfOneState(radio.state_id)" class="form-control">
+          <select v-validate:state="{ required: true }" v-model="radio.state_id" v-on:change="getAllcitiesOfOneState(radio.state_id)" class="form-control">
             <option value="0" selected="selected">Seleccione la provincia</option>
             <option v-for="state in states" value="{{ state.id }}">{{ state.name }}</option>
           </select>
@@ -43,7 +43,7 @@
     <div class="form-group">
         <label for="city_id" class="col-md-4 control-label">Ciudad</label>
         <div class="col-md-6">
-          <select v-validate:radio.city_id="{ required: true }" v-model="radio.city_id" class="form-control" :disabled="radio.state_id == 0">
+          <select v-validate:city="{ required: true }" v-model="radio.city_id" class="form-control" :disabled="radio.state_id == 0">
             <option value="0" selected="selected">Seleccione la ciudad</option>
             <option v-for="city in cities" value="{{ city.id }}">{{ city.name }}</option>
           </select>
@@ -95,7 +95,7 @@
 
     <div class="form-group">
         <div class="col-md-8 col-md-offset-4">
-            <button type="button" v-on:click.prevent="saveRadio()" class="btn btn-primary" :disabled="!$validation.valid">Guardar</button>
+            <button type="button" v-on:click.prevent="saveRadio()" class="btn btn-primary" :disabled="$validation.invalid">Guardar</button>
         </div>
     </div>
 </form>
@@ -124,7 +124,6 @@ export default {
 
     if (this.id > 0) {
       this.getRadio();
-      this.valid = true;
     }
   },
 
