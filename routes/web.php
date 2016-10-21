@@ -18,7 +18,7 @@ Route::get('/new', 'RadioController@create');
 Route::get('/radio/{id}/edit', 'RadioController@edit');
 
 Route::group(['prefix' => 'dashboard'], function() {
-	Route::get('/', 'Dashboard\IndexController@getHome');
+	Route::get('/radios', 'Dashboard\IndexController@getRadios');
 });
 
 Auth::routes();

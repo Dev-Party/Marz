@@ -5,9 +5,8 @@
     <table class="table">
       <thead>
         <tr>
-          <th>#</th>
           <th>Nombre</th>
-          <th>Frecuencia</th>
+          <th>MHz</th>
           <th>Modulación</th>
           <th>Provincia</th>
           <th>Ciudad</th>
@@ -16,9 +15,8 @@
       </thead>
       <tbody>
         <tr v-for="radio in radios">
-          <th scope="row">{{ radio.id }}</th>
           <td>{{ radio.name }}</td>
-          <td>{{ radio.frequency }} MHz</td>
+          <td>{{ radio.frequency }}</td>
           <td>{{ radio.modulation }}</td>
           <td>{{ radio.state }}</td>
           <td>{{ radio.city }}</td>
