@@ -9,7 +9,7 @@
   <div class="panel-body">
     <div class="media">
       <div v-if="radio.streaming" class="media-left">
-        <a href="#" v-on:click.prevent="listen(radio.id)"><img id="{{ radio.id }}" class="media-object" src="http://marz.herokuapp.com/img/play.png"></a>
+        <a href="#" v-on:click.prevent="listen(radio.id)"><img id="{{ radio.id }}" class="media-object" src="/img/play.png"></a>
         <audio id="player-{{ radio.id }}" preload="none">
           <source :src="radio.streaming + '/;'" type="audio/mpeg">
           <source :src="radio.streaming" type="audio/ogg">
@@ -72,13 +72,13 @@ export default {
       var player = document.getElementById("player-" + index);
       player.play(); // Reproducir audio
       player.onplaying = function () {
-        document.getElementById(index).src = "http://marz.herokuapp.com/img/pause.png";
+        document.getElementById(index).src = "/img/pause.png";
       }
     },
     pauseRadio: function (index) {
       var player = document.getElementById("player-" + index);
       player.pause(); // Detener la reproducción
-      document.getElementById(index).src = "http://marz.herokuapp.com/img/play.png";
+      document.getElementById(index).src = "/img/play.png";
     }
   }
 }
