@@ -11,7 +11,7 @@
                         {{ csrf_field() }}
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <a href="{{ url('/auth/facebook') }}" class="btn btn-block btn-social btn-facebook">Registrarte usando Facebook</a>
+                                <a href="{{ url('/auth/facebook') }}" class="btn btn-block btn-social btn-facebook"><span class="fa fa-facebook"></span> Registrarte usando Facebook</a>
                             </div>
                         </div>
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
