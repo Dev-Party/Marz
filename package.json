@@ -17,6 +17,7 @@
     "vue-resource": "^0.9.3"
   },
   "dependencies": {
+    "vue-infinite-loading": "^1.1.2",
     "vue-resource": "^0.9.3",
     "vue-validator": "^2.1.7"
   }

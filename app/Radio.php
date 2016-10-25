@@ -68,7 +68,7 @@ class Radio extends Model
      */
     public function scopeState($query)
     {
-        return $query->join('states', 'state_id', '=', 'states.id');
+        return $query->join('states', 'radios.state_id', '=', 'states.id');
     }
 
     /**
@@ -78,7 +78,7 @@ class Radio extends Model
      */
     public function scopeCity($query)
     {
-        return $query->join('cities', 'city_id', '=', 'cities.id');
+        return $query->join('cities', 'radios.city_id', '=', 'cities.id');
     }
 
     /**
@@ -88,7 +88,7 @@ class Radio extends Model
      */
     public function scopeModulation($query)
     {
-        return $query->join('modulations', 'modulation_id', '=', 'modulations.id');
+        return $query->join('modulations', 'radios.modulation_id', '=', 'modulations.id');
     }
 
     /**
