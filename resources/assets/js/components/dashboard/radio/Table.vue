@@ -43,8 +43,9 @@ export default {
 
   methods: {
     loadRadios: function () {
+      console.log('datos')
       this.$http.get('/api/radio').then(function (response) {
-        this.radios = response.data;
+        this.radios = response.data.data;
       }, function (response) {
         console.log(response.status);
       });
