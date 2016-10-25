@@ -18,7 +18,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ url('/') }}">Marz</a>
+                <a class="navbar-brand" href="{{ url('/') }}"><i class="fa fa-microphone" aria-hidden="true"></i> MARZ</a>
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
