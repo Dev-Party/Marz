@@ -37,6 +37,7 @@ export default {
   data () {
     return {
       search: '',
+      per_page: 0,
       playing: 0,
       radios: []
     }
@@ -44,11 +45,13 @@ export default {
 
   methods: {
     onInfinite() {
+      console.log()
       this.$http.get('/api/radio', {
         params: {
-          page: this.radios.length / 15 + 1,
+          page: this.radios.length / this.per_page + 1,
         },
       }).then((res) => {
+        this.per_page = res.data.per_page;
         if (res.data.data.length) {
           this.radios = this.radios.concat(res.data.data);
           this.$broadcast('$InfiniteLoading:loaded');
