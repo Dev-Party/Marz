@@ -17,7 +17,7 @@
           </audio>
         </div>
         <div class="media-body">
-          <h4 class="media-heading">{{ radio.name }} <small>{{ radio.frequency }} MHz</small></h4>
+          <h4 class="media-heading"> {{radio.name}} <small>{{radio.frequency}} MHz</small></h4>
           <span>{{ radio.city }}, {{ radio.state }}</span>
         </div>
         <div class="media-right">
@@ -26,7 +26,9 @@
       </div>
     </div>
   </div>
-  <infinite-loading :on-infinite="onInfinite"></infinite-loading>
+  <infinite-loading :on-infinite="onInfinite" spinner="spiral">
+    <span slot="no-more">...</span>
+  </infinite-loading>
 </div>
 </template>
 
@@ -45,7 +47,6 @@ export default {
 
   methods: {
     onInfinite() {
-      console.log()
       this.$http.get('/api/radio', {
         params: {
           page: this.radios.length / this.per_page + 1,
