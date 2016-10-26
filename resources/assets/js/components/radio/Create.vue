@@ -95,7 +95,7 @@
 
     <div class="form-group">
         <div class="col-md-8 col-md-offset-4">
-            <button type="button" v-on:click.prevent="saveRadio()" class="btn btn-primary" :disabled="$validation.invalid">Guardar</button>
+            <button type="button" v-on:click.prevent="saveRadio()" class="btn btn-success" :disabled="$validation.invalid">Guardar</button>
         </div>
     </div>
 </form>
