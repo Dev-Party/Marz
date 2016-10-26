@@ -1,6 +1,7 @@
+$icon-font-path: '../fonts';
 
 // Body
-$body-bg: #f5f8fa;
+$body-bg: #fff;
 
 // Borders
 $laravel-border-color: darken($body-bg, 10%);
@@ -17,11 +18,11 @@ $brand-warning: #cbb956;
 $brand-danger:  #bf5329;
 
 // Typography
-$font-family-sans-serif: "Arimo", sans-serif;
+$font-family-sans-serif: 'Roboto', sans-serif;
 $font-family-cursive: 'Oswald', sans-serif;
-$font-size-base: 14px;
-$line-height-base: 1.6;
-$text-color: #444;
+$font-size-base: 15px;
+$line-height-base: 1.5;
+$text-color: #555;
 
 // Navbar
 $navbar-default-bg: #fff;

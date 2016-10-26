@@ -15,7 +15,7 @@
                 <div class="panel panel-default bg-info">
                     <div class="panel-body">
                         <h4 class="text-primary"><i class="fa fa-info-circle" aria-hidden="true"></i> Info</h4>
-                        <p>Una vez guardados los datos de la radio, la misma quedará pendiente de ser verificada por un administrador.</p>
+                        <p class="text-muted">Una vez guardados los datos de la radio, la misma quedará pendiente de ser verificada por un administrador.</p>
                     </div>
                 </div>
             </div>

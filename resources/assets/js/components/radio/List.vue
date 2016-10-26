@@ -1,10 +1,5 @@
 <template>
 <div>
-<div class="row search">
-  <div class="col-xs-12">
-    <input type="search" v-model.trim="search" v-on:keyup.prevent="searchRadio" class="form-control" placeholder="Buscar">
-  </div>
-</div>
   <div class="panel panel-default" v-for="radio in radios">
     <div class="panel-body">
       <div class="media">
@@ -100,8 +95,3 @@ export default {
   }
 }
 </script>
-<style>
-.search {
-  margin-bottom: 20px;
-}
-</style>

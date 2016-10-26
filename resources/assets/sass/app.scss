@@ -1,5 +1,5 @@
 // Fonts
-@import url(https://fonts.googleapis.com/css?family=Arimo:400,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,700);
 @import url(https://fonts.googleapis.com/css?family=Oswald);
 
 // Variables
@@ -9,7 +9,6 @@
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
 // Font Awesome
-$icon-font-path: '../fonts';
 @import "node_modules/font-awesome/scss/font-awesome";
 
 @import "header";
