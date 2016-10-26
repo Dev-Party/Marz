@@ -27,7 +27,7 @@ class IndexControllerTest extends TestCase
     public function testGetNew()
     {
         $this->visit('/new')
-             ->see('Agregar una nueva radio. Gratis!');
+             ->see('Agregar una radio');
              
     }
 }
