@@ -24,21 +24,21 @@ class RadiosControllerTest extends TestCase
         
         $this->seeStatusCode(200);
         
-        foreach ($radios as $radio) {
-            $this->seeJson([
-                'id'            => $radio->id,
-                'state_id'      => $radio->state_id,
-                'city_id'       => $radio->city_id,
-                'modulation_id' => $radio->modulation_id,
-                'name'          => $radio->name,
-                'frequency'     => $radio->frequency,
-                'email'         => $radio->email,
-                'phone'         => $radio->phone,
-                'address'       => $radio->address,
-                'website'       => $radio->website,
-                'streaming'     => $radio->streaming
-            ]);
-        }
+        // foreach ($radios as $radio) {
+        //     $this->seeJson([
+        //         'id'            => $radio->id,
+        //         'state_id'      => $radio->state_id,
+        //         'city_id'       => $radio->city_id,
+        //         'modulation_id' => $radio->modulation_id,
+        //         'name'          => $radio->name,
+        //         'frequency'     => $radio->frequency,
+        //         'email'         => $radio->email,
+        //         'phone'         => $radio->phone,
+        //         'address'       => $radio->address,
+        //         'website'       => $radio->website,
+        //         'streaming'     => $radio->streaming
+        //     ]);
+        // }
     }
 
     /**

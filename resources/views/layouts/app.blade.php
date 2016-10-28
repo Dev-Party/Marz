@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Sintoniza</title>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Marz</title>
     <link href="/css/app.css" rel="stylesheet">
-    <script> window.Marz = <?php echo json_encode(['csrfToken' => csrf_token()]); ?> </script>
+    <script> window.Sintoniza = <?php echo json_encode(['csrfToken' => csrf_token()]); ?> </script>
 </head>
 <body>
     <nav class="navbar navbar-default navbar-static-top">
@@ -19,7 +19,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ url('/') }}">Marz</a>
+                <a class="navbar-brand" href="{{ url('/') }}">SINT<i class="fa fa-microphone" aria-hidden="true"></i>NIZA</a>
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -34,12 +34,12 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/dashboard') }}">Dashboard</a></li>
+                                <li><a href="{{ url('/dashboard/radios') }}">Radios</a></li>
                                 <li>
                                     <a href="{{ url('/logout') }}"
                                         onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
-                                        Logout
+                                        Cerrar sesión
                                     </a>
 
                                     <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">

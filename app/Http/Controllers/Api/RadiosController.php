@@ -19,15 +19,15 @@ class RadiosController extends Controller
      */
     public function all(Request $request)
     {
-        $count = $request->input('count');
+        // $page = $request->input('page');
+        // if(empty($page)) $page = 10;
 
         $radios = Radio::state()
                 ->city()
                 ->modulation()
                 ->ofSelect()
-                ->orderBy('name', 'desc')
-                ->take($count)
-                ->get();
+                ->orderBy('id', 'asc')
+                ->paginate();
 
         return response()->json($radios);
     }

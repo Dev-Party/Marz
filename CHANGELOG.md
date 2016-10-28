@@ -1,3 +1,13 @@
+## v1.5.1 (Octubre 27, 2016)
+
+#### :zap: Mejoras
+* Infinite scroll ([#28](https://github.com/soyFelixBarros/Marz/issues/28))
+* Ingresar y registrarse por Facebook ([#22](https://github.com/soyFelixBarros/Marz/issues/22))
+* Font Awesome ([#40](https://github.com/soyFelixBarros/Marz/issues/40))
+
+#### :bug: Correcciones
+* Select de la provincia y ciudades ([#39](https://github.com/soyFelixBarros/Marz/issues/39))
+
 ## v1.4.1 (Octubre 20, 2016)
 
 #### :zap: Mejoras

@@ -1,8 +1,16 @@
 .navbar-default {
+	background-clip: padding-box;
+    border-bottom: 1px solid rgba(0,0,0,0.075);
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+
 	.navbar-brand {
 		color: #222;
 		font-family: $font-family-cursive;
-		font-size: 35px;
+		font-size: 26px;
+	}
+	.navbar-nav > li > a {
+		padding-top: 15px;
+    	font-size: 17px;
 	}
 	.navbar-nav > li > a.new {
     	color: #88b14b;

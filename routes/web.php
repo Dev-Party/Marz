@@ -18,7 +18,10 @@ Route::get('/new', 'RadioController@create');
 Route::get('/radio/{id}/edit', 'RadioController@edit');
 
 Route::group(['prefix' => 'dashboard'], function() {
-	Route::get('/', 'Dashboard\IndexController@getHome');
+	Route::get('/radios', 'Dashboard\IndexController@getRadios');
 });
 
 Auth::routes();
+
+Route::get('auth/facebook', 'Auth\SocialController@redirectToProvider');
+Route::get('auth/facebook/callback', 'Auth\SocialController@handleProviderCallback');

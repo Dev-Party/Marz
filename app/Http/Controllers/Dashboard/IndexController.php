@@ -18,13 +18,10 @@ class IndexController extends Controller
     {
         $this->middleware('auth');
     }
-
-    /**
-     * Metodo para manejar la página principal del Dashboard.
-     */
-    public function getHome()
+    
+    public function getRadios()
     {
-        return view('dashboard.index');
+        return view('dashboard.radios');
     }
 
 }
