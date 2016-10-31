@@ -17,9 +17,7 @@
 			            		Si utilizas el programa Tapin Radio para escuchar, puedes agregar todas nuestras radios a tus favoritos.
 			            	</div><!-- .media-body -->
 			            	<div class="media-right media-middle">
-			            		<a class="btn btn-default" href="{{ url('export/chaco.xml') }}" role="button">
-			            			<i class="fa fa-file-code-o" aria-hidden="true"></i> Descargar
-			            		</a>
+			            		<export-button></export-button>
 			            	</div>
 			            </div>
             		</div>
