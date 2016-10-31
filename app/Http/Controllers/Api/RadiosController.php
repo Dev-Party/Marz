@@ -22,7 +22,8 @@ class RadiosController extends Controller
         // $page = $request->input('page');
         // if(empty($page)) $page = 10;
 
-        $radios = Radio::state()
+        $radios = Radio::ofStreaming()
+                ->state()
                 ->city()
                 ->modulation()
                 ->ofSelect()

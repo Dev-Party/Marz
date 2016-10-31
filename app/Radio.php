@@ -62,6 +62,17 @@ class Radio extends Model
     }
 
     /**
+     * Scope para incluir las radios que tiene streaming.
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeOfStreaming($query, $streaming = '')
+    {
+        return $query->where('radios.streaming', '!=', $streaming);
+    }
+
+
+    /**
      * Scope para obtener la provincia de una radio.
      *
      * @return \Illuminate\Database\Eloquent\Builder

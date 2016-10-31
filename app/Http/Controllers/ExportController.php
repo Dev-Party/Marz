@@ -23,7 +23,8 @@ class ExportController extends Controller
      */
     public function format($format)
     {
-        $radios = Radio::state()
+        $radios = Radio::ofStreaming()
+                ->state()
                 ->city()
                 ->modulation()
                 ->ofSelect()
