@@ -42,11 +42,12 @@ export default {
 
   methods: {
     onInfinite() {
-      this.$http.get('/api/radio', {
+      let options = {
         params: {
-          page: this.radios.length / this.per_page + 1,
-        },
-      }).then((res) => {
+          page: this.radios.length / this.per_page + 1
+        }
+      };
+      this.$http.get('/api/radio', options).then((res) => {
         this.per_page = res.data.per_page;
         if (res.data.data.length) {
           this.radios = this.radios.concat(res.data.data);

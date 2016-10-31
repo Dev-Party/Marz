@@ -11,9 +11,14 @@ Route::group(['prefix' => 'export'], function () {
 	Route::get('/chaco{format}', 'ExportController@format');
 });
 
-Route::group(['prefix' => 'dashboard'], function () {
-	Route::get('/radios', 'Dashboard\IndexController@getRadios');
-});
+Route::group([
+		'prefix' => 'dashboard',
+		'middleware' => ['auth']
+	],
+	function () {
+		Route::get('/radios', 'Dashboard\IndexController@getRadios');
+	}
+);
 
 Auth::routes();
 

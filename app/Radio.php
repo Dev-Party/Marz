@@ -58,7 +58,9 @@ class Radio extends Model
      */
     public function scopeOfActive($query, $active = 1)
     {
-        return $query->where('radios.active', $active);
+        if ($active != 'all') {
+            return $query->where('radios.active', $active);
+        }
     }
 
     /**
@@ -68,7 +70,9 @@ class Radio extends Model
      */
     public function scopeOfStreaming($query, $streaming = '')
     {
-        return $query->where('radios.streaming', '!=', $streaming);
+        if ($streaming != 'all') {
+            return $query->where('radios.streaming', '!=', $streaming);
+        }
     }
 
 
