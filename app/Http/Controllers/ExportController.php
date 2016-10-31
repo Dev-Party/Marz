@@ -37,7 +37,7 @@ class ExportController extends Controller
         {
             return response()
                    ->view('export.tapinradio', ['radios' => $radios])
-                   ->header('Content-Type', 'application/xml')
+                   // ->header('Content-Type', 'application/xml')
                    ->header('Content-Type', 'application/force-download');
         }
 
