@@ -17,8 +17,8 @@ Route::get('/new', 'RadioController@create');
 
 Route::get('/radio/{id}/edit', 'RadioController@edit');
 
-Route::get('/export', 'ExportController@index');
 Route::get('/export/{state}.xml', 'ExportController@xml');
+Route::get('/export', 'ExportController@index');
 
 Route::group(['prefix' => 'dashboard'], function() {
 	Route::get('/radios', 'Dashboard\IndexController@getRadios');
