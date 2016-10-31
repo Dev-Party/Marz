@@ -26,6 +26,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="{{ url('/') }}">Inicio</a></li>
                     <li><a href="{{ url('/new') }}" class="new">Nuevo</a></li>
+                    <li><a href="{{ url('/export') }}">Exportar</a></li>
                     @if (Auth::guest())
                     @else
                         <li class="dropdown">
