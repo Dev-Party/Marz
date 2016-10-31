@@ -1,15 +1,6 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| This file is where you may define all of the routes that are handled
-| by your application. Just tell Laravel the URIs it should respond
-| to using a Closure or controller method. Build something great!
-|
-*/
+Route::pattern('format', '.xml');
 
 Route::get('/', 'HomeController@index');
 
@@ -19,7 +10,7 @@ Route::get('/radio/{id}/edit', 'RadioController@edit');
 
 Route::group(['prefix' => 'export'], function () {
 	Route::get('/', 'ExportController@index');
-	Route::get('/chaco.xml', 'ExportController@xml');
+	Route::get('/{state}.xml', 'ExportController@xml');
 });
 
 Route::group(['prefix' => 'dashboard'], function () {
