@@ -17,10 +17,12 @@ Route::get('/new', 'RadioController@create');
 
 Route::get('/radio/{id}/edit', 'RadioController@edit');
 
-Route::get('/export/xml', 'ExportController@xml');
-Route::get('/export', 'ExportController@index');
+Route::group(['prefix' => 'export'], function () {
+	Route::get('/', 'ExportController@index');
+	Route::get('/xml', 'ExportController@xml');
+});
 
-Route::group(['prefix' => 'dashboard'], function() {
+Route::group(['prefix' => 'dashboard'], function () {
 	Route::get('/radios', 'Dashboard\IndexController@getRadios');
 });
 

@@ -21,7 +21,7 @@ class ExportController extends Controller
     /**
      * Metodo para exportar las radios.
      */
-    public function xml($state)
+    public function xml()
     {
         $radios = Radio::state()
                 ->city()
