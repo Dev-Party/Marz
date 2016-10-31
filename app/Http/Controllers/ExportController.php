@@ -21,7 +21,7 @@ class ExportController extends Controller
     /**
      * Metodo para exportar las radios.
      */
-    public function xml($state)
+    public function format($format)
     {
         $radios = Radio::state()
                 ->city()
@@ -30,9 +30,17 @@ class ExportController extends Controller
                 ->orderBy('name', 'asc')
                 ->get();
 
-        return response()
-                ->view('export.tapinradio', ['radios' => $radios])
-                ->header('Content-Type', 'application/xml');
+        if ('.json' == $format)
+        {
+            return response()->json($radios);
+        } elseif ('.xml' == $format)
+        {
+            return response()
+                   ->view('export.tapinradio', ['radios' => $radios])
+                   ->header('Content-Type', 'application/xml')
+                   ->header('Content-Type', 'application/force-download');
+        }
+
     }
 
 
