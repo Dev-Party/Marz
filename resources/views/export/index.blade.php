@@ -15,9 +15,11 @@
             			    <div class="media-body">
 			            		<h4 class="media-heading">Tapin Radio</h4>
 			            		Si utilizas el programa Tapin Radio para escuchar, puedes agregar todas nuestras radios a tus favoritos.
-			            	</div><!-- .media-body -->
+			            	</div>
 			            	<div class="media-right media-middle">
-			            		<export-button></export-button>
+			            		<a class="btn btn-default" href="{{ url('/export/chaco.xml') }}" role="button">
+			            			<i class="fa fa-file-code-o" aria-hidden="true"></i> Descargar
+			            		</a>
 			            	</div>
 			            </div>
             		</div>
