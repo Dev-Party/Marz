@@ -1,4 +1,3 @@
-<!-- resources/views/xml/tapinradio.blade.php -->
 <?xml version="1.0" encoding="UTF-8"?>
 <TapinRadio>
     <Group title="Root">
