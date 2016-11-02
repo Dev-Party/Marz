@@ -35,7 +35,7 @@ class RadiosController extends Controller
                 ->city()
                 ->modulation()
                 ->ofSelect()
-                ->orderBy('active', $order)
+                ->orderBy('name', $order)
                 ->paginate();
 
         return response()->json($radios);
