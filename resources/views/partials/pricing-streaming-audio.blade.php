@@ -12,7 +12,7 @@
         </div>
         <button type="button" class="btn btn-success btn-lg btn-block text-uppercase">Comprar</button>
         <div class="text-muted text-right">
-            <small>en Pesos Argentinos (IVA Incluído)</small>
+            <small>IVA Incluído</small>
         </div>
     </div>
 </div>

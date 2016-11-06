@@ -77,7 +77,8 @@ export default {
       let options = {
         params: {
           active: 'all',
-          streaming: 'all'
+          streaming: 'all',
+          order: 'desc'
         }
       };
       this.$http.get('/api/radio', options).then(function (response) {
