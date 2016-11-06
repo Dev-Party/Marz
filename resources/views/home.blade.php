@@ -2,8 +2,6 @@
 
 @section('content')
 <div class="container">
-	<div class="row">
-		<list-radio></list-radio>
-	</div>
+	<list-radio></list-radio>
 </div>
 @endsection
