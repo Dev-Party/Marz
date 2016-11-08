@@ -11,7 +11,7 @@ const app = new Vue({
     el: '#app',
     ready: function () {
     	this.$http.get('http://ipinfo.io/geo').then(function (response) {
-			console.log(response.data.region)
+			console.log(response.data);
 		}, function (response) {
 			console.log(response.status);
 		});
