@@ -5,41 +5,27 @@
     <table class="table">
       <thead>
         <tr>
-          <th></th>
           <th>Nombre</th>
-          <th>MHz</th>
           <th>Modulación</th>
-          <th>Provincia</th>
-          <th>Ciudad</th>
-          <th></th>
+          <th>Ubicación</th>
+          <th>Acción</th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="radio in radios">
-          <td v-if="radio.active">
-            <a v-on:click="activeRadio(0, $index)" class="text-muted" title="Desactivar">
-              <i class="fa fa-circle-o"></i>
-            </a>
-          </td>
-          <td v-else>
-            <a v-on:click="activeRadio(1, $index)" class="text-danger" title="Activar">
-              <i class="fa fa-circle"></i>
-            </a>
-          </td>
-          <td>{{ radio.name }}</td>
-          <td>{{ radio.frequency }}</td>
+          <td>{{ radio.name }} {{ radio.frequency }} MHz</td>
           <td>{{ radio.modulation }}</td>
-          <td>{{ radio.state }}</td>
-          <td>{{ radio.city }}</td>
+          <td>{{ radio.city }}, {{ radio.state }}</td>
           <td>
-          <div class="dropdown">
-            <a href="#" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-              <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+            <a v-if="radio.active" v-on:click="activeRadio(0, $index)" class="text-success" title="Desactivar">
+              <i class="fa fa-toggle-on" aria-hidden="true"></i>
             </a>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-              <li><a href="/radio/{{ radio.id }}/edit">Editar</a></li>
-            </ul>
-          </div>
+            <a v-else v-on:click="activeRadio(1, $index)" class="text-danger" title="Activar">
+              <i class="fa fa-toggle-off" aria-hidden="true"></i>
+            </a>
+             - 
+            <a href="/radio/{{ radio.id }}/edit" title="Editar"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> 
+            <a href="/radio/{{ radio.id }}/delete" class="text-danger" title="Eliminar"><i class="fa fa-window-close-o" aria-hidden="true"></i></a> 
           </td>
         </tr>
       </tbody>
