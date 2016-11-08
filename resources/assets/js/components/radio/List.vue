@@ -32,8 +32,6 @@ export default {
   data () {
     return {
       state: 0,
-      search: '',
-      per_page: 0,
       playing: 0,
       radios: []
     }
