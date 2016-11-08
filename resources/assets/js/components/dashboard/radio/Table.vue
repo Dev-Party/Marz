@@ -23,11 +23,9 @@
             </a>
             <a v-else v-on:click="activeRadio(1, $index)" class="text-danger" title="Activar">
             <i class="fa fa-toggle-off" aria-hidden="true"></i>
-            </a>
-            
-             - 
-             <a href="/radio/{{ radio.id }}/edit" title="Editar"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> 
-            <a href="/radio/{{ radio.id }}/delete" class="text-danger" title="Eliminar"><i class="fa fa-window-close-o" aria-hidden="true"></i></a> 
+            </a> 
+            - 
+            <a href="/radio/{{ radio.id }}/edit" title="Editar"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
           </td>
         </tr>
       </tbody>
