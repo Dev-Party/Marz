@@ -3,12 +3,13 @@
 <div class="panel panel-default">
   <div class="panel-body">
     <table class="table">
+    <caption>Total: {{ pagination.total }}</caption>
       <thead>
         <tr>
           <th>Nombre</th>
           <th>Modulación</th>
           <th>Ubicación</th>
-          <th>Acción</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -16,21 +17,22 @@
           <td>{{ radio.name }} {{ radio.frequency }} MHz</td>
           <td>{{ radio.modulation }}</td>
           <td>{{ radio.city }}, {{ radio.state }}</td>
-          <td>
+          <td class="text-right">
             <a v-if="radio.active" v-on:click="activeRadio(0, $index)" class="text-success" title="Desactivar">
-              <i class="fa fa-toggle-on" aria-hidden="true"></i>
+            <i class="fa fa-toggle-on" aria-hidden="true"></i>
             </a>
             <a v-else v-on:click="activeRadio(1, $index)" class="text-danger" title="Activar">
-              <i class="fa fa-toggle-off" aria-hidden="true"></i>
+            <i class="fa fa-toggle-off" aria-hidden="true"></i>
             </a>
+            
              - 
-            <a href="/radio/{{ radio.id }}/edit" title="Editar"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> 
+             <a href="/radio/{{ radio.id }}/edit" title="Editar"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> 
             <a href="/radio/{{ radio.id }}/delete" class="text-danger" title="Eliminar"><i class="fa fa-window-close-o" aria-hidden="true"></i></a> 
           </td>
         </tr>
       </tbody>
     </table>
-      <nav class="text-center" v-if="pagination.total > 22">
+      <nav class="text-center" v-if="pagination.total >= pagination.per_page">
           <ul class="pagination">
               <li v-if="pagination.current_page > 1">
                   <a href="#" aria-label="Previous"
