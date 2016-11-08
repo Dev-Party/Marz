@@ -44,7 +44,7 @@
         </tr>
       </tbody>
     </table>
-      <nav v-if="pagination.total > 22">
+      <nav class="text-center" v-if="pagination.total > 22">
           <ul class="pagination">
               <li v-if="pagination.current_page > 1">
                   <a href="#" aria-label="Previous"
@@ -55,7 +55,7 @@
               <li v-for="page in pagesNumber"
                   v-bind:class="[ page == isActived ? 'active' : '']">
                   <a href="#"
-                     @click.prevent="changePage(page)">@{{ page }}</a>
+                     @click.prevent="changePage(page)">{{ page }}</a>
               </li>
               <li v-if="pagination.current_page < pagination.last_page">
                   <a href="#" aria-label="Next"
@@ -81,14 +81,13 @@ export default {
         to: 0,
         current_page: 1
       },
-      offset: 4,// left and right padding from the pagination <span>,just change it to see effects
+      offset: 4,
       radios: []
     }
   },
 
   ready: function () {
-    this.fetchItems(this.pagination.current_page);
-    //this.loadRadios();
+    this.fetchRadios(this.pagination.current_page);
   },
 
   computed: {
@@ -117,7 +116,7 @@ export default {
   },
 
   methods: {
-    fetchItems: function (page) {
+    fetchRadios: function (page) {
       let options = {
         params: {
           active: 'all',
@@ -131,12 +130,12 @@ export default {
         this.$set('radios', response.data.data);
         this.$set('pagination', response.data);
       }, function (error) {
-      // handle error
+        console.log(error);
       });
     },
     changePage: function (page) {
       this.pagination.current_page = page;
-      this.fetchItems(page);
+      this.fetchRadios(page);
     },
     activeRadio: function (active, index) {
       var radio = this.radios[index];
