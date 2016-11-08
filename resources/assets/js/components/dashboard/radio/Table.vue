@@ -44,6 +44,27 @@
         </tr>
       </tbody>
     </table>
+      <nav v-if="pagination.total > 22">
+          <ul class="pagination">
+              <li v-if="pagination.current_page > 1">
+                  <a href="#" aria-label="Previous"
+                     @click.prevent="changePage(pagination.current_page - 1)">
+                      <span aria-hidden="true">&laquo;</span>
+                  </a>
+              </li>
+              <li v-for="page in pagesNumber"
+                  v-bind:class="[ page == isActived ? 'active' : '']">
+                  <a href="#"
+                     @click.prevent="changePage(page)">@{{ page }}</a>
+              </li>
+              <li v-if="pagination.current_page < pagination.last_page">
+                  <a href="#" aria-label="Next"
+                     @click.prevent="changePage(pagination.current_page + 1)">
+                      <span aria-hidden="true">&raquo;</span>
+                  </a>
+              </li>
+          </ul>
+      </nav>
   </div><!-- .panel-body -->
 </div><!-- .panel -->
 </div>
@@ -53,15 +74,70 @@
 export default {
   data () {
     return {
+      pagination: {
+        total: 0,
+        per_page: 7,
+        from: 1,
+        to: 0,
+        current_page: 1
+      },
+      offset: 4,// left and right padding from the pagination <span>,just change it to see effects
       radios: []
     }
   },
 
   ready: function () {
-    this.loadRadios();
+    this.fetchItems(this.pagination.current_page);
+    //this.loadRadios();
+  },
+
+  computed: {
+    isActived: function () {
+      return this.pagination.current_page;
+    },
+    pagesNumber: function () {
+      if (!this.pagination.to) {
+        return [];
+      }
+      var from = this.pagination.current_page - this.offset;
+      if (from < 1) {
+        from = 1;
+      }
+      var to = from + (this.offset * 2);
+      if (to >= this.pagination.last_page) {
+        to = this.pagination.last_page;
+      }
+      var pagesArray = [];
+      while (from <= to) {
+        pagesArray.push(from);
+        from++;
+      }
+      return pagesArray;
+    }
   },
 
   methods: {
+    fetchItems: function (page) {
+      let options = {
+        params: {
+          active: 'all',
+          streaming: 'all',
+          order: 'desc',
+          page: page
+        }
+      };
+
+      this.$http.get('/api/radio', options).then(function (response) {
+        this.$set('radios', response.data.data);
+        this.$set('pagination', response.data);
+      }, function (error) {
+      // handle error
+      });
+    },
+    changePage: function (page) {
+      this.pagination.current_page = page;
+      this.fetchItems(page);
+    },
     activeRadio: function (active, index) {
       var radio = this.radios[index];
       radio.active = active;
@@ -69,20 +145,6 @@ export default {
       // Guardar los nuevos cambios
       this.$http.put('/api/radio/' + radio.id, radio).then(function (response) {
         console.log(response.body);
-      }, function (response) {
-        console.log(response.status);
-      });
-    },
-    loadRadios: function () {
-      let options = {
-        params: {
-          active: 'all',
-          streaming: 'all',
-          order: 'desc'
-        }
-      };
-      this.$http.get('/api/radio', options).then(function (response) {
-        this.radios = response.data.data;
       }, function (response) {
         console.log(response.status);
       });
