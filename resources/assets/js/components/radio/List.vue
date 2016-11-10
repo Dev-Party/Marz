@@ -43,8 +43,13 @@ export default {
 
   methods: {
     listRadios() {
-      this.$http.get('/api/radio').then(function (response) {
-        this.radios = response.data.data;
+      let options = {
+        params: {
+          per_page: 50
+        }
+      };
+      this.$http.get('/api/radio', options).then(function (response) {
+        this.$set('radios', response.data.data);
       }, function (response) {
         console.log(response.status);
       });
