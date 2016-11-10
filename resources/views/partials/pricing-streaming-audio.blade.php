@@ -10,7 +10,7 @@
                 <li>Transmisión las 24 Hs.</li>
             </ul>
         </div>
-        <button type="button" class="btn btn-success btn-lg btn-block text-uppercase">Comprar</button>
+        <a href="{{url('/billing')}}" type="button" class="btn btn-success btn-lg btn-block text-uppercase">Contratar</a>
         <div class="text-muted text-right">
             <small>IVA Incluído</small>
         </div>

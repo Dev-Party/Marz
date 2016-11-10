@@ -6,7 +6,7 @@
         <div class="col-md-10 col-md-offset-1">
             <div class="col-md-12 text-center">
                 <i class="fa fa-play-circle-o" style="color: #3097D1; font-size: 68px;" aria-hidden="true"></i>
-                <h3 class="text-muted text-uppercase" style="color: #e04e50;">Sintoniza tu Radio en Internet</h3>
+                <h3 class="text-muted text-uppercase" style="color: #e04e50;">Tu Radio en Internet</h3>
                 <h2>Haga que más personas escuchen su radio</h2>
                 <br><br>
             </div>
@@ -26,7 +26,7 @@
             @include('partials.pricing-streaming-audio')
             <aside class="text-center">
                 <h4>Formas de pagos</h4>
-                <img src="/img/pagoexpresscargas.jpg">
+                <img src="/img/pagoexpresscargas.jpg" class="img-responsive">
             </aside>
             </div>
         </div>

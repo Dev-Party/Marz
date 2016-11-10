@@ -7,7 +7,6 @@
       <thead>
         <tr>
           <th>Nombre</th>
-          <th>Modulación</th>
           <th>Ubicación</th>
           <th></th>
         </tr>
@@ -15,7 +14,6 @@
       <tbody>
         <tr v-for="radio in radios">
           <td>{{ radio.name }} {{ radio.frequency }} MHz</td>
-          <td>{{ radio.modulation }}</td>
           <td>{{ radio.city }}, {{ radio.state }}</td>
           <td class="text-right">
             <a v-if="radio.active" v-on:click="activeRadio(0, $index)" class="text-success" title="Desactivar">

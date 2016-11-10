@@ -72,9 +72,13 @@
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Registrarte
-                                </button>
+                                <button type="submit" class="btn btn-primary">Registrarte</button>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <small class="text-muted">Al hacer clic en "Registrarte", acepta nuestras <a href="{{ url('/terms-and-conditions') }}">condiciones de servicio</a> y política de privacidad.</small>
                             </div>
                         </div>
                     </form>
