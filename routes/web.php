@@ -6,7 +6,9 @@ Route::get('/new', 'RadioController@create');
 
 Route::get('/pricing', 'PricingController@index');
 
-Route::get('/billing', 'BillingController@index');
+Route::get('/billing', 'BillingController@getIndex');
+
+Route::post('/billing', 'BillingController@postIndex');
 
 Route::get('/terms-and-conditions', function () {
 	return view('terms-and-conditions');

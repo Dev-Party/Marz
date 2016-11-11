@@ -33,25 +33,25 @@
             </div>
             <div class="col-md-7">
                  <h4>Ingresa tus datos</h4>
-                 <form>
-
+                 <form role="form" method="POST" action="{{ url('/billing') }}">
+                    {{ csrf_field() }}
                     <div class="form-group">
                         <label for="name" class="control-label">Nombre y apellido</label>
-                        <input type="text" class="form-control" value="" autofocus>
+                        <input name="name" type="text" class="form-control" value="" autofocus>
                     </div>
 
                     <div class="form-group">
                         <label for="email" class="control-label">Correo</label>
-                        <input type="email" class="form-control" value="" placeholder="contacto@radio.com">
+                        <input name="email" type="email" class="form-control" value="" placeholder="contacto@radio.com">
                     </div>
 
                     <div class="form-group">
                         <label for="phone" class="control-label">Teléfono</label>
-                        <input type="text" class="form-control" value="" placeholder="(000) 000-0000">
+                        <input name="phone" type="text" class="form-control" value="" placeholder="(000) 000-0000">
                     </div>
                     <hr>
                     <div class="form-group">
-                        <button type="button" class="btn btn-success btn-lg btn-block text-uppercase">Continuar <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+                        <button type="submit" class="btn btn-success btn-lg btn-block text-uppercase">Continuar <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
                     </div>
                 </form>
             </div>
