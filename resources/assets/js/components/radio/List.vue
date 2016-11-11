@@ -1,27 +1,25 @@
 <template>
 <div>
   <div class="row">
-    <div v-for="radio in radios">
-      <div class="col-md-4">
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <div class="media">
-              <div v-if="radio.streaming" class="media-left">
-                <a href="#" v-on:click.prevent="listen(radio.id)"><img id="{{ radio.id }}" class="media-object" src="/img/play.png"></a>
-                <audio id="player-{{ radio.id }}" preload="none">
-                  <source :src="radio.streaming + '/;'" type="audio/mpeg">
-                  <source :src="radio.streaming" type="audio/ogg">
-                  <source :src="radio.streaming" type="audio/wav">
-                </audio>
-              </div>
-              <div class="media-body">
-                <h4 class="media-heading"> {{radio.name}} <small>{{radio.frequency}} MHz</small></h4>
-                <span>{{ radio.city }}, {{ radio.state }}</span>
-              </div>
+    <div v-for="radio in radios" class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="media">
+            <div v-if="radio.streaming" class="media-left">
+              <a href="#" v-on:click.prevent="listen(radio.id)"><img id="{{ radio.id }}" class="media-object" src="/img/play.png"></a>
+              <audio id="player-{{ radio.id }}" preload="none">
+                <source :src="radio.streaming + '/;'" type="audio/mpeg">
+                <source :src="radio.streaming" type="audio/ogg">
+                <source :src="radio.streaming" type="audio/wav">
+              </audio>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading"> {{radio.name}} <small>{{radio.frequency}} MHz</small></h4>
+              <span>{{ radio.city }}, {{ radio.state }}</span>
             </div>
           </div>
         </div>
-      </div><!-- .col-md-2 -->
+      </div><!-- .col-md-4 -->
     </div>
   </div><!-- .row -->
 </div>

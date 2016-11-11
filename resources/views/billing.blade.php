@@ -27,12 +27,6 @@
                             <td>$ 70,00 /mes</td>
                             <td class="text-right">$ 70,00</td>
                         </tr>
-                        <tr class="lead active">
-                            <td></td>
-                            <td></td>
-                            <td class="text-right">Total:</td>
-                            <td class="text-right"><strong>$ 70,00</strong></td>
-                        </tr>
                     </tbody>
                 </table>   
                 <hr>             

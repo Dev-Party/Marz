@@ -23,7 +23,6 @@
                             <li><a href="{{ url('/pricing') }}">Audio streaming</a></li>
                         </ul>
                     </li>
-                <li><a href="{{ url('/export') }}">Exportar</a></li>
                 @if (Auth::guest())
                 @else
                     <li class="dropdown">
