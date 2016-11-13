@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
+use App\Invoice;
+use Validator;
+use App\Mail\Factura;
 use App\Http\Controllers\Controller;
-use App\Mail\BillingShipped;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class BillingController extends Controller
@@ -16,12 +20,38 @@ class BillingController extends Controller
     
     public function postIndex(Request $request)
     {
-    	$name  = $request->input('name');
-    	$email = $request->input('email');
-    	$phone = $request->input('phone');
+        $data = $request->all();
 
-        Mail::to($email)->send(new BillingShipped());
-        return redirect()->intended('/billing');
+        if (!Auth::check())
+        {
+            $validator = Validator::make($data, [
+                'name' => 'required|max:255',
+                'email' => 'required|email|max:255|unique:users',
+                'password' => 'required|min:6',
+            ]);
+
+            if ($validator->fails()) {
+                return redirect('/billing')
+                            ->withErrors($validator)
+                            ->withInput();
+            }
+
+            User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => bcrypt($data['password']),
+            ]);
+
+            Auth::attempt(['email' => $data['email'], 'password' => $data['password']]);
+
+        }
+
+        $invoice = Invoice::create(['user_id' => Auth::user()->id]);
+
+        Mail::to(Auth::user()->email)->send(new Factura($invoice));
+
+        return redirect()->intended('/account/invoices');
+
     }
 
 }

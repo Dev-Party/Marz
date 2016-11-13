@@ -21,14 +21,20 @@ Route::group(['prefix' => 'export'], function () {
 	Route::get('/chaco{format}', 'ExportController@format');
 });
 
-Route::group([
-		'prefix' => 'dashboard',
-		'middleware' => ['auth']
-	],
-	function () {
-		Route::get('/radios', 'Dashboard\IndexController@getRadios');
-	}
-);
+// Account
+Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
+
+	Route::get('/invoices', 'Account\InvoicesController@all');
+	Route::get('/invoice/{id}.pdf', 'Account\InvoicesController@view');
+
+});
+
+// Dashboard
+Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
+
+	Route::get('/radios', 'Dashboard\IndexController@getRadios');
+
+});
 
 Auth::routes();
 

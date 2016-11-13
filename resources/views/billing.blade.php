@@ -33,26 +33,33 @@
                     <hr>             
                 </div>
                 <div class="col-md-7">
-                     <h4>Ingresa tus datos</h4>
-                     <form role="form" method="POST" action="{{ url('/billing') }}">
-                        {{ csrf_field() }}
-                        <div class="form-group">
-                            <label for="name" class="control-label">Nombre y apellido</label>
-                            <input name="name" type="text" class="form-control" value="" autofocus>
+                    <h4>Tus datos</h4>
+                    <form role="form" method="POST" action="{{ url('/billing') }}">
+                    {{ csrf_field() }}
+                    @if (Auth::guest())
+                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                            <input name="name" type="text" class="form-control" value="{{ old('name') }}" placeholder="Nombre y apellido">
                         </div>
 
-                        <div class="form-group">
-                            <label for="email" class="control-label">Correo</label>
-                            <input name="email" type="email" class="form-control" value="" placeholder="contacto@radio.com">
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                            <input name="email" type="email" class="form-control" value="{{ old('email') }}" placeholder="Correo">
                         </div>
 
-                        <div class="form-group">
-                            <label for="phone" class="control-label">Teléfono</label>
-                            <input name="phone" type="text" class="form-control" value="" placeholder="(000) 000-0000">
+                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                            <input name="password" type="password" class="form-control" value="{{ old('password') }}" placeholder="Contraseña">
                         </div>
+                    @else
+                        <ul class="list-unstyled">
+                            <li>{{ Auth::user()->name }}</li>
+                            <li>{{ Auth::user()->email }}</li>
+                        </ul>
+                    @endif
                         <hr>
                         <div class="form-group">
                             <button type="submit" class="btn btn-success btn-lg btn-block text-uppercase">Continuar <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+                        </div>
+                        <div class="form-group">
+                            <small class="text-muted">Al hacer clic en "Continuar", acepta nuestras <a href="{{ url('/terms-and-conditions') }}">condiciones de servicio</a> y política de privacidad.</small>
                         </div>
                     </form>
                 </div>

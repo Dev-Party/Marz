@@ -31,6 +31,7 @@
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{ url('/account/invoices') }}">Mis facturas</a></li>
                             <li><a href="{{ url('/dashboard/radios') }}">Radios</a></li>
                             <li>
                                 <a href="{{ url('/logout') }}"
