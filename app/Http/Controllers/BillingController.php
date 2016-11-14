@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Invoice;
 use Validator;
-use App\Mail\Factura;
+use App\Mail\BillingInformation;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Auth;
@@ -48,7 +48,7 @@ class BillingController extends Controller
 
         $invoice = Invoice::create(['user_id' => Auth::user()->id]);
 
-        Mail::to(Auth::user()->email)->send(new Factura($invoice));
+        Mail::to(Auth::user()->email)->send(new BillingInformation($invoice));
 
         return redirect()->intended('/account/invoices');
 
