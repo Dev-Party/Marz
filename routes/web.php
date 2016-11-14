@@ -30,7 +30,7 @@ Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
 });
 
 // Dashboard
-Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
+Route::group(['prefix' => 'dashboard', 'middleware' => ['role:admin']], function () {
 
 	Route::get('/radios', 'Dashboard\IndexController@getRadios');
 

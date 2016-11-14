@@ -32,8 +32,10 @@
 
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="{{ url('/account/invoices') }}">Mis facturas</a></li>
+                            @if (Auth::user()->hasRole('admin'))
                             <li><a href="{{ url('/dashboard/radios') }}">Radios</a></li>
                             <li><a href="{{ url('/dashboard/users') }}">Usuarios</a></li>
+                            @endif
                             <li>
                                 <a href="{{ url('/logout') }}"
                                     onclick="event.preventDefault();
