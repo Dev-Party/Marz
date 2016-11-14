@@ -34,6 +34,8 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
 
 	Route::get('/radios', 'Dashboard\IndexController@getRadios');
 
+	Route::get('/users', 'Dashboard\UsersController@all');
+
 });
 
 Auth::routes();
