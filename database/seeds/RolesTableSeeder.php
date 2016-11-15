@@ -13,10 +13,9 @@ class RolesTableSeeder extends Seeder
     {
     	DB::table('roles')->insert(
     		[
-    			'name' => 'admin',
-    			'display_name' => 'Administrador',
-    			'description' => 'Se permite al administrador gestionar usuarios y radios.'
-    		]
+                'name' => 'Admin',
+                'slug' => 'admin'
+            ]
     	);
     }
 }

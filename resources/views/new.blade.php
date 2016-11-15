@@ -9,7 +9,7 @@
                 <hr>
             </div>
             <div class="col-md-8">
-                <create-radio></create-radio>
+                <form-radio></form-radio>
             </div>
             <div class="col-md-4">
                 <div class="panel panel-default bg-info">

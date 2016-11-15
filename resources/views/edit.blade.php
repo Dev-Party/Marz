@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Editar radio</div>
                 <div class="panel-body">
-                    <create-radio :id="{{ $radio_id }}"></create-radio>
+                    <form-radio :id="{{ $radio_id }}"></form-radio>
                 </div>
             </div>
         </div>

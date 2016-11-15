@@ -64,6 +64,12 @@
                                 </a>
                             </div>
                         </div>
+
+                        <div class="form-group">
+                            <div class="col-md-8 col-md-offset-4">
+                                <p class="text-muted">¿No tiene una cuenta? <a href="{{ url('/register') }}">Regístrate aquí</a>!</p>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>

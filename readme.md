@@ -26,7 +26,3 @@ $ php artisan db:seed
 $ php artisan key:generate
 ```
 ¡Listo! Ingresa a tu url local (Ej: http://localhost/)
-
-### Licencia
-
-El proyecto Marz es software de código abierto bajo la [licencia MIT](http://opensource.org/licenses/MIT)

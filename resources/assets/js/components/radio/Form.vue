@@ -124,6 +124,7 @@ export default {
 
     if (this.id > 0) {
       this.getRadio();
+      $validation.invalid = false;
     }
   },
 
@@ -147,7 +148,7 @@ export default {
     // Metodo para obtener una radio segun el id.
     getRadio: function () {
       this.$http.get('/api/radio/' + this.id).then(function (response) {
-        this.radio = response.data;
+        this.$set('radio', response.data);
         this.getAllcitiesOfOneState(this.radio.state_id);
       }, function (response) {
         console.log(response.status);

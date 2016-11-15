@@ -19,15 +19,27 @@ class RadiosController extends Controller
      */
     public function all(Request $request)
     {
-        // $page = $request->input('page');
-        // if(empty($page)) $page = 10;
+        $active = $request->input('active');
+        if (empty($active)) $active = 1;
 
-        $radios = Radio::state()
+        $order = $request->input('order');
+        if (empty($order)) $order = 'asc';
+
+        $streaming = $request->input('streaming');
+        if (empty($streaming)) $streaming = '';
+
+        $per_page = $request->input('per_page');
+        if (empty($per_page)) $per_page = 20;
+
+        $radios = Radio::query()
+                ->ofActive($active)
+                ->ofStreaming($streaming)
+                ->state()
                 ->city()
                 ->modulation()
                 ->ofSelect()
-                ->orderBy('id', 'asc')
-                ->paginate();
+                ->orderBy('name', $order)
+                ->paginate($per_page);
 
         return response()->json($radios);
     }

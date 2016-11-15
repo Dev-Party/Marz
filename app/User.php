@@ -4,12 +4,10 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Zizaco\Entrust\Traits\EntrustUserTrait;
 
 class User extends Authenticatable
 {
-    use Notifiable,
-        EntrustUserTrait;
+    use Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -17,7 +15,11 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'facebook_id'
+        'role_id',
+        'name',
+        'email',
+        'password',
+        'facebook_id'
     ];
 
     /**
@@ -26,6 +28,32 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
+        'remember_token'
     ];
+
+    /**
+     * Obtener el rol del usuario.
+     */
+    public function role()
+    {
+        return $this->belongsTo('App\Role');
+    }
+
+    /**
+     * Verificar rol.
+     */
+    public function hasRole($role)
+    {
+        return (isset($this->role->slug) == $role) ? true : false;
+    }
+
+    /**
+     * Obtener las facturas del usuario.
+     */
+    public function invoices()
+    {
+        return $this->hasMany('App\Invoice');
+    }
+    
 }
