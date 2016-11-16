@@ -24,7 +24,10 @@ Route::group(['prefix' => 'export'], function () {
 // Account
 Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
 
+	Route::get('/settings', 'Account\SettingsController@index');
+	
 	Route::get('/invoices', 'Account\InvoicesController@all');
+	
 	Route::get('/invoice/{id}.pdf', 'Account\InvoicesController@view');
 
 });
