@@ -8,9 +8,7 @@
         	@include('shared.message')
 
 			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h3 class="panel-title">Perfil público</h3>
-				</div><!-- .panel-heading -->
+				<div class="panel-heading">Perfil</div>
 
 				<div class="panel-body">
 					<form class="form-horizontal" role="form" method="POST" action="{{ url('account/settings/profile/' . $user->id) }}">
@@ -31,7 +29,7 @@
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">Actualizar perfil</button>
+                                <button type="submit" class="btn btn-primary">Actualizar</button>
                             </div>
                         </div>
                     </form>
