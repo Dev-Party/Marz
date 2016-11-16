@@ -36,6 +36,8 @@
                             <li><a href="{{ url('/dashboard/radios') }}">Radios</a></li>
                             <li><a href="{{ url('/dashboard/users') }}">Usuarios</a></li>
                             @endif
+                            <li role="separator" class="divider"></li>
+                            <li><a href="{{ url('/account/settings') }}">Ajustes</a></li>
                             <li>
                                 <a href="{{ url('/logout') }}"
                                     onclick="event.preventDefault();

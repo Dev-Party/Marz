@@ -25,6 +25,8 @@ Route::group(['prefix' => 'export'], function () {
 Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
 
 	Route::get('/settings', 'Account\SettingsController@index');
+
+	Route::post('/settings/profile/{id}', 'Account\SettingsController@profile');
 	
 	Route::get('/invoices', 'Account\InvoicesController@all');
 	
