@@ -13,6 +13,7 @@
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="{{ url('/') }}">Inicio</a></li>
+                <li><a href="{{ url('/notes') }}">Notas</a></li>
                 <li><a href="{{ url('/new') }}" class="new">Nuevo</a></li>
                 <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

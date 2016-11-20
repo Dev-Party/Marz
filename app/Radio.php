@@ -105,7 +105,7 @@ class Radio extends Model
     {
         return $query->join('modulations', 'radios.modulation_id', '=', 'modulations.id');
     }
-
+    
     /**
      * Scope para formatear la salida de los datos.
      *
@@ -114,5 +114,13 @@ class Radio extends Model
     public function scopeOfSelect($query)
     {
         return $query->select($this->select);
+    }
+
+    /**
+     * Obtener todas las notas de un radio.
+     */
+    public function notes()
+    {
+        return $this->hasMany('App\Note');
     }
 }

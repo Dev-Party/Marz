@@ -10,6 +10,13 @@ Route::get('/billing', 'BillingController@getIndex');
 
 Route::post('/billing', 'BillingController@postIndex');
 
+Route::get('/notes', 'NotesController@all');
+
+Route::get('/notes/new', 'NotesController@create')->middleware('auth', 'role:admin');
+Route::post('/notes/new', 'NotesController@store')->middleware('auth', 'role:admin');
+Route::get('/notes/edit/{id}', 'NotesController@edit')->middleware('auth', 'role:admin');
+Route::post('/notes/edit/{id}', 'NotesController@update')->middleware('auth', 'role:admin');
+
 Route::get('/terms-and-conditions', function () {
 	return view('terms-and-conditions');
 });
