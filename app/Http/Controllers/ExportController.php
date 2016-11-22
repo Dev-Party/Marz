@@ -8,7 +8,7 @@ use Illuminate\Http\Response;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\Radio;
+use App\City;
 
 class ExportController extends Controller
 {
@@ -21,26 +21,16 @@ class ExportController extends Controller
     /**
      * Metodo para exportar las radios.
      */
-    public function format($format)
+    public function format()
     {
-        $radios = Radio::ofStreaming()
-                ->state()
-                ->city()
-                ->modulation()
-                ->ofSelect()
-                ->orderBy('name', 'asc')
-                ->get();
 
-        if ('.json' == $format)
-        {
-            return response()->json($radios);
-        } elseif ('.xml' == $format)
-        {
-            return response()
-                   ->view('export.tapinradio', ['radios' => $radios])
-                   ->header('Content-Type', 'application/xml')
-                   ->header('Content-Type', 'application/force-download');
-        }
+        $cities = City::all();
+
+        return response()
+               ->view('export.tapinradio', ['cities' => $cities])
+               ->header('Content-Type', 'application/xml')
+               ->header('Content-Type', 'application/force-download');
+
 
     }
 

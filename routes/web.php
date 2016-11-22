@@ -26,7 +26,7 @@ Route::get('/radio/{id}/edit', 'RadioController@edit');
 
 Route::group(['prefix' => 'export'], function () {
 	Route::get('/', 'ExportController@index');
-	Route::get('/chaco{format}', 'ExportController@format');
+	Route::get('/chaco.xml', 'ExportController@format');
 });
 
 // Account

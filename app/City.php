@@ -21,4 +21,12 @@ class City extends Model
 
     /** @var bool $timestamps Los campos timestamp de la tabla. */
     public $timestamps = false;
+
+    /**
+     * Obtener las radios de una ciudad.
+     */
+    public function radios()
+    {
+        return $this->hasMany('App\Radio');
+    }
 }
