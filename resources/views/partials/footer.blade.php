@@ -5,6 +5,7 @@
             <ul class="list-inline text-uppercase">
                 <li><a href="{{ url('/terms-and-conditions') }}">Términos y condiciones</a></li>
                 <li><a href="{{ url('/export') }}">Exportar</a></li>
+                <li><a href="{{ url('/new') }}" class="new">Sugerir Radio</a></li>
                 @if (Auth::guest())
                 <li><a href="{{ url('/login') }}">Ingresar</a></li>
                 @else

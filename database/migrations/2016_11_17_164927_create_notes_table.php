@@ -21,7 +21,6 @@ class CreateNotesTable extends Migration
             $table->integer('radio_id')->unsigned();
             $table->string('title');
             $table->string('audio');
-            $table->integer('live')->default(0);
             $table->timestamps();
         });
     }

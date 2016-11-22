@@ -18,7 +18,17 @@ class RadioController extends Controller
      */
     public function create()
     {
-    	return view('new');
+    	return view('radio.new');
+    }
+
+    /**
+     * Metodo para mostrar los datos de una radio.
+     */
+    public function show($id)
+    {
+        $radio = Radio::find($id);
+
+        return view('radio.show', ['radio' => $radio]);
     }
 
     /**
@@ -26,7 +36,7 @@ class RadioController extends Controller
      */
     public function edit($id)
     {
-        return view('edit', ['radio_id' => $id]);
+        return view('radio.edit', ['radio_id' => $id]);
     }
 
 }

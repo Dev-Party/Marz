@@ -21,8 +21,7 @@ class Note extends Model
      */
     protected $fillable = [
         'title',
-        'audio',
-        'live'
+        'audio'
     ];
 
     /** @var array $select Selects para la constulta a la base de datos. */
@@ -33,7 +32,6 @@ class Note extends Model
         'radios.frequency as radio_frequency',
         'notes.title',
         'notes.audio',
-        'notes.live',
         'notes.created_at',
         'notes.updated_at'
     ];

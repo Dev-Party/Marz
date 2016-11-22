@@ -21,6 +21,7 @@ Route::get('/terms-and-conditions', function () {
 	return view('terms-and-conditions');
 });
 
+Route::get('/radio/{id}', 'RadioController@show');
 Route::get('/radio/{id}/edit', 'RadioController@edit');
 
 Route::group(['prefix' => 'export'], function () {

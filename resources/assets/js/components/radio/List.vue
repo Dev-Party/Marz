@@ -1,7 +1,7 @@
 <template>
 <div>
 <div class="row">
-  <div v-for="radio in radios" class="col-md-6">
+  <div v-for="radio in radios" class="col-md-6 col-sm-6">
     <div class="panel panel-default">
       <div class="panel-body">
         <div class="media">

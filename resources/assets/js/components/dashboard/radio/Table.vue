@@ -1,6 +1,7 @@
 <template>
 <div>
 <div class="panel panel-default">
+  <div class="panel-heading">Radios</div>
   <div class="panel-body">
     <table class="table">
     <caption>Total: {{ pagination.total }}</caption>

@@ -123,4 +123,28 @@ class Radio extends Model
     {
         return $this->hasMany('App\Note');
     }
+
+    /**
+     * Obtener la modulación de la radio (AM o FM).
+     */
+    public function modulation()
+    {
+        return $this->belongsTo('App\Modulation');
+    }
+
+    /**
+     * Obtener la provincia.
+     */
+    public function state()
+    {
+        return $this->belongsTo('App\State');
+    }
+
+    /**
+     * Obtener la ciudad.
+     */
+    public function city()
+    {
+        return $this->belongsTo('App\City');
+    }
 }
