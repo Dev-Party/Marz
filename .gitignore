@@ -1,6 +1,6 @@
 /node_modules
 /public/storage
-/uploads/audios
+/uploads
 /vendor
 /.idea
 Homestead.json
