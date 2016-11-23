@@ -6,6 +6,9 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateUsersTable extends Migration
 {
+    /** @var string $table Nombre de la tabla. */
+    protected $table = 'users';
+
     /**
      * Run the migrations.
      *
@@ -13,12 +16,13 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create($this->table, function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('role_id')->unsigned();
+            $table->integer('role_id')->unsigned()->default(0);
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('password');
+            $table->string('password')->nullable();
+            $table->string('facebook_id')->nullable()->unique();
             $table->rememberToken();
             $table->timestamps();
         });
@@ -31,6 +35,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('users');
+        Schema::drop($this->table);
     }
 }

@@ -12,10 +12,10 @@ Route::post('/billing', 'BillingController@postIndex');
 
 Route::get('/notes', 'NotesController@all');
 
-Route::get('/notes/new', 'NotesController@create')->middleware('auth', 'role:admin');
-Route::post('/notes/new', 'NotesController@store')->middleware('auth', 'role:admin');
-Route::get('/notes/edit/{id}', 'NotesController@edit')->middleware('auth', 'role:admin');
-Route::post('/notes/edit/{id}', 'NotesController@update')->middleware('auth', 'role:admin');
+Route::get('/notes/new', 'NotesController@create')->middleware('auth', 'role:administrator');
+Route::post('/notes/new', 'NotesController@store')->middleware('auth', 'role:administrator');
+Route::get('/notes/edit/{id}', 'NotesController@edit')->middleware('auth', 'role:administrator');
+Route::post('/notes/edit/{id}', 'NotesController@update')->middleware('auth', 'role:administrator');
 
 Route::get('/terms-and-conditions', function () {
 	return view('terms-and-conditions');
@@ -43,7 +43,7 @@ Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
 });
 
 // Dashboard
-Route::group(['prefix' => 'dashboard', 'middleware' => ['role:admin']], function () {
+Route::group(['prefix' => 'dashboard', 'middleware' => ['role:administrator']], function () {
 
 	Route::get('/radios', 'Dashboard\IndexController@getRadios');
 
