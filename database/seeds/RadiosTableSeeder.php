@@ -187,6 +187,14 @@ class RadiosTableSeeder extends Seeder
             'city_id' => 41,
             'modulation_id' => 2,
             'streaming' => 'http://estudio2k1.com:8600'
+          ],
+          [
+            'name' => 'La Rocka',
+            'frequency' => '107.3',
+            'state_id' => 1,
+            'city_id' => 41,
+            'modulation_id' => 2,
+            'streaming' => 'http://cdn.instream.audio:8137/stream'
           ]
         ]);
       }
