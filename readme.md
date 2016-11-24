@@ -24,5 +24,6 @@ DB_PASSWORD=
 $ php artisan migrate
 $ php artisan db:seed
 $ php artisan key:generate
+$ npm install
 ```
 ¡Listo! Ingresa a tu url local (Ej: http://localhost/)
