@@ -1,3 +1,10 @@
+## v1.7.0 (Noviembre 24, 2016)
+
+#### :zap: Mejoras
+* Notas ([#54](https://github.com/soyFelixBarros/Sintoniza/issues/54))
+* Ajustes ([#53](https://github.com/soyFelixBarros/Sintoniza/issues/53))
+* Mejoramos el XML para exportar a Tapin Radio ([#56](https://github.com/soyFelixBarros/Sintoniza/issues/56))
+
 ## v1.6.1 (Noviembre 15, 2016)
 
 #### :zap: Mejoras
