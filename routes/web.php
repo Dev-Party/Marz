@@ -1,5 +1,9 @@
 <?php
 
+Route::get('/rec', function () {
+	return view('rec');
+});
+
 Route::get('/', 'HomeController@index');
 
 Route::get('/new', 'RadioController@create');
