@@ -18,7 +18,8 @@ class RadiosTableSeeder extends Seeder
             'state_id' => 1,
             'city_id' => 45,
             'modulation_id' => 2,
-            'streaming' => 'http://server.ohradio.com.ar:9906'
+            'streaming' => 'http://server.ohradio.com.ar:9906',
+            'active' => 1
           ],
           [
             'name' => 'Ciudad',
@@ -26,7 +27,8 @@ class RadiosTableSeeder extends Seeder
             'state_id' => 1,
             'city_id' => 41,
             'modulation_id' => 2,
-            'streaming' => 'http://23.29.123.98:11037/stream'
+            'streaming' => 'http://23.29.123.98:11037/stream',
+            'active' => 1
           ],
           [
             'name' => 'Clan',
@@ -34,7 +36,8 @@ class RadiosTableSeeder extends Seeder
             'state_id' => 1,
             'city_id' => 41,
             'modulation_id' => 2,
-            'streaming' => 'http://painel.serveron.com.br:8110/stream'
+            'streaming' => 'http://painel.serveron.com.br:8110/stream',
+            'active' => 1
           ],
           [
             'name' => 'Cordial',
@@ -42,7 +45,8 @@ class RadiosTableSeeder extends Seeder
             'state_id' => 1,
             'city_id' => 12,
             'modulation_id' => 2,
-            'streaming' => 'http://190.57.234.67:8038'
+            'streaming' => 'http://190.57.234.67:8038',
+            'active' => 1
           ],
           [
             'name' => 'Cristal',
@@ -50,7 +54,8 @@ class RadiosTableSeeder extends Seeder
             'state_id' => 1,
             'city_id' => 47,
             'modulation_id' => 2,
-            'streaming' => 'http://200.58.123.233:5205'
+            'streaming' => 'http://200.58.123.233:5205',
+            'active' => 1
           ],
           [
             'name' => 'Facundo Quiroga',
@@ -58,7 +63,8 @@ class RadiosTableSeeder extends Seeder
             'state_id' => 1,
             'city_id' => 41,
             'modulation_id' => 2,
-            'streaming' => 'http://www.turadioenvivo.com:11034/stream'
+            'streaming' => 'http://www.turadioenvivo.com:11034/stream',
+            'active' => 1
           ],
           [
             'name' => 'Fan',
@@ -66,7 +72,8 @@ class RadiosTableSeeder extends Seeder
             'state_id' => 1,
             'city_id' => 19,
             'modulation_id' => 2,
-            'streaming' => 'http://195.154.167.62:7340'
+            'streaming' => 'http://195.154.167.62:7340',
+            'active' => 1
           ],
           [
             'name' => 'Frontera',
@@ -74,7 +81,8 @@ class RadiosTableSeeder extends Seeder
             'state_id' => 1,
             'city_id' => 25,
             'modulation_id' => 2,
-            'streaming' => 'http://188.165.236.90:7288'
+            'streaming' => 'http://188.165.236.90:7288',
+            'active' => 1
           ],
           [
             'name' => 'Futuro',
@@ -82,7 +90,8 @@ class RadiosTableSeeder extends Seeder
             'state_id' => 1,
             'city_id' => 31,
             'modulation_id' => 2,
-            'streaming' => 'http://200.58.101.247:8326'
+            'streaming' => 'http://200.58.101.247:8326',
+            'active' => 1
           ],
           [
             'name' => 'Génesis',
@@ -90,7 +99,8 @@ class RadiosTableSeeder extends Seeder
             'state_id' => 1,
             'city_id' => 41,
             'modulation_id' => 2,
-            'streaming' => 'http://200.58.118.108:8146/stream'
+            'streaming' => 'http://200.58.118.108:8146/stream',
+            'active' => 1
           ],
           [
             'name' => 'Independencia',
@@ -98,7 +108,8 @@ class RadiosTableSeeder extends Seeder
             'state_id' => 1,
             'city_id' => 3,
             'modulation_id' => 2,
-            'streaming' => 'http://s2.netradiofm.com:8060'
+            'streaming' => 'http://s2.netradiofm.com:8060',
+            'active' => 1
           ],
           [
             'name' => 'Isla del Cerrito',
@@ -106,7 +117,8 @@ class RadiosTableSeeder extends Seeder
             'state_id' => 1,
             'city_id' => 41,
             'modulation_id' => 2,
-            'streaming' => 'http://200.58.112.14:11310'
+            'streaming' => 'http://200.58.112.14:11310',
+            'active' => 1
           ],
           [
             'name' => 'La Radio',
@@ -114,7 +126,8 @@ class RadiosTableSeeder extends Seeder
             'state_id' => 1,
             'city_id' => 41,
             'modulation_id' => 2,
-            'streaming' => 'http://46.105.37.180:8800'
+            'streaming' => 'http://46.105.37.180:8800',
+            'active' => 1
           ],
           [
             'name' => 'La Red',
@@ -122,7 +135,8 @@ class RadiosTableSeeder extends Seeder
             'state_id' => 1,
             'city_id' => 31,
             'modulation_id' => 2,
-            'streaming' => 'http://209.133.213.93:41000/stream/1/'
+            'streaming' => 'http://209.133.213.93:41000/stream/1/',
+            'active' => 1
           ],
           [
             'name' => 'Latina',
@@ -130,7 +144,8 @@ class RadiosTableSeeder extends Seeder
             'state_id' => 1,
             'city_id' => 9,
             'modulation_id' => 2,
-            'streaming' => 'http://iplinea.com:9730'
+            'streaming' => 'http://iplinea.com:9730',
+            'active' => 1
           ],
           [
             'name' => 'Libertad',
@@ -138,7 +153,8 @@ class RadiosTableSeeder extends Seeder
             'state_id' => 1,
             'city_id' => 5,
             'modulation_id' => 2,
-            'streaming' => 'http://200.58.101.247:8006'
+            'streaming' => 'http://200.58.101.247:8006',
+            'active' => 1
           ],
           [
             'name' => 'Libertad',
@@ -146,7 +162,8 @@ class RadiosTableSeeder extends Seeder
             'state_id' => 1,
             'city_id' => 41,
             'modulation_id' => 2,
-            'streaming' => 'http://01.solumedia.com.ar:8378'
+            'streaming' => 'http://01.solumedia.com.ar:8378',
+            'active' => 1
           ],
           [
             'name' => 'Mágica',
@@ -154,7 +171,8 @@ class RadiosTableSeeder extends Seeder
             'state_id' => 1,
             'city_id' => 2,
             'modulation_id' => 2,
-            'streaming' => 'http://108.163.190.212:9660'
+            'streaming' => 'http://108.163.190.212:9660',
+            'active' => 1
           ],
           [
             'name' => 'Mi Ciudad',
@@ -162,7 +180,8 @@ class RadiosTableSeeder extends Seeder
             'state_id' => 1,
             'city_id' => 2,
             'modulation_id' => 2,
-            'streaming' => 'http://01.solumedia.com.ar:8500'
+            'streaming' => 'http://01.solumedia.com.ar:8500',
+            'active' => 1
           ],
           [
             'name' => 'Micks',
@@ -170,7 +189,8 @@ class RadiosTableSeeder extends Seeder
             'state_id' => 1,
             'city_id' => 46,
             'modulation_id' => 2,
-            'streaming' => 'http://108.163.190.211:9960'
+            'streaming' => 'http://108.163.190.211:9960',
+            'active' => 1
           ],
           [
             'name' => 'Provincia del Chaco',
@@ -178,7 +198,8 @@ class RadiosTableSeeder extends Seeder
             'state_id' => 1,
             'city_id' => 41,
             'modulation_id' => 2,
-            'streaming' => 'http://debred5.ecomchaco.com.ar:8000/radioecom'
+            'streaming' => 'http://debred5.ecomchaco.com.ar:8000/radioecom',
+            'active' => 1
           ],
           [
             'name' => 'Natagalá',
@@ -186,7 +207,8 @@ class RadiosTableSeeder extends Seeder
             'state_id' => 1,
             'city_id' => 41,
             'modulation_id' => 2,
-            'streaming' => 'http://estudio2k1.com:8600'
+            'streaming' => 'http://estudio2k1.com:8600',
+            'active' => 1
           ],
           [
             'name' => 'La Rocka',
@@ -194,7 +216,8 @@ class RadiosTableSeeder extends Seeder
             'state_id' => 1,
             'city_id' => 41,
             'modulation_id' => 2,
-            'streaming' => 'http://cdn.instream.audio:8137/stream'
+            'streaming' => 'http://cdn.instream.audio:8137/stream',
+            'active' => 1
           ]
         ]);
       }
