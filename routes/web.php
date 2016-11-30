@@ -39,6 +39,8 @@ Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
 	Route::get('/settings', 'Account\SettingsController@index');
 
 	Route::post('/settings/profile/{id}', 'Account\SettingsController@profile');
+
+	Route::post('/settings/password', 'Account\SettingsController@password');
 	
 	Route::get('/invoices', 'Account\InvoicesController@all');
 	
