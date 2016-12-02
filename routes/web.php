@@ -44,7 +44,7 @@ Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
 	
 	Route::get('/invoices', 'Account\InvoicesController@all');
 	
-	Route::get('/invoice/{id}.pdf', 'Account\InvoicesController@view');
+	Route::get('/invoice/{id}.pdf', 'Account\InvoicesController@pdf');
 
 });
 

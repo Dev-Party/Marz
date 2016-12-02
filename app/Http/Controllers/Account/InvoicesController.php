@@ -18,7 +18,10 @@ class InvoicesController extends Controller
         return view('account.invoices.all', ['invoices' => $invoices]);
     }
 
-    public function view($id)
+    /**
+     * Mostrar la factura en PDF.
+     */
+    public function pdf($id)
     {
     	$invoice = Invoice::find($id);
 
