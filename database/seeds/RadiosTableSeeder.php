@@ -59,7 +59,7 @@ class RadiosTableSeeder extends Seeder
           ],
           [
             'name' => 'Facundo Quiroga',
-            'frequency' => '95.8',
+            'frequency' => '95.9',
             'state_id' => 1,
             'city_id' => 41,
             'modulation_id' => 2,
