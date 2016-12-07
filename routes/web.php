@@ -1,9 +1,5 @@
 <?php
 
-Route::get('/rec', function () {
-	return view('rec');
-});
-
 Route::get('/', 'HomeController@index');
 
 Route::get('/new', 'RadioController@create');
@@ -14,6 +10,7 @@ Route::get('/billing', 'BillingController@getIndex');
 
 Route::post('/billing', 'BillingController@postIndex');
 
+// Notes
 Route::get('/notes', 'NotesController@all');
 
 Route::get('/notes/new', 'NotesController@create')->middleware('auth', 'role:administrator');
@@ -21,13 +18,11 @@ Route::post('/notes/new', 'NotesController@store')->middleware('auth', 'role:adm
 Route::get('/notes/edit/{id}', 'NotesController@edit')->middleware('auth', 'role:administrator');
 Route::post('/notes/edit/{id}', 'NotesController@update')->middleware('auth', 'role:administrator');
 
-Route::get('/terms-and-conditions', function () {
-	return view('terms-and-conditions');
-});
-
+// Radios
 Route::get('/radio/{id}', 'RadioController@show');
 Route::get('/radio/{id}/edit', 'RadioController@edit');
 
+// Export
 Route::group(['prefix' => 'export'], function () {
 	Route::get('/', 'ExportController@index');
 	Route::get('/chaco.xml', 'ExportController@format');
@@ -55,6 +50,11 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['role:administrator']], 
 
 	Route::get('/users', 'Dashboard\UsersController@all');
 
+});
+
+// Terms-and-conditions
+Route::get('/terms-and-conditions', function () {
+	return view('terms-and-conditions');
 });
 
 Auth::routes();

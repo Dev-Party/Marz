@@ -1,16 +1,8 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Model Factories
-|--------------------------------------------------------------------------
-|
-| Here you may define all of your model factories. Model factories give
-| you a convenient way to create models for testing and seeding your
-| database. Just tell the factory how a default model should look.
-|
-*/
-
+/**
+ * Users
+ */
 $factory->define(App\User::class, function (Faker\Generator $faker) {
     static $password;
 
@@ -22,6 +14,9 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     ];
 });
 
+/**
+ * Radios
+ */
 $factory->define(App\Radio::class, function (Faker\Generator $faker) {
 	return [
 		'state_id'      => 1,
@@ -38,18 +33,27 @@ $factory->define(App\Radio::class, function (Faker\Generator $faker) {
 	];
 });
 
+/**
+ * Modultationes
+ */
 $factory->define(App\Modulation::class, function (Faker\Generator $faker) {
 	return [
 		'name' => $faker->randomElements($array = array ('AM','FM'))
 	];
 });
 
+/**
+ * Estates
+ */
 $factory->define(App\State::class, function (Faker\Generator $faker) {
 	return [
 		'name' => $faker->state
 	];
 });
 
+/**
+ * Cities
+ */
 $factory->define(App\City::class, function (Faker\Generator $faker) {
 	return [
 		'state_id' => 1,
