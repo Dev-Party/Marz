@@ -12,7 +12,7 @@ class IndexController extends Controller
     
     public function getRadios()
     {
-        return view('dashboard.radios');
+        return view('dashboard.radios.all');
     }
 
 }
