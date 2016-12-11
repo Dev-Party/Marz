@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
 use App\Note;
+use App\Http\Controllers\Controller;
 
 class NotesController extends Controller
 {
     /**
      * Restorna todas las notas.
+     * 
      * 
      * @return object
      */
@@ -26,7 +27,9 @@ class NotesController extends Controller
     /**
      * Crear una nota nueva.
      * 
+     * 
      * @param array $request Datos de la nota.
+     * 
      * 
      * @return object
      */

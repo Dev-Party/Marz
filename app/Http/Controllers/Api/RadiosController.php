@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers\Api;
 
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
-
 use App\Radio;
+use App\Http\Requests;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class RadiosController extends Controller
 {
@@ -15,21 +13,30 @@ class RadiosController extends Controller
     /**
      * Restorna todas las radios.
      * 
+     * 
      * @return object
      */
     public function all(Request $request)
     {
         $active = $request->input('active');
-        if (empty($active)) $active = 1;
+        if (empty($active)) {
+            $active = 1;
+        }
 
         $order = $request->input('order');
-        if (empty($order)) $order = 'asc';
+        if (empty($order)) {
+            $order = 'asc';
+        }
 
         $streaming = $request->input('streaming');
-        if (empty($streaming)) $streaming = '';
+        if (empty($streaming)) {
+            $streaming = '';
+        }
 
         $per_page = $request->input('per_page');
-        if (empty($per_page)) $per_page = 20;
+        if (empty($per_page)) {
+            $per_page = 20;
+        }
 
         $radios = Radio::query()
                 ->ofActive($active)
@@ -47,20 +54,25 @@ class RadiosController extends Controller
     /**
      * Crear una radio nueva.
      * 
+     * 
      * @param array $request Datos de la radio.
+     * 
      * 
      * @return object
      */
     public function create(Request $request)
     {
         $radio = Radio::create($request->all());
+
         return response()->json(['created' => true], 201);
     }
 
     /**
      * Retornar los datos de la radio que se busca.
      * 
+     * 
      * @param string $q Nombre de la radio.
+     * 
      * 
      * @return object
      */
@@ -70,7 +82,7 @@ class RadiosController extends Controller
         $count = $request->input('count');
         $q = ucwords(strtolower($q));
         
-        $radio = Radio::where('radios.name', 'like', '%' . $q . '%')
+        $radio = Radio::where('radios.name', 'like', '%'.$q.'%')
                 ->state()
                 ->city()
                 ->modulation()
@@ -84,14 +96,16 @@ class RadiosController extends Controller
     /**
      * Retornar una radio.
      * 
+     * 
      * @param int $id Identificador unico de la radio.
+     * 
      * 
      * @return object
      */
     public function show($id)
     {
         $radio = Radio::find($id);
-                
+
         return response()->json($radio);
     }
 
@@ -106,17 +120,17 @@ class RadiosController extends Controller
     public function update(Request $request, $id)
     {
         $radio = Radio::find($id);
-        $radio->state_id      = $request->state_id;
-        $radio->city_id       = $request->city_id;
+        $radio->state_id = $request->state_id;
+        $radio->city_id = $request->city_id;
         $radio->modulation_id = $request->modulation_id;
-        $radio->name          = $request->name;
-        $radio->frequency     = $request->frequency;
-        $radio->email         = $request->email;
-        $radio->phone         = $request->phone;
-        $radio->address       = $request->address;
-        $radio->website       = $request->website;
-        $radio->streaming     = $request->streaming;
-        $radio->active        = $request->active;
+        $radio->name = $request->name;
+        $radio->frequency = $request->frequency;
+        $radio->email = $request->email;
+        $radio->phone = $request->phone;
+        $radio->address = $request->address;
+        $radio->website = $request->website;
+        $radio->streaming = $request->streaming;
+        $radio->active = $request->active;
         $radio->save();
 
         return response()->json($radio);
@@ -125,7 +139,9 @@ class RadiosController extends Controller
     /**
      * Eliminar una radio.
      * 
+     * 
      * @param int $id Identificador unico de la radio.
+     * 
      * 
      * @return object
      */

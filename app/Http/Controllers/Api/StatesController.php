@@ -2,17 +2,16 @@
 
 namespace App\Http\Controllers\Api;
 
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
-
 use App\State;
+use App\Http\Requests;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class StatesController extends Controller
 {
     /**
      * Restorna todas las provincias.
+     * 
      * 
      * @return object
      */
@@ -26,6 +25,7 @@ class StatesController extends Controller
     /**
      * Restorna todas las ciudades de una provincia.
      * 
+     * 
      * @return object
      */
     public function cities($id)
@@ -34,4 +34,5 @@ class StatesController extends Controller
 
         return response()->json($cities);
     }
+
 }
