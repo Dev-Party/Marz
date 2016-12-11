@@ -29,7 +29,7 @@ $factory->define(App\Radio::class, function (Faker\Generator $faker) {
 
 $factory->define(App\Modulation::class, function (Faker\Generator $faker) {
     return [
-        'name' => $faker->randomElements($array = array('AM','FM')),
+        'name' => $faker->randomElements($array = array('AM', 'FM')),
     ];
 });
 
