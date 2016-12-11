@@ -213,7 +213,7 @@ class RadiosTableSeeder extends Seeder
               'modulation_id' => 2,
               'streaming' => 'http://cdn.instream.audio:8137/stream',
               'active' => 1,
-            ]
+            ],
         ]);
     }
 }
