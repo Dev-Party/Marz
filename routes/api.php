@@ -6,7 +6,6 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
 
-
 Route::get('/radio', 'Api\RadiosController@all');
 Route::post('/radio', 'Api\RadiosController@create');
 Route::get('/radio/search', 'Api\RadiosController@search');

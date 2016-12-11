@@ -5,10 +5,10 @@ use Illuminate\Database\Seeder;
 class UsersTableSeeder extends Seeder
 {
   /**
-   * Ejecutar seed.
-   * 
-   * @return void
-   */
+  * Ejecutar seed.
+  * 
+  * @return void
+  */
   public function run()
   {
     DB::table('users')->insert([

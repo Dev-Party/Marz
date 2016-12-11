@@ -24,8 +24,11 @@ Route::get('/radio/{id}/edit', 'RadioController@edit');
 
 // Export
 Route::group(['prefix' => 'export'], function () {
+
 	Route::get('/', 'ExportController@index');
+
 	Route::get('/chaco.xml', 'ExportController@format');
+
 });
 
 // Account
@@ -36,9 +39,9 @@ Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
 	Route::post('/settings/profile/{id}', 'Account\SettingsController@profile');
 
 	Route::post('/settings/password', 'Account\SettingsController@password');
-	
+
 	Route::get('/invoices', 'Account\InvoicesController@all');
-	
+
 	Route::get('/invoice/{id}.pdf', 'Account\InvoicesController@pdf');
 
 });
