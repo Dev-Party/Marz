@@ -11,7 +11,7 @@ class City extends Model
 
     /** @var array $fillable Los atributos que son asignables. */
     protected $fillable = [
-    	'name',
+        'name',
     ];
 
     /** @var array $fillable Los atributos excluidos en el JSON. */
