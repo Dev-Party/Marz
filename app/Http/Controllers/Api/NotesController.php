@@ -9,8 +9,8 @@ class NotesController extends Controller
 {
     /**
      * Restorna todas las notas.
-     * 
-     * 
+     *
+     *
      * @return object
      */
     public function all()
@@ -26,16 +26,17 @@ class NotesController extends Controller
 
     /**
      * Crear una nota nueva.
-     * 
-     * 
+     *
+     *
      * @param array $request Datos de la nota.
-     * 
-     * 
+     *
+     *
      * @return object
      */
     public function store(Request $request)
     {
         $note = Note::create($request->all());
+        
         return response()->json(['created' => true], 201);
     }
 }

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Api;
 
 use App\Radio;
-use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -12,8 +11,8 @@ class RadiosController extends Controller
 
     /**
      * Restorna todas las radios.
-     * 
-     * 
+     *
+     *
      * @return object
      */
     public function all(Request $request)
@@ -53,11 +52,11 @@ class RadiosController extends Controller
 
     /**
      * Crear una radio nueva.
-     * 
-     * 
+     *
+     *
      * @param array $request Datos de la radio.
-     * 
-     * 
+     *
+     *
      * @return object
      */
     public function create(Request $request)
@@ -69,11 +68,11 @@ class RadiosController extends Controller
 
     /**
      * Retornar los datos de la radio que se busca.
-     * 
-     * 
+     *
+     *
      * @param string $q Nombre de la radio.
-     * 
-     * 
+     *
+     *
      * @return object
      */
     public function search(Request $request)
@@ -81,7 +80,7 @@ class RadiosController extends Controller
         $q = $request->input('q');
         $count = $request->input('count');
         $q = ucwords(strtolower($q));
-        
+
         $radio = Radio::where('radios.name', 'like', '%'.$q.'%')
                 ->state()
                 ->city()
@@ -95,11 +94,11 @@ class RadiosController extends Controller
 
     /**
      * Retornar una radio.
-     * 
-     * 
+     *
+     *
      * @param int $id Identificador unico de la radio.
-     * 
-     * 
+     *
+     *
      * @return object
      */
     public function show($id)
@@ -138,18 +137,18 @@ class RadiosController extends Controller
 
     /**
      * Eliminar una radio.
-     * 
-     * 
+     *
+     *
      * @param int $id Identificador unico de la radio.
-     * 
-     * 
+     *
+     *
      * @return object
      */
     public function destroy($id)
     {
         $radio = Radio::find($id);
         $radio->delete();
-
+        
         return response()->json(['deleted'], 204);
     }
 }
