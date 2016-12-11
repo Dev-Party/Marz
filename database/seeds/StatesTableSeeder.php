@@ -18,6 +18,6 @@ class StatesTableSeeder extends Seeder
 
         for ($i = 0; count($states) > $i; $i++) {
             DB::table('states')->insert(['name' => $states[$i]]);
-        }    
+        }
     }
 }
