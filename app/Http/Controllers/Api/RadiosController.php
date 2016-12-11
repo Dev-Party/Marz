@@ -149,7 +149,7 @@ class RadiosController extends Controller
     {
         $radio = Radio::find($id);
         $radio->delete();
-        
+
         return response()->json(['deleted'], 204);
     }
 }
