@@ -7,8 +7,7 @@ use App\Http\Controllers\Controller;
 
 class NotesController extends Controller
 {
-    
-    public function all()
+	public function all()
     {
     	$notes = Note::all();
 

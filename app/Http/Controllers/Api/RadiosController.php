@@ -8,7 +8,6 @@ use App\Http\Controllers\Controller;
 
 class RadiosController extends Controller
 {
-
     /**
      * Restorna todas las radios.
      *
@@ -110,10 +109,12 @@ class RadiosController extends Controller
 
     /**
      * Actualizar una radio.
-     * 
+     *
+     *
      * @param array $request Datos de la radio.
      * @param int $id Identificador unico de la radio.
-     * 
+     *
+     *
      * @return object
      */
     public function update(Request $request, $id)
