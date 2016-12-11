@@ -104,7 +104,7 @@ class Radio extends Model
     {
         return $query->join('modulations', 'radios.modulation_id', '=', 'modulations.id');
     }
-    
+
     /**
      * Scope para formatear la salida de los datos.
      *

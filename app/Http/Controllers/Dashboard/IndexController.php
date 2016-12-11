@@ -2,11 +2,6 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-
-use App\Radio;
-
 class IndexController extends Controller
 {
     
@@ -14,5 +9,4 @@ class IndexController extends Controller
     {
         return view('dashboard.radios.all');
     }
-
 }

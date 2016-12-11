@@ -6,7 +6,6 @@ use App\Radio;
 
 class RadioController extends Controller
 {
-
     /**
      * Metodo para mostrar la vista con el formulario para agregar radio.
      */
@@ -32,6 +31,4 @@ class RadioController extends Controller
     {
         return view('radio.edit', ['radio_id' => $id]);
     }
-
 }
-

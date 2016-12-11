@@ -15,7 +15,7 @@ class Role extends Model
         'slug',
         'description',
     ];
-    
+
     /** @var bool $timestamps Indicates if the model should be timestamped. */
     public $timestamps = false;
 }

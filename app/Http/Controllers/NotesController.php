@@ -22,7 +22,7 @@ class NotesController extends Controller
             $fileName = rand(11111, 99999).'.'.$extension;
             $uploadSuccess = $audio->move($destinationPath, $fileName);
         }
-        
+
         $note = new Note;
         $note->title = $request->title;
         $note->radio_id = $request->radio_id;
@@ -30,7 +30,7 @@ class NotesController extends Controller
         $note->save();
 
         return redirect('/notes/edit/'.$note->id);
-	}
+    }
 
     /**
      * Mostrar todas las notas con audio.
@@ -45,6 +45,7 @@ class NotesController extends Controller
     public function edit($id)
     {
         $note = Note::find($id);
+
         return view('notes.edit', ['note' => $note]);
     }
 
@@ -58,13 +59,13 @@ class NotesController extends Controller
             $fileName = rand(11111, 99999).'.'.$extension;
             $uploadSuccess = $audio->move($destinationPath, $fileName);
         }
-        
+
         $note = Note::find($id);
         $note->title = $request->title;
         $note->radio_id = $request->radio_id;
         $note->audio = $fileName;
         $note->save();
 
-        return redirect('/notes/edit/' . $note->id);
+        return redirect('/notes/edit/'.$note->id);
     }
 }

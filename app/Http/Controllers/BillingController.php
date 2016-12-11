@@ -6,7 +6,6 @@ use App\User;
 use Validator;
 use App\Invoice;
 use App\Mail\BillingInformation;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
 class BillingController extends Controller

@@ -260,7 +260,7 @@ class CitiesTableSeeder extends Seeder
                   ['state_id' => 5, 'name' => 'Santiago de Liniers'],
                   ['state_id' => 5, 'name' => 'Santo Pipó'],
                   ['state_id' => 5, 'name' => 'Tres Capones'],
-                  ['state_id' => 5, 'name' => 'Wanda']
+                  ['state_id' => 5, 'name' => 'Wanda'],
             ]);    
       }
 }

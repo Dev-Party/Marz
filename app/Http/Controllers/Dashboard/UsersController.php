@@ -8,9 +8,9 @@ use App\Http\Controllers\Controller;
 class UsersController extends Controller
 {
 	public function all()
-    {
-    	$users = User::all();
+	{
+		$users = User::all();
 
-    	return view('dashboard.users.all', ['users' => $users]);
+		return view('dashboard.users.all', ['users' => $users]);
     }
 }
