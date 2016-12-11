@@ -25,42 +25,42 @@ Route::get('/radio/{id}/edit', 'RadioController@edit');
 // Export
 Route::group(['prefix' => 'export'], function () {
 
-	Route::get('/', 'ExportController@index');
+    Route::get('/', 'ExportController@index');
 
-	Route::get('/chaco.xml', 'ExportController@format');
+    Route::get('/chaco.xml', 'ExportController@format');
 
 });
 
 // Account
 Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
 
-	Route::get('/settings', 'Account\SettingsController@index');
+    Route::get('/settings', 'Account\SettingsController@index');
 
-	Route::post('/settings/profile/{id}', 'Account\SettingsController@profile');
+    Route::post('/settings/profile/{id}', 'Account\SettingsController@profile');
 
-	Route::post('/settings/password', 'Account\SettingsController@password');
+    Route::post('/settings/password', 'Account\SettingsController@password');
 
-	Route::get('/invoices', 'Account\InvoicesController@all');
+    Route::get('/invoices', 'Account\InvoicesController@all');
 
-	Route::get('/invoice/{id}.pdf', 'Account\InvoicesController@pdf');
+    Route::get('/invoice/{id}.pdf', 'Account\InvoicesController@pdf');
 
 });
 
 // Dashboard
 Route::group([
-	'prefix' => 'dashboard',
-	'namespace' => 'Dashboard',
-	'middleware' => ['role:administrator']],
-	function () {
-		Route::get('/radios', 'IndexController@getRadios');
-		Route::get('/users', 'UsersController@all');
-		Route::get('/notes', 'NotesController@all');
-	}
+    'prefix' => 'dashboard',
+    'namespace' => 'Dashboard',
+    'middleware' => ['role:administrator']],
+    function () {
+        Route::get('/radios', 'IndexController@getRadios');
+        Route::get('/users', 'UsersController@all');
+        Route::get('/notes', 'NotesController@all');
+    }
 );
 
 // Terms-and-conditions
 Route::get('/terms-and-conditions', function () {
-	return view('terms-and-conditions');
+    return view('terms-and-conditions');
 });
 
 Auth::routes();
