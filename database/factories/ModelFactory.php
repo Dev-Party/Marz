@@ -21,15 +21,15 @@ $factory->define(App\Radio::class, function (Faker\Generator $faker) {
         'email' => $faker->email,
         'phone' => $faker->tollFreePhoneNumber,
         'address' => $faker->address,
-        'website' => 'http://' . $faker->safeEmailDomain,
-        'streaming' => 'http://' . $faker->ipv4,
+        'website' => 'http://'.$faker->safeEmailDomain,
+        'streaming' => 'http://'.$faker->ipv4,
         'active' => 1,
     ];
 });
 
 $factory->define(App\Modulation::class, function (Faker\Generator $faker) {
     return [
-        'name' => $faker->randomElements($array = array ('AM','FM')),
+        'name' => $faker->randomElements($array = array('AM','FM')),
     ];
 });
 
@@ -42,6 +42,6 @@ $factory->define(App\State::class, function (Faker\Generator $faker) {
 $factory->define(App\City::class, function (Faker\Generator $faker) {
     return [
         'state_id' => 1,
-        'name'     => $faker->city,
+        'name' => $faker->city,
     ];
 });
