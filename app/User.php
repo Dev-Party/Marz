@@ -45,7 +45,7 @@ class User extends Authenticatable
      */
     public function hasRole($role)
     {
-        return ((string) $this->role->slug === $role) ? true : false;
+        return (isset($this->role->slug) && (string) $this->role->slug === $role) ? true : false;
     }
 
     /**
