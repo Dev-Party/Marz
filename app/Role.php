@@ -4,31 +4,18 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-
 class Role extends Model
 {
-	/**
-     * La tabla de base de datos utilizada por el modelo.
-     *
-     * @var string
-     */
+    /** @var string $table Nombre de la tabla. */
     protected $table = 'roles';
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
+    /** @var array $fillable Los atributos que son asignables. */
     protected $fillable = [
         'name',
         'slug',
-        'description'
+        'description',
     ];
     
-    /**
-     * Indicates if the model should be timestamped.
-     *
-     * @var bool
-     */
+    /** @var bool $timestamps Indicates if the model should be timestamped. */
     public $timestamps = false;
 }

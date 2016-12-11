@@ -4,10 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-
 class Note extends Model
 {
-	/**
+    /**
      * La tabla de base de datos utilizada por el modelo.
      *
      * @var string
@@ -21,7 +20,7 @@ class Note extends Model
      */
     protected $fillable = [
         'title',
-        'audio'
+        'audio',
     ];
 
     /** @var array $select Selects para la constulta a la base de datos. */
@@ -33,7 +32,7 @@ class Note extends Model
         'notes.title',
         'notes.audio',
         'notes.created_at',
-        'notes.updated_at'
+        'notes.updated_at',
     ];
 
     /**

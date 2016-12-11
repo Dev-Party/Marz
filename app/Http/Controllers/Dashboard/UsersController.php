@@ -2,18 +2,15 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-
 use App\User;
+use App\Http\Controllers\Controller;
 
 class UsersController extends Controller
 {
-    
-    public function all()
+	public function all()
     {
     	$users = User::all();
-        return view('dashboard.users.all', ['users' => $users]);
-    }
 
+    	return view('dashboard.users.all', ['users' => $users]);
+    }
 }

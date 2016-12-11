@@ -2,12 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
-
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
-
 use App\Radio;
 
 class RadioController extends Controller
@@ -18,7 +12,7 @@ class RadioController extends Controller
      */
     public function create()
     {
-    	return view('radio.new');
+        return view('radio.new');
     }
 
     /**

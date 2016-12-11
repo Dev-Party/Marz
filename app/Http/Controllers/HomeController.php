@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Note;
-use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
@@ -14,8 +13,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-    	$notes = Note::all();
-    	
+        $notes = Note::all();
+
         return view('home', ['notes' => $notes]);
     }
 }

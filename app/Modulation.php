@@ -11,7 +11,7 @@ class Modulation extends Model
 
     /** @var array $fillable Los atributos que son asignables. */
     protected $fillable = [
-    	'name'
+    	'name',
     ];
 
     /** @var string $dateFormat El formato de almacenamiento de columnas de fecha del modelo. */

@@ -36,7 +36,7 @@ class NotesController extends Controller
     public function store(Request $request)
     {
         $note = Note::create($request->all());
-        
+
         return response()->json(['created' => true], 201);
     }
 }
