@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Exportar radios')
+
 @section('content')
 <div class="container">
 <div class="row">

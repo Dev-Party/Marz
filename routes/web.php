@@ -44,13 +44,16 @@ Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
 });
 
 // Dashboard
-Route::group(['prefix' => 'dashboard', 'middleware' => ['role:administrator']], function () {
-
-	Route::get('/radios', 'Dashboard\IndexController@getRadios');
-
-	Route::get('/users', 'Dashboard\UsersController@all');
-
-});
+Route::group([
+	'prefix' => 'dashboard',
+	'namespace' => 'Dashboard',
+	'middleware' => ['role:administrator']],
+	function () {
+		Route::get('/radios', 'IndexController@getRadios');
+		Route::get('/users', 'UsersController@all');
+		Route::get('/notes', 'NotesController@all');
+	}
+);
 
 // Terms-and-conditions
 Route::get('/terms-and-conditions', function () {

@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Tu Radio en Internet')
+
 @section('content')
 <div class="container">
     <div class="pricing row">

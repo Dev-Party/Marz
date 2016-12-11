@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Mis Compras')
+
 @section('content')
 <div class="container">
     <div class="billing row">
