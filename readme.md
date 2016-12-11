@@ -1,5 +1,6 @@
 ## Sintoniza
 [![Build Status](https://travis-ci.org/soyFelixBarros/Sintoniza.svg?branch=master)](https://travis-ci.org/soyFelixBarros/Sintoniza)
+[![StyleCI](https://styleci.io/repos/53856715/shield?style=flat)](https://styleci.io/repos/53856715)
 [![Laravel 5.3](https://img.shields.io/badge/Laravel-5.3-orange.svg?style=flat)](http://laravel.com)
 [![License](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](https://opensource.org/licenses/MIT)
 
