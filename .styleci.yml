@@ -6,6 +6,7 @@ enabled:
   - strict
   - unalign_double_arrow
   - phpdoc_order
+  - phpdoc_single_line_var_spacing
 
 disabled:
   - short_array_syntax
