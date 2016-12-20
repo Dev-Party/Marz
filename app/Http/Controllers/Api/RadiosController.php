@@ -11,7 +11,6 @@ class RadiosController extends Controller
     /**
      * Restorna todas las radios.
      *
-     *
      * @return object
      */
     public function all(Request $request)
@@ -52,9 +51,7 @@ class RadiosController extends Controller
     /**
      * Crear una radio nueva.
      *
-     *
      * @param array $request Datos de la radio.
-     *
      *
      * @return object
      */
@@ -68,9 +65,7 @@ class RadiosController extends Controller
     /**
      * Retornar los datos de la radio que se busca.
      *
-     *
      * @param string $q Nombre de la radio.
-     *
      *
      * @return object
      */
