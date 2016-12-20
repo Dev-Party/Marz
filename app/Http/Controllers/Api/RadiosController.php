@@ -94,9 +94,7 @@ class RadiosController extends Controller
     /**
      * Retornar una radio.
      *
-     *
      * @param int $id Identificador unico de la radio.
-     *
      *
      * @return object
      */
@@ -110,10 +108,8 @@ class RadiosController extends Controller
     /**
      * Actualizar una radio.
      *
-     *
      * @param array $request Datos de la radio.
      * @param int $id Identificador unico de la radio.
-     *
      *
      * @return object
      */
@@ -139,9 +135,7 @@ class RadiosController extends Controller
     /**
      * Eliminar una radio.
      *
-     *
      * @param int $id Identificador unico de la radio.
-     *
      *
      * @return object
      */
