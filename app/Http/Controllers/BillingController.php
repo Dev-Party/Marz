@@ -7,8 +7,8 @@ use Validator;
 use App\Invoice;
 use Illuminate\Http\Request;
 use App\Mail\BillingInformation;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class BillingController extends Controller
 {
