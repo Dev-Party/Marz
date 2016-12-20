@@ -5,6 +5,7 @@ linting: true
 enabled:
   - strict
   - unalign_double_arrow
+  - phpdoc_order
 
 disabled:
   - short_array_syntax
