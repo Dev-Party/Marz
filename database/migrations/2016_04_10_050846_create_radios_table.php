@@ -29,7 +29,6 @@ class CreateRadiosTable extends Migration
             $table->string('website')->nullable();
             $table->integer('active')->default(0);
             $table->timestamps();
-            
             $table->foreign('state_id')->references('id')->on('states');
             $table->foreign('city_id')->references('id')->on('cities');
             $table->foreign('modulation_id')->references('id')->on('modulations');
