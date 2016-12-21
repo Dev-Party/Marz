@@ -6,18 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Note extends Model
 {
-    /**
-     * La tabla de base de datos utilizada por el modelo.
-     *
-     * @var string
-     */
+    /** @var string $table Nombre de la tabla. */
     protected $table = 'notes';
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
+    /** @var array $fillable Los atributos que son asignables. */
     protected $fillable = [
         'title',
         'audio',
