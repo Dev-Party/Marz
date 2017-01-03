@@ -22,7 +22,7 @@ class Radio extends Model
         'website',
         'streaming',
         'created_at',
-        'updated_at'
+        'updated_at',
     ];
 
     /** @var array $select Selects para la constulta a la base de datos. */
@@ -43,12 +43,12 @@ class Radio extends Model
         'radios.streaming',
         'radios.active',
         'radios.created_at',
-        'radios.updated_at'
+        'radios.updated_at',
     ];
 
     /** @var array $guarded Campos protegidos. */
     protected $guarded = [
-        'active'
+        'active',
     ];
 
     /**
@@ -58,7 +58,7 @@ class Radio extends Model
      */
     public function scopeOfActive($query, $active = 1)
     {
-        if ($active != 'all') {
+        if ($active !== 'all') {
             return $query->where('radios.active', $active);
         }
     }
@@ -70,11 +70,10 @@ class Radio extends Model
      */
     public function scopeOfStreaming($query, $streaming = '')
     {
-        if ($streaming != 'all') {
+        if ($streaming !== 'all') {
             return $query->where('radios.streaming', '!=', $streaming);
         }
     }
-
 
     /**
      * Scope para obtener la provincia de una radio.
@@ -114,5 +113,37 @@ class Radio extends Model
     public function scopeOfSelect($query)
     {
         return $query->select($this->select);
+    }
+
+    /**
+     * Obtener todas las notas de un radio.
+     */
+    public function notes()
+    {
+        return $this->hasMany('App\Note');
+    }
+
+    /**
+     * Obtener la modulación de la radio (AM o FM).
+     */
+    public function modulation()
+    {
+        return $this->belongsTo('App\Modulation');
+    }
+
+    /**
+     * Obtener la provincia.
+     */
+    public function state()
+    {
+        return $this->belongsTo('App\State');
+    }
+
+    /**
+     * Obtener la ciudad.
+     */
+    public function city()
+    {
+        return $this->belongsTo('App\City');
     }
 }

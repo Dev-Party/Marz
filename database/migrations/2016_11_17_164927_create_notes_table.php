@@ -4,13 +4,13 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateInvoicesTable extends Migration
+class CreateNotesTable extends Migration
 {
     /** @var string $table Nombre de la tabla. */
-    protected $table = 'invoices';
+    protected $table = 'notes';
 
     /**
-     * Run the migrations.
+     * Ejecutar la migración.
      *
      * @return void
      */
@@ -18,14 +18,15 @@ class CreateInvoicesTable extends Migration
     {
         Schema::create($this->table, function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
-            $table->integer('active')->default(0);
+            $table->integer('radio_id')->unsigned();
+            $table->string('title');
+            $table->string('audio');
             $table->timestamps();
         });
     }
 
     /**
-     * Reverse the migrations.
+     * Revertir migración.
      *
      * @return void
      */

@@ -19,7 +19,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'facebook_id'
+        'facebook_id',
     ];
 
     /**
@@ -29,7 +29,7 @@ class User extends Authenticatable
      */
     protected $hidden = [
         'password',
-        'remember_token'
+        'remember_token',
     ];
 
     /**
@@ -45,7 +45,7 @@ class User extends Authenticatable
      */
     public function hasRole($role)
     {
-        return (isset($this->role->slug) == $role) ? true : false;
+        return (isset($this->role->slug) && (string) $this->role->slug === $role) ? true : false;
     }
 
     /**
@@ -55,5 +55,4 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Invoice');
     }
-    
 }

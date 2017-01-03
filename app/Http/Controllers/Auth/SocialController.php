@@ -2,17 +2,13 @@
 
 namespace App\Http\Controllers\Auth;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-
 use App\User;
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
 use Socialite;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class SocialController extends Controller
 {
-
     public function redirectToProvider()
     {
         return Socialite::driver('facebook')->redirect();
@@ -32,7 +28,7 @@ class SocialController extends Controller
 
         return redirect()->intended('/');
     }
-    
+
     private function findOrCreateUser($facebookUser)
     {
         if ($authUser = User::where('facebook_id', $facebookUser->id)->first()) {
@@ -42,7 +38,7 @@ class SocialController extends Controller
         return User::create([
             'name' => $facebookUser->name,
             'email' => $facebookUser->email,
-            'facebook_id' => $facebookUser->id
+            'facebook_id' => $facebookUser->id,
         ]);
     }
 }

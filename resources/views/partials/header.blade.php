@@ -13,7 +13,7 @@
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="{{ url('/') }}">Inicio</a></li>
-                <li><a href="{{ url('/new') }}" class="new">Nuevo</a></li>
+                <li><a href="{{ url('/notes') }}">Notas</a></li>
                 <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             Servicios <span class="caret"></span>
@@ -32,10 +32,12 @@
 
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="{{ url('/account/invoices') }}">Mis facturas</a></li>
-                            @if (Auth::user()->hasRole('admin'))
+                            @if (Auth::user()->hasRole('administrator'))
                             <li><a href="{{ url('/dashboard/radios') }}">Radios</a></li>
                             <li><a href="{{ url('/dashboard/users') }}">Usuarios</a></li>
                             @endif
+                            <li role="separator" class="divider"></li>
+                            <li><a href="{{ url('/account/settings') }}">Ajustes</a></li>
                             <li>
                                 <a href="{{ url('/logout') }}"
                                     onclick="event.preventDefault();

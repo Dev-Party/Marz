@@ -6,7 +6,6 @@ use App\Invoice;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Contracts\Queue\ShouldQueue;
 
 class BillingInformation extends Mailable
 {
@@ -37,10 +36,10 @@ class BillingInformation extends Mailable
     public function build()
     {
         return $this->view('emails.billing.shipped')
-                    ->subject('Factura #' . $this->invoice->id)
+                    ->subject('Factura #'.$this->invoice->id)
                     ->with([
                         'id' => $this->invoice->id,
-                        'created_at' => $this->invoice->created_at
+                        'created_at' => $this->invoice->created_at,
                     ]);
     }
 }

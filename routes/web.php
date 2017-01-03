@@ -10,32 +10,55 @@ Route::get('/billing', 'BillingController@getIndex');
 
 Route::post('/billing', 'BillingController@postIndex');
 
-Route::get('/terms-and-conditions', function () {
-	return view('terms-and-conditions');
-});
+// Notes
+Route::get('/notes', 'NotesController@all');
 
+Route::get('/notes/new', 'NotesController@create')->middleware('auth', 'role:administrator');
+Route::post('/notes/new', 'NotesController@store')->middleware('auth', 'role:administrator');
+Route::get('/notes/edit/{id}', 'NotesController@edit')->middleware('auth', 'role:administrator');
+Route::post('/notes/edit/{id}', 'NotesController@update')->middleware('auth', 'role:administrator');
+
+// Radios
+Route::get('/radio/{id}', 'RadioController@show');
 Route::get('/radio/{id}/edit', 'RadioController@edit');
 
+// Export
 Route::group(['prefix' => 'export'], function () {
-	Route::get('/', 'ExportController@index');
-	Route::get('/chaco{format}', 'ExportController@format');
+    Route::get('/', 'ExportController@index');
+
+    Route::get('/chaco.xml', 'ExportController@format');
 });
 
 // Account
 Route::group(['prefix' => 'account', 'middleware' => ['auth']], function () {
+    Route::get('/settings', 'Account\SettingsController@index');
 
-	Route::get('/invoices', 'Account\InvoicesController@all');
-	Route::get('/invoice/{id}.pdf', 'Account\InvoicesController@view');
+    Route::post('/settings/profile/{id}', 'Account\SettingsController@profile');
 
+    Route::post('/settings/password', 'Account\SettingsController@password');
+
+    Route::get('/invoices', 'Account\InvoicesController@all');
+
+    Route::get('/invoice/{id}.pdf', 'Account\InvoicesController@pdf');
 });
 
 // Dashboard
-Route::group(['prefix' => 'dashboard', 'middleware' => ['role:admin']], function () {
+Route::group(
+    [
+        'prefix' => 'dashboard',
+        'namespace' => 'Dashboard',
+        'middleware' => ['role:administrator'],
+    ],
+    function () {
+        Route::get('/radios', 'IndexController@getRadios');
+        Route::get('/users', 'UsersController@all');
+        Route::get('/notes', 'NotesController@all');
+    }
+);
 
-	Route::get('/radios', 'Dashboard\IndexController@getRadios');
-
-	Route::get('/users', 'Dashboard\UsersController@all');
-
+// Terms-and-conditions
+Route::get('/terms-and-conditions', function () {
+    return view('terms-and-conditions');
 });
 
 Auth::routes();

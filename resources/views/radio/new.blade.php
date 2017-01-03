@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Agregar una radio')
+
 @section('content')
 <div class="container">
     <div class="row">

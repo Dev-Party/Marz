@@ -1,9 +1,17 @@
 <TapinRadio>
-    <Group title="Root">
-    	@foreach ($radios as $radio)
-        <Station title="{{ $radio->name }} - {{ $radio->city }}" country="Argentina" countrystate="{{ $radio->state }}" url="{{ $radio->website }}">
+	@foreach ($cities as $city)
+	@if($city->radios->count() > 0)
+
+	<Group title="{{ $city->name }}">		
+		@foreach ($city->radios as $radio)
+		@if($radio->streaming != '')
+		<Station title="{{ $radio->name }} {{ $radio->frequency }} MHz" country="Argentina" countrystate="{{ $radio->state->name }}" url="{{ $radio->website }}">
             <Source>{{ $radio->streaming }}</Source>
         </Station>
+        @endif
         @endforeach
-    </Group>
+	
+	</Group>
+	@endif
+	@endforeach
 </TapinRadio>

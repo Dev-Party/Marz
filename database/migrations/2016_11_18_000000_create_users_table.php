@@ -1,15 +1,16 @@
 <?php
 
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRadiosTable extends Migration
+class CreateUsersTable extends Migration
 {
     /** @var string $table Nombre de la tabla. */
-    protected $table = 'radios';
+    protected $table = 'users';
 
     /**
-     * Ejecutar la migración.
+     * Run the migrations.
      *
      * @return void
      */
@@ -17,19 +18,19 @@ class CreateRadiosTable extends Migration
     {
         Schema::create($this->table, function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('state_id')->unsigned();
-            $table->integer('city_id')->unsigned();
-            $table->integer('modulation_id')->unsigned();
+            $table->integer('role_id')->unsigned()->default(0);
             $table->string('name');
-            $table->float('frequency');
-            $table->string('streaming');
-            $table->integer('active')->default(0);
+            $table->string('email')->unique();
+            $table->string('password')->nullable();
+            $table->string('facebook_id')->nullable()->unique();
+            $table->rememberToken();
             $table->timestamps();
+            $table->foreign('role_id')->references('id')->on('roles');
         });
     }
 
     /**
-     * Revertir migración.
+     * Reverse the migrations.
      *
      * @return void
      */

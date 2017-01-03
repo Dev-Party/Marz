@@ -11,7 +11,7 @@ class State extends Model
 
     /** @var array $fillable Los atributos que son asignables. */
     protected $fillable = [
-        'name'
+        'name',
     ];
 
     /** @var bool $timestamps Los campos timestamp de la tabla. */
@@ -19,7 +19,8 @@ class State extends Model
 
     /**
      * Obtener las ciduades de una provincia.
-     * 
+     *
+     *
      * @return object
      */
     public function cities()
